@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Online Password Generator - Chdao Tools</title>
+	<meta name="keywords" content="online tools suite, Chdao Tools">
+	<meta name="description" content="Chdao Tools is an online toolkit with no login or fees. Includes life, developer, encoding/decoding, encryption, image, and entertainment tools.">
+	<link rel="canonical" href="https://www.chdaoai.com/life/pwd.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.container {
+			width: 600px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.input-group {
+			margin-bottom: 20px;
+		}
+
+		.input-label {
+			display: block;
+			margin-bottom: 5px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #333;
+		}
+
+		.input-field {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+			background-color: #f9f9f9;
+			color: #333;
+		}
+
+		.checkbox-group {
+			margin-bottom: 10px;
+		}
+
+		.checkbox-label {
+			display: inline-block;
+			margin-right: 20px;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			background-color: #3e8e41;
+		}
+
+		.password {
+			margin-bottom: 20px;
+		}
+
+		.password-label {
+			display: block;
+			margin-bottom: 5px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #333;
+		}
+
+		.password-field {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+			background-color: #f9f9f9;
+			color: #333;
+			font-family: monospace;
+			line-height: 1.5;
+		}
+
+		.alert {
+			margin-top: 20px;
+			padding: 15px;
+			font-size: 16px;
+			color: #31708f;
+			background-color: #d9edf7;
+			border-color: #bce8f1;
+			border-radius: 5px;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* Responsive navigation */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* Tools grid layout */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* Mobile styles */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding/Decoding</a>
+			<a href="../dev.html" class="nav-category">💻 Developer Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Entertainment</a>
+		</div>
+	</div>
+</nav>
+
+
+<div class="container">
+	<h1>Password Generator</h1>
+
+	<form id="password-form" method="POST">
+		<div class="input-group">
+			<label for="length" class="input-label">Password length:</label>
+			<input type="number" name="length" id="length" class="input-field" min="6" max="32" required>
+		</div>
+
+		<div class="input-group">
+			<label for="count" class="input-label">Number of passwords:</label>
+			<input type="number" name="count" id="count" class="input-field" min="1" max="10" required>
+		</div>
+
+		<div class="checkbox-group">
+			<label class="input-label">Include characters:</label>
+			<label for="uppercase" class="checkbox-label"><input type="checkbox" name="uppercase" id="uppercase"> Uppercase letters</label>
+			<label for="lowercase" class="checkbox-label"><input type="checkbox" name="lowercase" id="lowercase"> Lowercase letters</label>
+			<label for="number" class="checkbox-label"><input type="checkbox" name="number" id="number"> Numbers</label>
+			<label for="symbol" class="checkbox-label"><input type="checkbox" name="symbol" id="symbol"> Symbols (!@#$%^&*()_+-=[]{}|;':",./<>?)</label>
+		</div>
+
+		<button type="submit" class="btn">Generate</button>
+	</form>
+
+	<div class="password">
+		<label for="generated-password" class="password-label">Generated passwords:</label>
+		<textarea name="generated-password" id="generated-password" class="password-field" readonly></textarea>
+	</div>
+
+	<div class="alert" role="alert">
+		Note: Select at least one character set. This generator runs entirely in your browser and sends no data to a server. Ensure your computer and browser are trusted and secure.
+	</div>
+</div>
+
+<script>
+	function generatePassword(event) {
+		event.preventDefault();
+
+		const length = parseInt(document.getElementById('length').value);
+		const count = parseInt(document.getElementById('count').value);
+		const uppercase = document.getElementById('uppercase').checked;
+		const lowercase = document.getElementById('lowercase').checked;
+		const number = document.getElementById('number').checked;
+		const symbol = document.getElementById('symbol').checked;
+
+		const characters = [];
+		if (uppercase) characters.push(...'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+		if (lowercase) characters.push(...'abcdefghijklmnopqrstuvwxyz');
+		if (number) characters.push(...'0123456789');
+		if (symbol) characters.push(...'!@#$%^&*()_+-=[]{}|;\'\":,./<>?');
+
+		let passwords = [];
+		for (let i = 0; i < count; i++) {
+			let password = '';
+			for (let j = 0; j < length; j++) {
+				password += characters[Math.floor(Math.random() * characters.length)];
+			}
+			passwords.push(`${i + 1}. ${password}`);
+		}
+
+		document.getElementById('generated-password').value = passwords.join('\n\n');
+	}
+
+	document.getElementById('password-form').addEventListener('submit', generatePassword);
+</script>
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+</body>
+
+</html>

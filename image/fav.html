@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Favicon Generator - Chuandao Tools</title>
+	<meta name="keywords" content="favicon, icon generator, Chuandao Tools">
+	<meta name="description" content="Generate .ico favicons from images in various sizes. Client-side processing for privacy.">
+	<link rel="canonical" href="https://www.chdaoai.com/image/fav.html">			
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+		}
+		.header-icon {
+			width: 48px;
+			height: 48px;
+			background-color: #c2185b;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 24px;
+			margin-right: 10px;
+		}
+		.header-title {
+			font-size: 18px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		.heart-icon {
+			color: #ff4757;
+			cursor: pointer;
+		}
+		.rating {
+			display: flex;
+			gap: 5px;
+			color: #ffd700;
+		}
+		.share-icon {
+			margin-left: auto;
+			color: #666;
+			cursor: pointer;
+		}
+		.upload-area {
+			max-width: 800px;
+			margin: 0 auto;
+			background-color: white;
+			border-radius: 8px;
+			padding: 40px;
+			text-align: center;
+			border: 2px dashed #ddd;
+			margin-bottom: 20px;
+			cursor: pointer;
+		}
+		.upload-icon {
+			font-size: 48px;
+			color: #999;
+			margin-bottom: 10px;
+		}
+		.upload-text {
+			color: #666;
+		}
+		.size-options {
+			max-width: 800px;
+			margin: 20px auto;
+			display: flex;
+			gap: 20px;
+			align-items: center;
+		}
+		.size-label {
+			color: #666;
+		}
+		.size-radio {
+			display: flex;
+			gap: 15px;
+		}
+		.radio-item {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.radio-item input[type="radio"] {
+			margin: 0;
+		}
+		.generate-btn {
+			display: block;
+			width: 800px;
+			margin: 20px auto;
+			padding: 12px;
+			background-color: #2196f3;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		.generate-btn:hover {
+			background-color: #1976d2;
+		}
+		.info-box {
+			max-width: 800px;
+			margin: 30px auto;
+			background-color: #fff5f0;
+			border-radius: 4px;
+			padding: 20px;
+		}
+		.info-title {
+			color: #ff6b6b;
+			margin-bottom: 15px;
+		}
+		.info-list {
+			list-style: none;
+			color: #666;
+		}
+		.info-list li {
+			margin-bottom: 10px;
+			line-height: 1.6;
+		}
+		.code-block {
+			background-color: #1e1e1e;
+			border-radius: 4px;
+			padding: 15px;
+			margin: 15px 0;
+			color: #d4d4d4;
+			font-family: monospace;
+			line-height: 1.5;
+		}
+		.code-block .line-number {
+			color: #858585;
+			margin-right: 10px;
+			user-select: none;
+		}
+		.code-block .code-content {
+			color: #d4d4d4;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* Responsive navigation bar */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* Tool card layout */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* Mobile styles */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	<!-- 添加图片处理所需的库 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jimp/0.16.1/jimp.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Featured</a>
+			<a href="../life.html" class="nav-category">🏠 Life</a>
+			<a href="../encry.html" class="nav-category">🔒 Crypto</a>
+			<a href="../code.html" class="nav-category">📝 Encode/Decode</a>
+			<a href="../dev.html" class="nav-category">💻 Developer</a>
+			<a href="../image.html" class="nav-category">🖼️ Image</a>
+			<a href="../game.html" class="nav-category">🎮 Fun</a>
+		</div>
+	</div>
+</nav>
+
+<h1 style="text-align: center">Favicon Generator</h1>
+<div class="upload-area" onclick="document.getElementById('fileInput').click()">
+	<input type="file" id="fileInput" style="display: none" accept="image/*">
+	<div class="upload-icon">☁️</div>
+	<div class="upload-text">Click to upload, or drag-and-drop an image here</div>
+</div>
+
+<div class="size-options">
+	<span class="size-label">Output size</span>
+	<div class="size-radio">
+		<label class="radio-item">
+			<input type="radio" name="size" value="16x16">
+			16x16
+		</label>
+		<label class="radio-item">
+			<input type="radio" name="size" value="32x32" checked>
+			32x32
+		</label>
+		<label class="radio-item">
+			<input type="radio" name="size" value="48x48">
+			48x48
+		</label>
+		<label class="radio-item">
+			<input type="radio" name="size" value="64x64">
+			64x64
+		</label>
+		<label class="radio-item">
+			<input type="radio" name="size" value="128x128">
+			128x128
+		</label>
+	</div>
+</div>
+
+<button class="generate-btn">Generate and Download</button>
+
+<div class="info-box">
+	<h3 class="info-title">About favicon.ico</h3>
+	<ul class="info-list">
+		<li>1. favicon.ico is a website icon file shown in address bar, tabs, bookmarks.</li>
+		<li>2. It can contain multiple sizes: commonly 16x16, 32x32, 48x48.</li>
+		<li>3. Place it at the site root; most browsers auto-detect it.</li>
+		<li>4. Modern sites may also use PNG/SVG for transparency and high DPI.</li>
+		<li>5. Use rel="icon" links to specify different sizes as needed.</li>
+	</ul>
+	<div class="code-block">
+		<div><span class="line-number">01.</span><span class="code-content">&lt;link rel="icon" href="/favicon-16x16.png" sizes="16x16"&gt;</span></div>
+		<div><span class="line-number">02.</span><span class="code-content">&lt;link rel="icon" href="/favicon-32x32.png" sizes="32x32"&gt;</span></div>
+		<div><span class="line-number">03.</span><span class="code-content">&lt;link rel="icon" href="/favicon-48x48.png" sizes="48x48"&gt;</span></div>
+		<div><span class="line-number">04.</span><span class="code-content">&lt;link rel="icon" href="/favicon-64x64.png" sizes="64x64"&gt;</span></div>
+		<div><span class="line-number">05.</span><span class="code-content">&lt;link rel="icon" href="/favicon-128x128.png" sizes="128x128"&gt;</span></div>
+	</div>
+	<li>6. Your image is processed locally and never uploaded to a server.</li>
+</div>
+
+<script>
+	let currentFile = null;
+	const uploadArea = document.querySelector('.upload-area');
+	const generateBtn = document.querySelector('.generate-btn');
+
+	// 处理文件拖放
+	uploadArea.addEventListener('dragover', (e) => {
+		e.preventDefault();
+		uploadArea.style.borderColor = '#2196f3';
+	});
+
+	uploadArea.addEventListener('dragleave', (e) => {
+		e.preventDefault();
+		uploadArea.style.borderColor = '#ddd';
+	});
+
+	uploadArea.addEventListener('drop', (e) => {
+		e.preventDefault();
+		uploadArea.style.borderColor = '#ddd';
+		const files = e.dataTransfer.files;
+		if (files.length > 0) {
+			handleFile(files[0]);
+		}
+	});
+
+	document.getElementById('fileInput').addEventListener('change', (e) => {
+		if (e.target.files.length > 0) {
+			handleFile(e.target.files[0]);
+		}
+	});
+
+	// 处理上传的文件
+	function handleFile(file) {
+		if (!file.type.startsWith('image/')) {
+			alert('Please upload an image file');
+			return;
+		}
+		currentFile = file;
+
+		// 显示预览
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			uploadArea.innerHTML = `
+                    <img src="${e.target.result}" style="max-width: 200px; max-height: 200px;">
+                    <div class="upload-text">点击或拖拽更换图片</div>
+                `;
+		};
+		reader.readAsDataURL(file);
+	}
+
+	// 生成指定尺寸的Canvas
+	function createResizedCanvas(img, size) {
+		const canvas = document.createElement('canvas');
+		canvas.width = size;
+		canvas.height = size;
+		const ctx = canvas.getContext('2d');
+		ctx.drawImage(img, 0, 0, size, size);
+		return canvas;
+	}
+
+	// 将Canvas数据转换为Blob
+	function canvasToBlob(canvas) {
+		return new Promise((resolve) => {
+			canvas.toBlob((blob) => {
+				resolve(blob);
+			}, 'image/png');
+		});
+	}
+
+	// 生成ICO文件
+	async function generateIco() {
+		if (!currentFile) {
+			alert('请先上传图片！');
+			return;
+		}
+
+		try {
+			// 获取选中的尺寸
+			const selectedSize = document.querySelector('input[name="size"]:checked').value;
+			const size = parseInt(selectedSize.split('x')[0]);
+
+			// 创建图片元素
+			const img = new Image();
+			img.src = URL.createObjectURL(currentFile);
+
+			await new Promise((resolve, reject) => {
+				img.onload = resolve;
+				img.onerror = reject;
+			});
+
+			// 创建调整大小后的canvas
+			const canvas = createResizedCanvas(img, size);
+
+			// 将canvas转换为blob
+			const blob = await canvasToBlob(canvas);
+
+			// 创建ICO文件头
+			const header = new Uint8Array([
+				0, 0,             // 保留，必须为0
+				1, 0,             // 图像类型，1=ICO
+				1, 0,             // 图像数量
+				size, size,       // 宽度和高度
+				0,                // 调色板大小
+				0,                // 保留，必须为0
+				1, 0,             // 颜色平面
+				32, 0,            // 位深度
+				blob.size & 0xFF, // 图像数据大小（低字节）
+				(blob.size >> 8) & 0xFF,
+				(blob.size >> 16) & 0xFF,
+				(blob.size >> 24) & 0xFF,
+				22, 0, 0, 0       // 图像数据偏移量
+			]);
+
+			// 合并头部和图像数据
+			const iconData = new Blob([header, blob], { type: 'image/x-icon' });
+
+			// 下载文件
+			saveAs(iconData, 'favicon.ico');
+
+		} catch (error) {
+			console.error('生成ICO文件失败:', error);
+			alert('生成ICO文件失败，请重试！');
+		}
+	}
+
+	// 绑定生成按钮事件
+	generateBtn.addEventListener('click', generateIco);
+
+	// 添加预览功能
+	function addPreview(file) {
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			const preview = document.createElement('div');
+			preview.style.marginTop = '20px';
+			preview.style.textAlign = 'center';
+			preview.innerHTML = `
+                    <h4>Preview:</h4>
+                    <img src="${e.target.result}" style="width: 16px; height: 16px; margin: 5px;">
+                    <img src="${e.target.result}" style="width: 32px; height: 32px; margin: 5px;">
+                    <img src="${e.target.result}" style="width: 48px; height: 48px; margin: 5px;">
+                `;
+
+			const existingPreview = document.querySelector('.preview');
+			if (existingPreview) {
+				existingPreview.remove();
+			}
+			preview.className = 'preview';
+			uploadArea.after(preview);
+		};
+		reader.readAsDataURL(file);
+	}
+
+	// 修改handleFile函数，添加预览功能
+	function handleFile(file) {
+		if (!file.type.startsWith('image/')) {
+			alert('Please upload an image file');
+			return;
+		}
+		currentFile = file;
+
+		// 显示预览
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			uploadArea.innerHTML = `
+                    <img src="${e.target.result}" style="max-width: 200px; max-height: 200px;">
+                    <div class="upload-text">点击或拖拽更换图片</div>
+                `;
+		};
+		reader.readAsDataURL(file);
+
+		// 添加不同尺寸的预览
+		addPreview(file);
+	}
+</script>
+</body>
+
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+
+
+
+</html>

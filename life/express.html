@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Express Tracking - Chdao Tools</title>
+	<meta name="keywords" content="online tools suite, Chdao Tools">
+	<meta name="description" content="Chdao Tools is an online toolkit with no login or fees. Includes life, developer, encoding/decoding, encryption, image, and entertainment tools.">
+	<link rel="canonical" href="https://www.chdaoai.com/life/express.html">	
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+		}
+		.header-icon {
+			width: 48px;
+			height: 48px;
+			background-color: #4285f4;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 24px;
+			margin-right: 10px;
+		}
+		.header-title {
+			font-size: 18px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		.heart-icon {
+			color: #ff4757;
+			cursor: pointer;
+		}
+		.rating {
+			display: flex;
+			gap: 5px;
+			color: #ffd700;
+		}
+		.share-icon {
+			margin-left: auto;
+			color: #666;
+			cursor: pointer;
+		}
+		.tabs {
+			max-width: 800px;
+			margin: 0 auto 20px;
+			display: flex;
+			gap: 10px;
+		}
+		.tab {
+			padding: 6px 16px;
+			border-radius: 20px;
+			cursor: pointer;
+			font-size: 14px;
+		}
+		.tab.active {
+			background-color: #00b894;
+			color: white;
+		}
+		.tab:not(.active) {
+			background-color: #e9ecef;
+			color: #666;
+		}
+		.festival-table {
+			max-width: 800px;
+			margin: 0 auto;
+			background: white;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		.table-header {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			background-color: #f8f9fa;
+			padding: 15px 20px;
+			font-weight: bold;
+			color: #666;
+		}
+		.festival-row {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			padding: 15px 20px;
+			border-top: 1px solid #eee;
+		}
+		.festival-row:hover {
+			background-color: #f8f9fa;
+		}
+		.date {
+			color: #666;
+		}
+		.festival {
+			color: #333;
+		}
+		.festival-english {
+			color: #666;
+			font-size: 0.9em;
+			margin-left: 8px;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* Responsive navigation */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* Tools grid layout */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* Mobile styles */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding/Decoding</a>
+			<a href="../dev.html" class="nav-category">💻 Developer Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Entertainment</a>
+		</div>
+	</div>
+</nav>
+
+<h1 style="text-align: center">Express Tracking</h1>
+<div class="container" style="max-width:600px;margin:30px auto;background:#fff;padding:30px 20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+  <div style="margin-bottom:20px;text-align:center;">
+    <input id="expressNo" type="text" placeholder="Enter tracking number" style="width:60%;padding:10px 12px;font-size:16px;border:1.5px solid #ddd;border-radius:6px;">
+    <select id="companySelect" style="padding:10px 12px;font-size:16px;border:1.5px solid #ddd;border-radius:6px;margin-left:8px;">
+      <option value="auto">Auto detect</option>
+      <option value="shunfeng">SF Express</option>
+      <option value="yuantong">YTO</option>
+      <option value="zhongtong">ZTO</option>
+      <option value="shentong">STO</option>
+      <option value="yunda">Yunda</option>
+      <option value="jd">JD</option>
+      <option value="ems">EMS</option>
+      <option value="youzhengguonei">China Post</option>
+      <option value="huitongkuaidi">Best Express</option>
+      <option value="debangwuliu">Deppon</option>
+      <option value="zhaijisong">ZJS Express</option>
+    </select>
+    <button id="searchBtn" style="padding:10px 30px;font-size:16px;background:#4CAF50;color:#fff;border:none;border-radius:6px;margin-left:8px;cursor:pointer;">Search</button>
+  </div>
+  <div id="resultBox" style="min-height:120px;"></div>
+</div>
+<script>
+// Auto-detect company (simple rules)
+function guessCompany(no) {
+  if (/^SF/.test(no) || /^0?1\d{11}$/.test(no)) return 'shunfeng';
+  if (/^YT/.test(no)) return 'yuantong';
+  if (/^ZTO/.test(no)) return 'zhongtong';
+  if (/^STO/.test(no)) return 'shentong';
+  if (/^JD/.test(no)) return 'jd';
+  if (/^YTO/.test(no)) return 'yuantong';
+  if (/^YD/.test(no)) return 'yunda';
+  if (/^EMS/.test(no)) return 'ems';
+  if (/^HT/.test(no)) return 'huitongkuaidi';
+  if (/^DB/.test(no)) return 'debangwuliu';
+  if (/^ZJS/.test(no)) return 'zhaijisong';
+  if (/^\d{13}$/.test(no)) return 'youzhengguonei';
+  return 'auto';
+}
+
+function showLoading() {
+  $('#resultBox').html('<div style="text-align:center;color:#888;padding:40px 0;">Searching, please wait...</div>');
+}
+function showError(msg) {
+  $('#resultBox').html('<div style="color:#f44336;text-align:center;padding:40px 0;">' + msg + '</div>');
+}
+function showResult(data) {
+  if (!data || data.status!=='200') {
+    showError(data && data.message ? data.message : 'No tracking info found');
+    return;
+  }
+  let html = `<div style='font-weight:bold;font-size:18px;margin-bottom:10px;'>${data.nu} (${companyMap[data.com]||data.com})</div>`;
+  html += `<div style='color:#888;font-size:14px;margin-bottom:10px;'>Latest status: ${data.state?stateMap[data.state]:''}</div>`;
+  html += '<div style="border-left:3px solid #4CAF50;padding-left:12px;">';
+  for (let i = 0; i < data.data.length; i++) {
+    const item = data.data[i];
+    html += `<div style='margin-bottom:10px;'><div style='font-size:15px;'>${item.context}</div><div style='color:#888;font-size:13px;'>${item.time}</div></div>`;
+  }
+  html += '</div>';
+  $('#resultBox').html(html);
+}
+const companyMap = {
+  shunfeng: 'SF Express', yuantong: 'YTO', zhongtong: 'ZTO', shentong: 'STO', yunda: 'Yunda', jd: 'JD', ems: 'EMS', youzhengguonei: 'China Post', huitongkuaidi: 'Best Express', debangwuliu: 'Deppon', zhaijisong: 'ZJS Express'
+};
+const stateMap = { '0':'In transit', '1':'Collected', '2':'Exception', '3':'Delivered', '4':'Returned', '5':'Out for delivery', '6':'Returned to sender', '7':'Transferred' };
+
+$('#searchBtn').on('click', function() {
+  const no = $('#expressNo').val().trim();
+  let com = $('#companySelect').val();
+  if (!no) { showError('Please enter a tracking number'); return; }
+  if (com === 'auto') com = guessCompany(no);
+  if (com === 'auto') { showError('Unable to identify the courier. Please select manually'); return; }
+  showLoading();
+  $.ajax({
+    url: `https://api.vvhan.com/api/kuaidi?type=${com}&number=${no}`,
+    method: 'get',
+    dataType: 'json',
+    success: function(data) {
+      // 适配新接口返回结构
+      if (!data || data.code !== 200) {
+        showError((data && data.msg ? data.msg : 'No tracking info found') + '<br>If SF Express, JD etc. cannot be queried, try another courier or a real tracking number.');
+        return;
+      }
+      const info = data.info;
+      let html = `<div style='font-weight:bold;font-size:18px;margin-bottom:10px;'>${info.number} (${info.typeName||com})</div>`;
+      html += `<div style='color:#888;font-size:14px;margin-bottom:10px;'>Latest status: ${info.list && info.list.length ? info.list[0].status : ''}</div>`;
+      html += '<div style="border-left:3px solid #4CAF50;padding-left:12px;">';
+      if (info.list && info.list.length) {
+        for (let i = 0; i < info.list.length; i++) {
+          const item = info.list[i];
+          html += `<div style='margin-bottom:10px;'><div style='font-size:15px;'>${item.status}</div><div style='color:#888;font-size:13px;'>${item.time}</div></div>`;
+        }
+      }
+      html += '</div>';
+      $('#resultBox').html(html);
+    },
+    error: function(xhr) {
+      if (xhr.status === 404) {
+        showError('Interface does not support this courier or tracking number, please try another courier or enter a real tracking number.');
+      } else {
+        showError('Query failed, please try again later');
+      }
+    }
+  });
+});
+$('#expressNo').on('keypress', function(e) { if (e.key === 'Enter') $('#searchBtn').click(); });
+</script>
+
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+</body>
+
+</html>

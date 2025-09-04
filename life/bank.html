@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bank Card Type Checker - Chdao Tools</title>
+	<meta name="keywords" content="online tools suite, Chdao Tools">
+	<meta name="description" content="Chdao Tools is an online toolkit with no login or fees. Includes life, developer, encoding/decoding, encryption, image, and entertainment tools.">
+	<link rel="canonical" href="https://www.chdaoai.com/life/bank.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.container {
+			background-color: white;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+			border-radius: 4px;
+			overflow: hidden;
+			max-width: 600px;
+			max-width: 100%;
+			margin: auto;
+		}
+
+		h2 {
+			text-align: center;
+			margin-top: 50px;
+			color: #1890ff;
+			font-size: 38px;
+			margin-bottom: 50px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		label {
+			font-size: 24px;
+			color: #1890ff;
+			margin-bottom: 20px;
+		}
+
+		input[type=text] {
+			padding: 10px;
+			font-size: 24px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			margin-bottom: 20px;
+			width: 80%;
+			max-width: 500px;
+		}
+
+		.con-btn {
+			padding: 10px 20px;
+			font-size: 24px;
+			color: #fff;
+			background-color: #1890ff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.con-btn:hover {
+			background-color: #096dd9;
+		}
+
+		.result {
+			margin-top: 50px;
+			font-size: 36px;
+			color: #1890ff;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* Responsive navigation */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* Tools grid layout */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* Mobile styles */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding/Decoding</a>
+			<a href="../dev.html" class="nav-category">💻 Developer Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Entertainment</a>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+	<h2>Bank Card Type Checker</h2>
+	<form>
+		<label for="cardNumber">Please enter card number:</label>
+		<input type="text" id="cardNumber" placeholder="Enter card number">
+		<button class="con-btn" type="button" onclick="checkCardType()">Check</button>
+	</form>
+	<div class="result" id="result"></div>
+</div>
+
+<script>
+	function checkCardType() {
+		var cardNumber = document.getElementById("cardNumber").value.trim();
+
+		if (cardNumber.length == 0) {
+			alert("Please enter a card number!");
+			return;
+		}
+
+		var reg = /^([1-9]{1})(\d{14}|\d{15}|\d{18})$/;
+		if (!reg.test(cardNumber)) {
+			alert("Invalid card number format!");
+			return;
+		}
+
+		var prefix = cardNumber.substring(0,6); // 截取卡号前六位
+		var url = "https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?_input_charset=utf-8&cardNo=" + cardNumber + "&cardBinCheck=true";
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', url);
+		xhr.onload = function () {
+			if (xhr.status === 200) { // 请求成功处理
+				var response = JSON.parse(xhr.responseText);
+				if (response.validated && response.cardType != "DC") { // Validated and not a debit card
+					document.getElementById("result").textContent = "This card is a " + response.bank + " " + response.cardType + " card";
+					return;
+				}
+			}
+			document.getElementById("result").textContent = "Unable to identify card type or it's a debit card";
+		};
+		xhr.onerror = function () {
+			document.getElementById("result").textContent = "Request failed, please try again!";
+		};
+		xhr.send();
+	}
+</script>
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+</body>
+
+</html>

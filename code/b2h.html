@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Base64 ⇄ Hex Converter - Chandao Tools</title>
+	<meta name="keywords" content="online tool collection, Chandao Tools">
+	<meta name="description" content="Chandao Tools is a collection of free, no-login online utilities across life, dev, encoding/decoding, encryption, images, and fun.">
+	<link rel="canonical" href="https://www.chdaoai.com/code/b2h.html">				
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			margin: 0 auto;
+			max-width: 1200px;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			color: #333;
+			text-align: center;
+			margin-bottom: 5px;
+		}
+
+		.input-group {
+			margin: 15px 0;
+		}
+
+		textarea {
+			width: 100%;
+			height: 120px;
+			padding: 12px;
+			border: 2px solid #e0e0e0;
+			border-radius: 8px;
+			resize: vertical;
+			font-family: monospace;
+		}
+
+		.button-group {
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			margin: 15px 0;
+		}
+
+		button {
+			padding: 12px 25px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+
+		.active-btn {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		.secondary-btn {
+			background-color: #2196F3;
+			color: white;
+		}
+
+		.clear-btn {
+			background-color: #9E9E9E;
+			color: white;
+		}
+
+		button:hover {
+			opacity: 0.9;
+			transform: translateY(-1px);
+		}
+
+		.instructions {
+			margin-top: 30px;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border-radius: 8px;
+			line-height: 1.8;
+			color: #555;
+		}
+
+		.instructions h2 {
+			color: #333;
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+
+		.error {
+			color: #f44336;
+			text-align: center;
+			display: none;
+		}
+	</style>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* 响应式导航栏 */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* 工具卡片布局 */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* 移动端样式 */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	 <!-- Google tag (gtag.js2) -->
+	 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	 <script>
+		 window.dataLayer = window.dataLayer || [];
+		 function gtag(){dataLayer.push(arguments);}
+		 gtag('js', new Date());
+ 
+		 gtag('config', 'G-8NMLH22Y6G');
+	 </script>
+	 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			 crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding</a>
+			<a href="../dev.html" class="nav-category">💻 Dev Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Fun Tools</a>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+	<h2 style="text-align:center;color:#666">Base64 ⇄ Hex Converter</h2>
+
+	<div class="input-group">
+		<textarea id="hexInput" placeholder="Enter Hex-encoded content..."></textarea>
+	</div>
+
+	<div class="button-group">
+		<button class="active-btn" onclick="hexToBase64()">HEX → Base64</button>
+		<button class="secondary-btn" onclick="base64ToHex()">Base64 → HEX</button>
+		<button class="clear-btn" onclick="clearAll()">Clear</button>
+	</div>
+
+	<div class="input-group">
+		<textarea id="base64Input" placeholder="Enter Base64-encoded content..."></textarea>
+	</div>
+
+	<div class="error" id="errorMsg"></div>
+
+	<div class="instructions">
+		<h2>About this tool:</h2>
+		<ol>
+			<li>HEX (hexadecimal) is a base-16 number system using digits 0-9 and letters A-F.</li>
+			<li>Base64 encodes binary data into 64 printable characters for safe text transport.</li>
+			<li>This tool converts safely between hexadecimal and Base64 representations.</li>
+			<li>All conversions run locally in your browser. No data is collected.</li>
+			<li>Supports large texts (within browser limits).</li>
+		</ol>
+	</div>
+</div>
+
+<script>
+	// HEX to Base64
+	function hexToBase64() {
+		const hexString = document.getElementById('hexInput').value.trim();
+		try {
+			if (!/^[0-9a-fA-F]*$/.test(hexString)) {
+				throw new Error('Contains invalid HEX characters');
+			}
+			if (hexString.length % 2 !== 0) {
+				throw new Error('HEX length must be even');
+			}
+
+			const bytes = new Uint8Array(hexString.match(/[\da-fA-F]{2}/g).map(h => parseInt(h, 16)));
+			const base64 = btoa(String.fromCharCode.apply(null, bytes));
+			document.getElementById('base64Input').value = base64;
+			showError('');
+		} catch (error) {
+			showError(`Conversion failed: ${error.message}`);
+		}
+	}
+
+	// Base64 to HEX
+	function base64ToHex() {
+		const base64String = document.getElementById('base64Input').value.trim();
+		try {
+			const binaryString = atob(base64String);
+			const hexArray = Array.from(binaryString, char =>
+					char.charCodeAt(0).toString(16).padStart(2, '0')
+			);
+			document.getElementById('hexInput').value = hexArray.join('').toUpperCase();
+			showError('');
+		} catch (error) {
+			showError('Invalid Base64 string');
+		}
+	}
+
+	// Clear
+	function clearAll() {
+		document.getElementById('hexInput').value = '';
+		document.getElementById('base64Input').value = '';
+		showError('');
+	}
+
+	// Error handling
+	function showError(message) {
+		const errorElem = document.getElementById('errorMsg');
+		errorElem.textContent = message;
+		errorElem.style.display = message ? 'block' : 'none';
+	}
+</script>
+
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+</body>
+
+</html>

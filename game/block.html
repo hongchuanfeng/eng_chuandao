@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Online Click the Block Game - Chuandao Tools</title>
+	<meta name="keywords" content="online tools collection, Chuandao Tools">
+	<meta name="description" content="Chuandao Tools is an online collection of utilities. No login, no fees, just use and go. Includes life tools, developer tools, encoding/decoding, encryption/decryption, image tools, and games.">
+	<link rel="canonical" href="https://www.chdaoai.com/game/block.html">													
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			margin: 0 auto;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.container{
+			margin: auto;
+			text-align: center;
+		}
+		#game-area {
+			height: 400px;
+			width: 400px;
+			margin: 0 auto;
+			position: relative;
+			background-color: #eee;
+		}
+		.square {
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+			position: absolute;
+			cursor: pointer;
+		}
+	</style>
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* 响应式导航栏 */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+			z-index: 999;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* 工具卡片布局 */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* 移动端样式 */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding</a>
+			<a href="../dev.html" class="nav-category">💻 Dev Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Games</a>
+		</div>
+	</div>
+</nav>
+
+
+<div class="container">
+
+
+	<h1>Click the Block</h1>
+	<p>Click as many blue blocks as you can in 20 seconds</p>
+	<div id="game-area">
+		<!-- 方块会通过JavaScript动态生成 -->
+	</div>
+	<div id="countdown"></div>
+
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script>
+		// 游戏区域
+		const gameArea = document.getElementById('game-area');
+
+		// 定义变量
+		let score = 0;
+		let timeLeft = 20;
+
+		// 页面加载完毕后执行初始化操作
+		document.addEventListener("DOMContentLoaded", function() {
+			init();
+		});
+
+		// 初始化函数
+		function init() {
+			// 创建方块
+			createSquares();
+
+			// 开始倒计时
+			countDown(timeLeft);
+
+			// 监听所有方块的点击事件
+			gameArea.addEventListener('click', handleClick);
+		}
+
+		// 创建方块
+		function createSquares() {
+			for (let i = 0; i < 20; i++) {
+				let div = document.createElement('div');
+				div.className = 'square';
+				div.style.left = Math.floor(Math.random() * 350) + 'px';
+				div.style.top = Math.floor(Math.random() * 350) + 'px';
+				gameArea.appendChild(div);
+			}
+		}
+
+		// 处理方块的点击事件
+		function handleClick(e) {
+			if (e.target.classList.contains('square')) {
+				score++;
+				e.target.style.display = 'none';
+			}
+		}
+
+		// 倒计时函数
+		function countDown(timeLeft) {
+			let countdown = document.getElementById("countdown");
+			let timer = setInterval(function() {
+				countdown.innerHTML = "Countdown: " + timeLeft;
+				timeLeft--;
+				if (timeLeft === -1) {
+					clearInterval(timer);
+					countdown.innerHTML = "Time's up! Your score is: " + score;
+					let shareBtn = document.getElementById("share-btn");
+					shareBtn.style.display = 'block'; // 显示分享按钮
+					// 游戏结束后生成分享图片
+					html2canvas(gameArea).then(function(canvas) {
+						let imgSrc = canvas.toDataURL();
+						let link = document.createElement("a");
+						link.download = "click-block-score-" + score + ".png";
+						link.href = imgSrc;
+						link.click();
+					});
+				}
+			}, 1000);
+		}
+
+		// 分享按钮点击事件
+		// const shareBtn = document.getElementById("share-btn");
+		// shareBtn.addEventListener('click', function() {
+		// 	// 在这里添加分享内容和逻辑
+		// 	alert('您成功分享了游戏结果！');
+		// });
+	</script>
+</div>
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+
+
+
+
+
+</body>
+
+</html>

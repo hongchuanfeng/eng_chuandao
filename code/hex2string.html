@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HEX ⇄ Text Converter - Chandao Tools</title>
+	<meta name="keywords" content="online tool collection, Chandao Tools">
+	<meta name="description" content="Chandao Tools is a collection of free, no-login online utilities across life, dev, encoding/decoding, encryption, images, and fun.">
+	<link rel="canonical" href="https://www.chdaoai.com/code/hex2string.html">		
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			margin: 0 auto;
+			max-width: 1200px;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		h1 {
+			color: #333;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		.input-group {
+			margin: 15px 0;
+		}
+
+		textarea {
+			width: 100%;
+			height: 100px;
+			padding: 12px;
+			border: 2px solid #ddd;
+			border-radius: 8px;
+			resize: vertical;
+			font-size: 14px;
+		}
+
+		.button-group {
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			margin: 15px 0;
+		}
+
+		button {
+			padding: 12px 25px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+
+		.encode-btn {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		.decode-btn {
+			background-color: #FF9800;
+			color: white;
+		}
+
+		.clear-btn {
+			background-color: #9E9E9E;
+			color: white;
+		}
+
+		button:hover {
+			opacity: 0.9;
+			transform: translateY(-2px);
+		}
+
+		.instructions {
+			margin-top: 30px;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border-radius: 8px;
+			line-height: 1.8;
+		}
+
+		.error {
+			color: #f44336;
+			text-align: center;
+			display: none;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* 响应式导航栏 */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* 工具卡片布局 */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* 移动端样式 */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="https://cdn.jsdelivr.net/npm/punycode@2.1.0/punycode.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding</a>
+			<a href="../dev.html" class="nav-category">💻 Dev Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Fun Tools</a>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<h1>HEX ⇄ Text Converter</h1>
+
+	<div class="input-group">
+		<textarea id="charInput" placeholder="Enter text..."></textarea>
+	</div>
+
+	<div class="button-group">
+		<button class="encode-btn" onclick="charToHex()">Text → HEX</button>
+		<button class="decode-btn" onclick="hexToChar()">HEX → Text</button>
+		<button class="clear-btn" onclick="clearAll()">Clear</button>
+	</div>
+
+	<div class="input-group">
+		<textarea id="hexInput" placeholder="Enter HEX content..."></textarea>
+	</div>
+
+	<div class="error" id="errorMsg"></div>
+
+	<div class="instructions">
+		<h3>关于Hex编码介绍：</h3>
+		<ol>
+			<li>Hex encoding represents data in base-16 for storage or transfer</li>
+			<li>Each hex digit represents 4 bits, making it compact and readable for binary</li>
+			<li>Basics of hex encoding:
+				<ul>
+					<li>基数：Hex编码使用基数16</li>
+					<li>符号：Hex编码使用16个不同的符号，包括0-9的数字和A-F的字母</li>
+					<li>位权：Hex编码从右向左，每一位的权是16的幂次，从0开始依次增加</li>
+				</ul>
+			</li>
+			<li>Hex编码在存储和传输二进制数据、调试和程序开发以及网络通信中被广泛使用</li>
+		</ol>
+	</div>
+</div>
+
+<script>
+	// 字符转HEX
+	function charToHex() {
+		try {
+			const input = document.getElementById('charInput').value;
+			const hexArray = Array.from(input).map(char =>
+					char.charCodeAt(0).toString(16).toUpperCase().padStart(2, '0')
+			);
+			document.getElementById('hexInput').value = hexArray.join(' ');
+			showError('');
+		} catch (error) {
+			showError('转换失败：' + error.message);
+		}
+	}
+
+	// HEX转字符
+	function hexToChar() {
+		try {
+			const hexString = document.getElementById('hexInput').value.replace(/\s/g, '');
+			if (!/^[0-9a-fA-F]+$/.test(hexString)) {
+				throw new Error('包含非法HEX字符');
+			}
+			if (hexString.length % 2 !== 0) {
+				throw new Error('HEX长度必须为偶数');
+			}
+
+			const charArray = [];
+			for (let i = 0; i < hexString.length; i += 2) {
+				const hex = hexString.substr(i, 2);
+				charArray.push(String.fromCharCode(parseInt(hex, 16)));
+			}
+			document.getElementById('charInput').value = charArray.join('');
+			showError('');
+		} catch (error) {
+			showError('转换失败：' + error.message);
+		}
+	}
+
+	// 清空功能
+	function clearAll() {
+		document.getElementById('charInput').value = '';
+		document.getElementById('hexInput').value = '';
+		showError('');
+	}
+
+	// 错误提示
+	function showError(message) {
+		const errorElem = document.getElementById('errorMsg');
+		errorElem.textContent = message;
+		errorElem.style.display = message ? 'block' : 'none';
+	}
+</script>
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+</body>
+
+</html>

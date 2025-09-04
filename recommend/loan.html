@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Car Loan Calculator - Chuandao Tools</title>
+	<meta name="keywords" content="online tools collection, Chuandao Tools">
+	<meta name="description" content="Chuandao Tools is an online collection of utilities. No login, no fees, just use and go. Includes life tools, developer tools, encoding/decoding, encryption/decryption, image tools, and games.">
+	<link rel="canonical" href="https://www.chdaoai.com/recommend/loan.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			display: flex;
+			gap: 20px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.header {
+			align-items: center;
+			margin: 0 auto;
+			max-width: 1200px;
+			text-align: center;
+		}
+		.header-icon {
+			width: 48px;
+			height: 48px;
+			background-color: #2d3436;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 24px;
+			margin-right: 10px;
+		}
+		.container {
+			max-width: 520px;
+			margin: 0 auto;
+
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+		.calculator {
+			background: #fff;
+			padding: 2rem;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+		}
+
+		h1 {
+			color: #333;
+			margin-bottom: 2rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.form-group {
+			margin-bottom: 1.5rem;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			color: #666;
+		}
+
+		input[type="number"] {
+			width: 100%;
+			padding: 0.8rem;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			font-size: 1rem;
+		}
+
+		.repay-method {
+			display: flex;
+			gap: 1rem;
+			margin: 1rem 0;
+		}
+
+		.repay-method label {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			cursor: pointer;
+		}
+
+		.cal-btn {
+			width: 100%;
+			padding: 1rem;
+			background: #2196F3;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			font-size: 1.1rem;
+			cursor: pointer;
+			transition: background 0.3s;
+		}
+
+		.cal-btn:hover {
+			background: #1976D2;
+		}
+
+		.results {
+			margin-top: 2rem;
+			padding: 1rem;
+			background: #f8f9fa;
+			border-radius: 4px;
+			display: none;
+		}
+
+		.result-item {
+			display: flex;
+			justify-content: space-between;
+			margin: 1rem 0;
+			padding: 0.5rem;
+			background: white;
+			border-radius: 4px;
+		}
+
+		.result-item span:first-child {
+			color: #666;
+		}
+
+		.result-item span:last-child {
+			color: #2196F3;
+			font-weight: bold;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* Responsive navbar */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* 工具卡片布局 */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* 移动端样式 */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding</a>
+			<a href="../dev.html" class="nav-category">💻 Dev Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Games</a>
+		</div>
+	</div>
+</nav>
+
+
+
+<div class="container">
+
+
+	<div class="calculator">
+		<h1>
+			<i class="fas fa-calculator"></i>
+			Car Loan Calculator
+		</h1>
+
+		<div class="form-group">
+			<label>Car price (CNY)</label>
+			<input type="number" id="carPrice" value="150000">
+		</div>
+
+		<div class="form-group">
+			<label>Down payment (%)</label>
+			<input type="number" id="downPayment" value="0" step="10">
+		</div>
+
+		<div class="form-group">
+			<label>Loan term (years)</label>
+			<input type="number" id="loanYears" value="2" min="1" max="5">
+		</div>
+
+		<div class="form-group">
+			<label>Interest rate (%)</label>
+			<input type="number" id="interestRate" value="4.35" step="0.01">
+		</div>
+
+		<div class="repay-method">
+			<label>
+				<input type="radio" name="repayMethod" value="equal" checked>
+				Equal principal and interest
+			</label>
+			<label>
+				<input type="radio" name="repayMethod" value="principal">
+				Equal principal
+			</label>
+		</div>
+
+		<button class="cal-btn" onclick="calculate()">Calculate</button>
+
+		<div class="results" id="results">
+			<div class="result-item">
+				<span>Monthly payment</span>
+				<span id="monthlyPayment">0.00 CNY</span>
+			</div>
+			<div class="result-item">
+				<span>Total interest</span>
+				<span id="totalInterest">0.00 CNY</span>
+			</div>
+			<div class="result-item">
+				<span>Total repayment</span>
+				<span id="totalAmount">0.00 CNY</span>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function calculate() {
+			// Read inputs
+			const carPrice = parseFloat(document.getElementById('carPrice').value);
+			const downPaymentPercent = parseFloat(document.getElementById('downPayment').value);
+			const loanYears = parseInt(document.getElementById('loanYears').value);
+			const annualRate = parseFloat(document.getElementById('interestRate').value) / 100;
+
+			// Base parameters
+			const downPayment = carPrice * (downPaymentPercent / 100);
+			const loanAmount = carPrice - downPayment;
+			const loanMonths = loanYears * 12;
+			const monthlyRate = annualRate / 12;
+
+			// Repayment method
+			const repayMethod = document.querySelector('input[name="repayMethod"]:checked').value;
+
+			let monthlyPayment, totalInterest;
+
+			if (repayMethod === 'equal') {
+				// Equal principal and interest
+				const temp = Math.pow(1 + monthlyRate, loanMonths);
+				monthlyPayment = loanAmount * monthlyRate * temp / (temp - 1);
+				totalInterest = monthlyPayment * loanMonths - loanAmount;
+			} else {
+				// Equal principal
+				const principalPerMonth = loanAmount / loanMonths;
+				let total = 0;
+				for(let i=0; i<loanMonths; i++) {
+					total += (loanAmount - principalPerMonth * i) * monthlyRate;
+				}
+				totalInterest = total;
+				monthlyPayment = principalPerMonth + (loanAmount * monthlyRate);
+			}
+
+			// Update UI
+			document.getElementById('results').style.display = 'block';
+			document.getElementById('monthlyPayment').textContent =
+					`${monthlyPayment.toFixed(2)} CNY`;
+			document.getElementById('totalInterest').textContent =
+					`${totalInterest.toFixed(2)} CNY`;
+			document.getElementById('totalAmount').textContent =
+					`${(loanAmount + totalInterest).toFixed(2)} CNY`;
+		}
+
+		// Initial calculation
+		calculate();
+
+		// Recalculate on input change
+		document.querySelectorAll('input').forEach(input => {
+			input.addEventListener('input', calculate);
+		});
+	</script>
+</div>
+</body>
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+
+</html>

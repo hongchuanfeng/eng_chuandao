@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GUID Generator - Chuandao Tools</title>
+	<meta name="keywords" content="online tools collection, Chuandao Tools">
+	<meta name="description" content="Chuandao Tools is an online collection of utilities. No login, no fees, just use and go. Includes life tools, developer tools, encoding/decoding, encryption/decryption, image tools, and games.">
+	<link rel="canonical" href="https://www.chdaoai.com/recommend/guid.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.nav {
+			margin: 0 auto;
+			max-width: 1200px;
+			display: flex;
+			gap: 20px;
+		}
+		.nav-item {
+			color: #666;
+			text-decoration: none;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+		}
+		.header-icon {
+			width: 48px;
+			height: 48px;
+			background-color: #ff9f43;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 24px;
+			margin-right: 10px;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		.settings {
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			margin-bottom: 20px;
+		}
+		.form-group {
+			margin-bottom: 15px;
+		}
+		.form-label {
+			display: block;
+			margin-bottom: 10px;
+			color: #666;
+		}
+		.radio-group {
+			display: flex;
+			gap: 20px;
+		}
+		.radio-item {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.input-number {
+			width: 100%;
+			padding: 8px;
+			border: 2px solid #e9ecef;
+			border-radius: 4px;
+			font-size: 14px;
+		}
+		.generate-btn {
+			width: 100%;
+			padding: 12px;
+			background-color: #2196f3;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			font-size: 16px;
+			cursor: pointer;
+			margin: 20px 0;
+		}
+		.result-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+		.result-table th,
+		.result-table td {
+			padding: 12px;
+			text-align: left;
+			border: 1px solid #e9ecef;
+		}
+		.result-table th {
+			background-color: #f8f9fa;
+			color: #666;
+		}
+		.result-table tr:nth-child(even) {
+			background-color: #f8f9fa;
+		}
+		.info-box {
+			background-color: #fff5f0;
+			border-radius: 8px;
+			padding: 20px;
+		}
+		.info-title {
+			color: #ff6b6b;
+			margin-bottom: 15px;
+		}
+		.info-list {
+			list-style: none;
+			color: #666;
+		}
+		.info-list li {
+			margin-bottom: 10px;
+			line-height: 1.6;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		body {
+			background-color: #f5f5f5;
+		}
+
+		/* Responsive navbar */
+		nav {
+			background: white;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-categories {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.nav-category {
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+
+		.nav-category:hover {
+			color: #007bff;
+		}
+
+		.menu-btn {
+			display: none;
+			background: none;
+			border: none;
+			font-size: 1.2rem;
+			cursor: pointer;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		/* 工具卡片布局 */
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+
+		.tool-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1rem;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			transition: transform 0.3s;
+		}
+
+		.tool-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.tool-icon {
+			font-size: 1.5rem;
+			color: #007bff;
+			margin-bottom: 1rem;
+		}
+
+		.category-title {
+			color: #444;
+			margin: 2rem 0 1rem;
+			padding-left: 1rem;
+		}
+
+		/* 移动端样式 */
+		@media (max-width: 768px) {
+			.nav-categories {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background: white;
+				flex-direction: column;
+				padding: 1rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.nav-categories.active {
+				display: flex;
+			}
+
+			.nav-category {
+				padding: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			.menu-btn {
+				display: block;
+			}
+
+			nav {
+				padding: 1rem;
+			}
+		}
+	</style>
+	<script src="../static/js/jquery-3.6.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+	<!-- Google tag (gtag.js2) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8NMLH22Y6G');
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
+			crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+	<div class="nav-container">
+		<div class="logo">
+			<a href="../index.html" class="nav-item">
+				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+			</a>
+		</div>
+		<button class="menu-btn" onclick="toggleMenu()">☰</button>
+		<div class="nav-categories">
+			<a href="../index.html" class="nav-category">🔍 Recommended</a>
+			<a href="../life.html" class="nav-category">🏠 Life Tools</a>
+			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
+			<a href="../code.html" class="nav-category">📝 Encoding</a>
+			<a href="../dev.html" class="nav-category">💻 Dev Tools</a>
+			<a href="../image.html" class="nav-category">🖼️ Image Tools</a>
+			<a href="../game.html" class="nav-category">🎮 Games</a>
+		</div>
+	</div>
+</nav>
+
+
+
+<div class="container">
+	<h1 style="text-align: center">GUID Generator</h1>
+	<div class="settings">
+		<div class="form-group">
+			<label class="form-label">Count</label>
+			<input type="number" class="input-number" id="count" value="5" min="1" max="100">
+		</div>
+
+		<div class="form-group">
+			<label class="form-label">Uppercase</label>
+			<div class="radio-group">
+				<label class="radio-item">
+					<input type="radio" name="case" value="lower" checked> Lowercase
+				</label>
+				<label class="radio-item">
+					<input type="radio" name="case" value="upper"> Uppercase
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="form-label">Separator (-)</label>
+			<div class="radio-group">
+				<label class="radio-item">
+					<input type="radio" name="separator" value="true" checked> On
+				</label>
+				<label class="radio-item">
+					<input type="radio" name="separator" value="false"> Off
+				</label>
+			</div>
+		</div>
+
+		<button class="generate-btn" onclick="generateGUIDs()">Generate</button>
+	</div>
+
+	<table class="result-table">
+		<thead>
+		<tr>
+			<th>No.</th>
+			<th>GUID</th>
+		</tr>
+		</thead>
+		<tbody id="resultTable"></tbody>
+	</table>
+
+	<div class="info-box">
+		<h3 class="info-title">About GUIDs:</h3>
+		<ul class="info-list">
+			<li>1. A GUID is a 128-bit identifier used to uniquely identify objects in distributed systems.</li>
+			<li>2. It aims for uniqueness across time and space.</li>
+			<li>3. Common uses: database keys, device/file/app identifiers.</li>
+			<li>4. Typically represented as 32 hex digits in 5 groups separated by hyphens.</li>
+			<li>5. Widely supported across networks and operating systems.</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	function generateGUID() {
+		const useSeparator = document.querySelector('input[name="separator"]:checked').value === 'true';
+		const useUpperCase = document.querySelector('input[name="case"]:checked').value === 'upper';
+
+		let guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+			const r = Math.random() * 16 | 0;
+			const v = c === 'x' ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		});
+
+		if (!useSeparator) {
+			guid = guid.replace(/-/g, '');
+		}
+
+		return useUpperCase ? guid.toUpperCase() : guid;
+	}
+
+	function generateGUIDs() {
+		const count = parseInt(document.getElementById('count').value);
+		const resultTable = document.getElementById('resultTable');
+		resultTable.innerHTML = '';
+
+		for (let i = 0; i < count; i++) {
+			const guid = generateGUID();
+			const row = document.createElement('tr');
+			row.innerHTML = `
+                    <td>GUID_${i + 1}</td>
+                    <td>${guid}</td>
+                `;
+			resultTable.appendChild(row);
+		}
+	}
+
+	// Generate default GUIDs on load
+	window.onload = generateGUIDs;
+</script>
+<script>
+	function toggleMenu() {
+		const nav = document.querySelector('.nav-categories');
+		nav.classList.toggle('active');
+
+		// 点击菜单项后自动关闭
+		document.querySelectorAll('.nav-category').forEach(item => {
+			item.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					nav.classList.remove('active');
+				}
+			});
+		});
+	}
+</script>
+</body>
+
+</html>
