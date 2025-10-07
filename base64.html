@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encryption/Decryption Tools - Online Toolkit - Chuandao Tools</title>
-    <meta name="keywords" content="encryption, decryption, tools, Chuandao Tools">
-    <meta name="description" content="Crypto utilities: AES, DES, MD5, SHA, HMAC, CRC32, keccak, RC4, Rabbit, JWT and more.">
-    <link rel="canonical" href="https://www.chdaoai.com/encry.html">
+    <title>Online Toolkit Collection - Chuandao Tools & Base64 Tools</title>
+    <meta name="keywords" content="online toolkit, Chuandao Tools">
+    <meta name="description" content="Chuandao Tools is an online toolkit: no login, no cost. Includes life utilities, developer tools, encoding/decoding, encryption/decryption, image tools, and entertainment tools.">
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="canonical" href="https://www.chdaoai.com/base64.html">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/css.css">
     <style>
@@ -79,7 +79,7 @@
         .tool-card {
             background: white;
             border-radius: 8px;
-            padding: 1rem;
+            padding: 1.5rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
@@ -149,17 +149,17 @@
     <div class="nav-container">
         <div class="logo">
             <a href="index.html" class="nav-item">
-                <img src="static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="static/images/logo.png" alt="base64" width="100px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
         <div class="nav-categories">
-            <a href="index.html" class="nav-category">🔍 Featured</a>
+            <a href="index.html" class="nav-category">🔐 Base64</a>
+            <a href="common.html" class="nav-category">🔍 Common</a>
             <a href="life.html" class="nav-category">🏠 Life</a>
             <a href="encry.html" class="nav-category">🔒 Crypto</a>
             <a href="code.html" class="nav-category">📝 Encode/Decode</a>
             <a href="dev.html" class="nav-category">💻 Developer</a>
-            <a href="base64.html" class="nav-category">🔐 Base64</a>
             <a href="image.html" class="nav-category">🖼️ Image</a>
             <a href="game.html" class="nav-category">🎮 Fun</a>
             <a href="index.html" class="nav-category"><i class="fas fa-earth-americas" aria-hidden="true"></i> English</a>
@@ -169,59 +169,51 @@
 </nav>
 
 <div class="container">
-    <!-- Crypto -->
-    <h2 class="category-title">Encryption/Decryption</h2>
+    <!-- Featured -->
+    <h2 class="category-title">Base64 Tools</h2>
     <div class="tools-grid">
 
+        <div class="tool-card">
+            <a href="base64/base64Intro.html">
+                <img src="static/images/base64Intro.png" class="fas fa-search-location tool-icon" alt="Base64" />
+                <div class="tool-title">Base64 </div>
+                <div class="tool-desc">Base64</div>
+            </a>
+        </div>
 
         <div class="tool-card">
-            <a href="encry/asc.html">
+            <a href="base64/index.html">
+                <img src="static/images/base64f.png" class="fas fa-search-location tool-icon" alt="Base64 Encoding Comparison Table" />
+                <div class="tool-title">Base64 Fundamentals</div>
+                <div class="tool-desc">Base64 Fundamentals</div>
+            </a>
+        </div>
 
-                <img src="static/images/asc.png" class="tool-icon" alt="String/ASCII Converter">
-                <div class="tool-info">
-                    <div class="tool-title">String/ASCII Converter</div>
-                    <div class="tool-desc">Convert between strings and ASCII</div>
-                </div>
+        <div class="tool-card">
+            <a href="base64/base64List.html">
+                <img src="static/images/base64table.png" class="fas fa-search-location tool-icon" alt="Base64 Encoding Comparison Table" />
+                <div class="tool-title">Base64 Encoding Comparison Table</div>
+                <div class="tool-desc">Online Base64 Encoding Comparison Table </div>
+            </a>
+        </div>
 
+        <div class="tool-card">
+            <a href="base64/base64.html">
+                <img src="static/images/base64code.png" class="fas fa-search-location tool-icon" alt="Base64 Encode/Decode" />
+                <div class="tool-title">Base64 Encode/Decode</div>
+                <div class="tool-desc">Online Base64 Encode/Decode</div>
             </a>
         </div>
 
 
         <div class="tool-card">
 
-            <a href="encry/aes.html">
+            <a href="base64/image2base64.html">
 
-                <img src="static/images/aes.png" class="tool-icon" alt="AES Encrypt/Decrypt">
+                <img src="static/images/imagetobase64.png" class="tool-icon" alt="Image to Base64">
                 <div class="tool-info">
-                    <div class="tool-title">AES Encrypt/Decrypt</div>
-                    <div class="tool-desc">Encrypt/decrypt with AES online</div>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="tool-card">
-
-            <a href="encry/des.html">
-
-                <img src="static/images/des.png" class="tool-icon" alt="DES Encrypt/Decrypt">
-                <div class="tool-info">
-                    <div class="tool-title">DES Encrypt/Decrypt</div>
-                    <div class="tool-desc">Encrypt/decrypt with DES online</div>
-                </div>
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <a href="encry/jwt.html">
-
-                <img src="static/images/jwt.png" class="tool-icon" alt="JWT Decode">
-                <div class="tool-info">
-                    <div class="tool-title">JWT Decode</div>
-                    <div class="tool-desc">Decode JSON Web Tokens</div>
+                    <div class="tool-title">Image to Base64</div>
+                    <div class="tool-desc">Online Image to Base64 </div>
                 </div>
             </a>
 
@@ -229,12 +221,25 @@
 
         <div class="tool-card">
 
-            <a href="encry/md5.html">
+            <a href="base64/base64ToFile.html">
 
-                <img src="static/images/md5.png" class="tool-icon" alt="MD5 Hash">
+                <img src="static/images/base64toimage.png" class="tool-icon" alt="base64 to file">
                 <div class="tool-info">
-                    <div class="tool-title">MD5 Hash</div>
-                    <div class="tool-desc">Generate MD5 hashes</div>
+                    <div class="tool-title">base64 to file</div>
+                    <div class="tool-desc">Online base64 to file </div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="tool-card">
+
+            <a href="base64/base16.html">
+
+                <img src="static/images/base16.png" class="tool-icon" alt="Base16 Encode/Decode">
+                <div class="tool-info">
+                    <div class="tool-title">Base16 Encode/Decode</div>
+                    <div class="tool-desc">Online Base16 Encode/Decode </div>
                 </div>
             </a>
 
@@ -243,12 +248,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/sha.html">
+            <a href="base64/base32.html">
 
-                <img src="static/images/sha.png" class="tool-icon" alt="SHA Hash">
+                <img src="static/images/base32.png" class="tool-icon" alt="Base32 Encode/Decode">
                 <div class="tool-info">
-                    <div class="tool-title">SHA Hash</div>
-                    <div class="tool-desc">Compute SHA hashes</div>
+                    <div class="tool-title">Base32 Encode/Decode</div>
+                    <div class="tool-desc">Online Base32 Encode/Decode </div>
                 </div>
             </a>
 
@@ -256,12 +261,25 @@
 
         <div class="tool-card">
 
-            <a href="encry/shake.html">
+            <a href="base64/base58.html">
 
-                <img src="static/images/shake.png" class="tool-icon" alt="Shake Hash">
+                <img src="static/images/base58.png" class="tool-icon" alt="Base58 Encode/Decode">
                 <div class="tool-info">
-                    <div class="tool-title">Shake Hash</div>
-                    <div class="tool-desc">Compute SHAKE hashes</div>
+                    <div class="tool-title">Base58 Encode/Decode</div>
+                    <div class="tool-desc">Online Base58 Encode/Decode </div>
+                </div>
+            </a>
+
+        </div>
+      
+        <div class="tool-card">
+
+            <a href="base64/base62.html">
+
+                <img src="static/images/base62.png" class="tool-icon" alt="Base62 Encode/Decode">
+                <div class="tool-info">
+                    <div class="tool-title">Base62 Encode/Decode</div>
+                    <div class="tool-desc">Online Base62 Encode/Decode </div>
                 </div>
             </a>
 
@@ -269,12 +287,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/CRC32.html">
+            <a href="base64/base100.html">
 
-                <img src="static/images/CRC32.png" class="tool-icon" alt="CRC32 Hash">
+                <img src="static/images/base100.png" class="tool-icon" alt="Base100 Encode/Decode">
                 <div class="tool-info">
-                    <div class="tool-title">CRC32 Hash</div>
-                    <div class="tool-desc">Compute CRC32 checksums</div>
+                    <div class="tool-title">Base100 Encode/Decode</div>
+                    <div class="tool-desc">Online Base100 Encode/Decode </div>
                 </div>
             </a>
 
@@ -282,12 +300,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/HMAC.html">
+            <a href="base64/baseCust.html">
 
-                <img src="static/images/HMAC.png" class="tool-icon" alt="HMAC Generator">
+                <img src="static/images/basecustom.png" class="tool-icon" alt="Custom Base64 Encode/Decode">
                 <div class="tool-info">
-                    <div class="tool-title">HMAC Generator</div>
-                    <div class="tool-desc">Generate HMAC signatures</div>
+                    <div class="tool-title">Custom Base64 Encode/Decode</div>
+                    <div class="tool-desc">Online Custom Base64 Encode/Decode </div>
                 </div>
             </a>
 
@@ -295,12 +313,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/jseval.html">
+            <a href="base64/base64java.html">
 
-                <img src="static/images/jseval.png" class="tool-icon" alt="js(eval) Obfuscation">
+                <img src="static/images/base64java.png" class="tool-icon" alt="Java Base64">
                 <div class="tool-info">
-                    <div class="tool-title">js(eval) Obfuscation</div>
-                    <div class="tool-desc">Obfuscate JavaScript with eval-based method</div>
+                    <div class="tool-title">Java Base64</div>
+                    <div class="tool-desc">Online Java Base64 </div>
                 </div>
             </a>
 
@@ -308,12 +326,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/keccak.html">
+            <a href="base64/base64python.html">
 
-                <img src="static/images/keccak.png" class="tool-icon" alt="Keccak Hash">
+                <img src="static/images/base64Python.png" class="tool-icon" alt="Python base64 module">
                 <div class="tool-info">
-                    <div class="tool-title">Keccak Hash</div>
-                    <div class="tool-desc">Compute Keccak hashes</div>
+                    <div class="tool-title">Python base64 module</div>
+                    <div class="tool-desc">Online Python base64 module</div>
                 </div>
             </a>
 
@@ -321,12 +339,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/Rabbit.html">
+            <a href="base64/base64js.html">
 
-                <img src="static/images/Rabbit.png" class="tool-icon" alt="Rabbit Cipher">
+                <img src="static/images/base64js.png" class="tool-icon" alt="JavaScript Base64">
                 <div class="tool-info">
-                    <div class="tool-title">Rabbit Cipher</div>
-                    <div class="tool-desc">Encrypt/decrypt with Rabbit cipher</div>
+                    <div class="tool-title">JavaScript Base64</div>
+                    <div class="tool-desc">Online JavaScript Base64</div>
                 </div>
             </a>
 
@@ -334,12 +352,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/RC4.html">
+            <a href="base64/base64Go.html">
 
-                <img src="static/images/RC4.png" class="tool-icon" alt="RC4 Cipher">
+                <img src="static/images/base64Go.png" class="tool-icon" alt="Go Base64">
                 <div class="tool-info">
-                    <div class="tool-title">RC4 Cipher</div>
-                    <div class="tool-desc">Encrypt/decrypt with RC4</div>
+                    <div class="tool-title">Go Base64</div>
+                    <div class="tool-desc">Online Go Base64</div>
                 </div>
             </a>
 
@@ -347,12 +365,12 @@
 
         <div class="tool-card">
 
-            <a href="encry/RIPEMD160.html">
+            <a href="base64/base64Rust.html">
 
-                <img src="static/images/RIPEMD160.png" class="tool-icon" alt="RIPEMD160 Hash">
+                <img src="static/images/base64Rust.png" class="tool-icon" alt="Rust Base64">
                 <div class="tool-info">
-                    <div class="tool-title">RIPEMD160 Hash</div>
-                    <div class="tool-desc">Compute RIPEMD160 hashes</div>
+                    <div class="tool-title">Rust Base64</div>
+                    <div class="tool-desc">Online Rust Base64</div>
                 </div>
             </a>
 
@@ -360,18 +378,16 @@
 
         <div class="tool-card">
 
-            <a href="encry/TripleDES.html">
+            <a href="base64/base64Ruby.html">
 
-                <img src="static/images/TripleDES.png" class="tool-icon" alt="TripleDES Cipher">
+                <img src="static/images/base64Ruby.png" class="tool-icon" alt="Ruby Base64">
                 <div class="tool-info">
-                    <div class="tool-title">TripleDES Cipher</div>
-                    <div class="tool-desc">Encrypt/decrypt with TripleDES</div>
+                    <div class="tool-title">Ruby Base64</div>
+                    <div class="tool-desc">Online Ruby Base64</div>
                 </div>
             </a>
 
         </div>
-
-
 
     </div>
 
