@@ -229,6 +229,87 @@
                 padding: 1rem;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
     <!-- Google tag (gtag.js2) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
@@ -248,7 +329,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -542,6 +623,64 @@
         </ul>
     </div>
 </div>
+
+<div class="help-section">
+    <h2>How to Use Chinese Dynasties Reference</h2>
+    <p>Browse comprehensive historical information about Chinese dynasties and periods.</p>
+
+    <h3>Table Overview</h3>
+    <p>This reference table provides detailed information about major and minor Chinese dynasties, including their dates, capitals, and present-day locations.</p>
+
+    <h3>What Information is Displayed?</h3>
+    <ul>
+        <li><strong>Dynasty:</strong> Name of the dynasty or period</li>
+        <li><strong>Years:</strong> Period of reign with precise dates</li>
+        <li><strong>Capital:</strong> Capital city during the dynasty</li>
+        <li><strong>Present location:</strong> Modern city/country location</li>
+    </ul>
+
+    <h3>Dynasty Categories</h3>
+    <ul>
+        <li><strong>Major Dynasties:</strong> Main ruling periods (highlighted in blue)</li>
+        <li><strong>Sub-dynasties:</strong> Subdivisions or regional powers (indented)</li>
+        <li><strong>Unified Periods:</strong> Times when China was unified under one dynasty</li>
+        <li><strong>Divided Periods:</strong> Times of fragmentation (e.g., Three Kingdoms)</li>
+    </ul>
+
+    <h3>Timeline Highlights</h3>
+    <ul>
+        <li><strong>Ancient Period:</strong> Xia, Shang, Zhou (c. 2146 BCE - 256 BCE)</li>
+        <li><strong>Imperial Era:</strong> Qin through Qing (221 BCE - 1911 CE)</li>
+        <li><strong>Modern Era:</strong> Republic of China and People's Republic</li>
+    </ul>
+
+    <h3>Special Markers</h3>
+    <ul>
+        <li><strong>⊕ Symbol:</strong> Indicates periods with extended or regional kingdoms</li>
+        <li><strong>Sub-dynasties:</strong> Indented entries show subdivisions of larger periods</li>
+        <li><strong>Multiple capitals:</strong> Some dynasties had multiple capitals listed</li>
+    </ul>
+
+    <h3>Examples from the Table</h3>
+    <div class="example">
+        <strong>Example 1 - Tang Dynasty:</strong> 618-907 CE, Capital: Chang'an (Xi'an, Shaanxi)<br><br>
+        <strong>Example 2 - Southern Song:</strong> 1127-1279 CE, Capital: Lin'an (Hangzhou, Zhejiang)
+    </div>
+
+    <h3>Historical Context</h3>
+    <p>The table shows the evolution of Chinese civilization from ancient times to the modern period. Hover over rows to see highlights, with major dynasties displayed with a blue background. This tool is valuable for historians, students, and anyone interested in Chinese history and culture.</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

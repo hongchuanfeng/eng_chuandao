@@ -386,7 +386,47 @@
         </div>
     </div>
 
-</div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section" style="background:#f8f9fa; border-radius:8px; padding:2rem; margin:2rem auto; max-width:1100px; border-left:4px solid #007bff;">
+        <h2 class="help-title" style="color:#333; font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;">How to Use</h2>
+        <div class="help-content" style="color:#666; line-height:1.6;">
+            <h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">What this tool does</h3>
+            <p>Test regular expressions against input, toggle flags, and view matches or replacements. Supports multiline, global, and ignore-case options.</p>
+
+            <h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Steps</h3>
+            <ol style="margin:.5rem 0 1rem 1.5rem;">
+                <li>Select <b>Match mode</b> or <b>Replace mode</b>.</li>
+                <li>Enter your <b>Regular expression</b> (and flags if needed).</li>
+                <li>Provide the <b>Input string</b> and optional <b>Replacement</b>.</li>
+                <li>Review the <b>Output</b>; use ↥ to send output back to input.</li>
+            </ol>
+
+            <h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Examples</h3>
+            <pre style="background:#fff; border:1px solid #e5e7eb; padding:12px; border-radius:6px; white-space:pre-wrap; word-break:break-word; line-height:1.5;">Regex: (\w+)@(\w+\.\w+)
+Input:  contact: support@example.com
+Match groups → ["support", "example.com"]</pre>
+
+            <h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Notes</h3>
+            <ul style="margin:.5rem 0 1rem 1.5rem;">
+                <li>Escaping differs across languages; this tool uses JS regex.</li>
+                <li>Large inputs may be slow; simplify patterns if needed.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background:#333; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem;">
+        <div class="footer-links" style="display:flex; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;">
+            <a href="../../about.html" style="color:#ccc; text-decoration:none; transition:color .3s;">About Us</a>
+            <a href="../../contact.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Contact Us</a>
+            <a href="../../privacy.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Privacy Policy</a>
+        </div>
+        <div style="color:#aaa; font-size:.9rem;">© <span id="year-dev-reg">2025</span> Chuandao Tools. All rights reserved.</div>
+    </footer>
+    <script>document.getElementById('year-dev-reg').textContent = new Date().getFullYear();</script>
+
 </body>
 <script>
     function toggleMenu() {

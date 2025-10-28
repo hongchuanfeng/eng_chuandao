@@ -228,6 +228,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* Mobile styles */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -258,6 +337,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -279,7 +368,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -333,6 +422,89 @@
 		<div class="result-item"></div>
 	</div>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool calculates the financial cost of smoking based on your daily consumption, pack size, and price per pack. It helps you understand the long-term financial impact of smoking.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Set Cigarettes per Day:</strong> Enter how many cigarettes you smoke daily (use +/- buttons or type directly)</li>
+		<li><strong>Set Cigarettes per Pack:</strong> Enter the number of cigarettes in one pack (usually 20)</li>
+		<li><strong>Set Price per Pack:</strong> Enter the cost of one pack in your local currency</li>
+		<li><strong>Calculate:</strong> Click "Calculate" to see your daily, monthly, and yearly costs</li>
+	</ol>
+	
+	<h3>Cost Calculations:</h3>
+	<ul>
+		<li><strong>Daily Cost:</strong> (Cigarettes per day × Price per pack) ÷ Cigarettes per pack</li>
+		<li><strong>Monthly Cost:</strong> Daily cost × 30 days</li>
+		<li><strong>Yearly Cost:</strong> Daily cost × 365 days</li>
+	</ul>
+	
+	<h3>Examples:</h3>
+	<ul>
+		<li><strong>Light Smoker:</strong> 5 cigarettes/day, 20 per pack, $8/pack = $2/day, $60/month, $730/year</li>
+		<li><strong>Moderate Smoker:</strong> 10 cigarettes/day, 20 per pack, $8/pack = $4/day, $120/month, $1,460/year</li>
+		<li><strong>Heavy Smoker:</strong> 20 cigarettes/day, 20 per pack, $8/pack = $8/day, $240/month, $2,920/year</li>
+	</ul>
+	
+	<h3>Cost Comparison Ideas:</h3>
+	<ul>
+		<li><strong>Monthly Cost:</strong> Could pay for gym membership, streaming services, or groceries</li>
+		<li><strong>Yearly Cost:</strong> Could fund vacation, car payment, or home improvement</li>
+		<li><strong>5-Year Cost:</strong> Could be a down payment on a house or car</li>
+		<li><strong>10-Year Cost:</strong> Could be retirement savings or college fund</li>
+	</ul>
+	
+	<h3>Health Cost Considerations:</h3>
+	<ul>
+		<li>Medical expenses for smoking-related illnesses</li>
+		<li>Life insurance premium increases</li>
+		<li>Lost productivity due to health issues</li>
+		<li>Potential disability or early retirement costs</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Motivation to quit smoking</li>
+		<li>Budget planning and financial awareness</li>
+		<li>Health education and counseling</li>
+		<li>Insurance and financial planning</li>
+		<li>Family discussions about smoking costs</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use accurate daily consumption numbers</li>
+		<li>Include all smoking costs (cigarettes, lighters, etc.)</li>
+		<li>Consider price increases over time</li>
+		<li>Factor in different pack sizes and brands</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool only calculates financial costs, not health costs</li>
+		<li>Smoking costs vary by location and brand</li>
+		<li>Consider inflation and price increases over time</li>
+		<li>Quitting smoking can save significant money long-term</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	function adjustValue(id, delta) {

@@ -265,6 +265,87 @@
                 padding: 1rem;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
     <!-- Google tag (gtag.js2) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
@@ -284,7 +365,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -353,6 +434,79 @@
         </ul>
     </div>
 </div>
+
+<div class="help-section">
+    <h2>How to Use the Name Generator</h2>
+    <p>Generate random Chinese names for characters, stories, or creative projects.</p>
+
+    <h3>Instructions</h3>
+    <ul>
+        <li>Select gender preference (Male, Female, or All)</li>
+        <li>Set name length (2-4 characters, 3 recommended)</li>
+        <li>Enter the number of names to generate (1-50)</li>
+        <li>Type your desired last name (surname)</li>
+        <li>Click "Generate" to create names</li>
+    </ul>
+
+    <h3>Name Structure</h3>
+    <ul>
+        <li><strong>Last Name (姓):</strong> Family name, usually 1 character</li>
+        <li><strong>Given Name (名):</strong> Personal name, 1-3 characters</li>
+        <li><strong>Total Length:</strong> Last name + given name characters</li>
+    </ul>
+
+    <h3>Gender-Specific Characters</h3>
+    <ul>
+        <li><strong>Male Names:</strong> Characters like 志, 明, 永, 浩, 宇, 航, 天, 翔, 鸿, 博, 俊, 杰, 华, 伟, 强, 军, 平</li>
+        <li><strong>Female Names:</strong> Characters like 芳, 娟, 秀, 英, 华, 美, 玲, 琳, 雅, 婷, 静, 怡, 雪</li>
+        <li><strong>All:</strong> Combines both male and female character sets</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="example">
+        <strong>Example 1 - Male Names:</strong><br>
+        Last name: 李, Length: 3, Count: 5<br>
+        Results: 李志明, 李永浩, 李宇航, 李天翔, 李鸿博<br><br>
+        <strong>Example 2 - Female Names:</strong><br>
+        Last name: 王, Length: 3, Count: 3<br>
+        Results: 王芳娟, 王秀英, 王美玲
+    </div>
+
+    <h3>Common Chinese Surnames</h3>
+    <ul>
+        <li>李 (Li), 王 (Wang), 张 (Zhang), 刘 (Liu), 陈 (Chen)</li>
+        <li>杨 (Yang), 黄 (Huang), 赵 (Zhao), 周 (Zhou), 吴 (Wu)</li>
+        <li>徐 (Xu), 孙 (Sun), 胡 (Hu), 朱 (Zhu), 高 (Gao)</li>
+    </ul>
+
+    <h3>Use Cases</h3>
+    <ul>
+        <li>Creating characters for stories or novels</li>
+        <li>Generating names for games or role-playing</li>
+        <li>Finding inspiration for creative writing</li>
+        <li>Learning Chinese name patterns and structures</li>
+        <li>Creating placeholder names for applications</li>
+    </ul>
+
+    <h3>Tips</h3>
+    <ul>
+        <li>3-character names (1 surname + 2 given) are most common</li>
+        <li>Consider the meaning and pronunciation of generated names</li>
+        <li>Some combinations may sound better than others</li>
+        <li>Traditional Chinese names often have cultural significance</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
     // 常用字库

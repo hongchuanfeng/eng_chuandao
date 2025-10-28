@@ -234,6 +234,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -255,7 +336,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -347,6 +428,60 @@
 		</ul>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Random IP Generator</h2>
+	<p>Generate random IP addresses for testing, development, or educational purposes.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Select IP version (IPv4 or IPv6)</li>
+		<li>Choose IP class for IPv4 (Class A-E or Any)</li>
+		<li>Enter the number of IPs to generate (1-100)</li>
+		<li>Option to ensure uniqueness or allow duplicates</li>
+		<li>Click "Generate" to create IP addresses</li>
+	</ul>
+
+	<h3>IPv4 Address Classes</h3>
+	<ul>
+		<li><strong>Class A:</strong> 0.0.0.0 - 127.255.255.255 (Large networks)</li>
+		<li><strong>Class B:</strong> 128.0.0.0 - 191.255.255.255 (Medium networks)</li>
+		<li><strong>Class C:</strong> 192.0.0.0 - 223.255.255.255 (Small networks)</li>
+		<li><strong>Class D:</strong> 224.0.0.0 - 239.255.255.255 (Multicast)</li>
+		<li><strong>Class E:</strong> 240.0.0.0 - 255.255.255.255 (Reserved)</li>
+	</ul>
+
+	<h3>IPv6 Format</h3>
+	<p>IPv6 addresses use hexadecimal notation in 8 groups of 4 hex digits, separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).</p>
+
+	<h3>Use Cases</h3>
+	<ul>
+		<li>Testing network configurations</li>
+		<li>Development and debugging</li>
+		<li>Educational purposes and demonstrations</li>
+		<li>Creating test data for applications</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1:</strong> Generate 10 random Class C IPv4 addresses for local network testing<br><br>
+		<strong>Example 2:</strong> Generate 5 unique IPv6 addresses for modern application development
+	</div>
+
+	<h3>Important Notes</h3>
+	<p>Generated IP addresses are random and may include private, reserved, or invalid ranges. These IPs are for testing purposes only and should not be used for actual network configurations without proper routing configuration.</p>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	function generateRandomIPv4(ipClass) {

@@ -201,6 +201,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* 移动端样式 */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -231,6 +310,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -254,7 +343,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -298,6 +387,98 @@
 		<li>3. The RGB and HEX values will be displayed.</li>
 	</ul>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool allows you to extract exact color values from any image by clicking on specific pixels. It's perfect for designers, developers, and anyone who needs to match colors from images.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Upload Image:</strong> Click the upload area or drag and drop an image file</li>
+		<li><strong>Click to Sample:</strong> Click anywhere on the uploaded image to pick a color</li>
+		<li><strong>View Results:</strong> See the RGB and HEX color values in the right panel</li>
+		<li><strong>Color Preview:</strong> The selected color is displayed in the color preview box</li>
+		<li><strong>Try Different Areas:</strong> Click on different parts of the image to sample other colors</li>
+	</ol>
+	
+	<h3>Color Information Displayed:</h3>
+	<ul>
+		<li><strong>RGB Values:</strong> Red, Green, Blue values (0-255 each)</li>
+		<li><strong>HEX Code:</strong> Hexadecimal color code (#RRGGBB format)</li>
+		<li><strong>Color Preview:</strong> Visual representation of the selected color</li>
+		<li><strong>Precision:</strong> Exact pixel color at the clicked location</li>
+	</ul>
+	
+	<h3>Supported Image Formats:</h3>
+	<ul>
+		<li><strong>Common Formats:</strong> JPEG, PNG, GIF, WebP, BMP</li>
+		<li><strong>Vector Graphics:</strong> SVG (converted to raster for sampling)</li>
+		<li><strong>File Size:</strong> No specific limits, but very large images may be slow</li>
+		<li><strong>Quality:</strong> Works with any image resolution</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Extracting brand colors from logos</li>
+		<li>Matching colors from photographs</li>
+		<li>Creating color palettes from images</li>
+		<li>Web design and CSS color selection</li>
+		<li>Graphic design color matching</li>
+		<li>Print design color extraction</li>
+		<li>Digital art color sampling</li>
+		<li>UI/UX design color consistency</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use high-resolution images for more precise color sampling</li>
+		<li>Click on solid color areas rather than gradients for consistent results</li>
+		<li>Zoom in on the image if possible for pixel-perfect accuracy</li>
+		<li>Consider the image's color profile and lighting conditions</li>
+		<li>Test colors in your target application to ensure accuracy</li>
+	</ul>
+	
+	<h3>Color Format Explanations:</h3>
+	<ul>
+		<li><strong>RGB:</strong> Red, Green, Blue values from 0-255 (e.g., rgb(255, 0, 0) for red)</li>
+		<li><strong>HEX:</strong> Hexadecimal representation using 6 characters (e.g., #FF0000 for red)</li>
+		<li><strong>Usage:</strong> RGB for CSS, HEX for web development and design tools</li>
+		<li><strong>Conversion:</strong> Both formats represent the same color in different notation</li>
+	</ul>
+	
+	<h3>Technical Details:</h3>
+	<ul>
+		<li><strong>Processing:</strong> Uses HTML5 Canvas for pixel color extraction</li>
+		<li><strong>Accuracy:</strong> Samples the exact pixel at the clicked location</li>
+		<li><strong>Privacy:</strong> All processing happens locally in your browser</li>
+		<li><strong>Performance:</strong> Works with images of any size</li>
+		<li><strong>Compatibility:</strong> Requires modern browser with Canvas support</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool only processes valid image files</li>
+		<li>All processing happens locally in your browser</li>
+		<li>No images are uploaded to external servers</li>
+		<li>Color accuracy depends on your monitor's color calibration</li>
+		<li>Different devices may display colors slightly differently</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	const dropZone = document.getElementById('dropZone');

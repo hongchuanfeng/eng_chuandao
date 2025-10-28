@@ -197,6 +197,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* 移动端样式 */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -227,6 +306,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -250,7 +339,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -292,6 +381,106 @@
 		</ul>
 	</div>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool provides a color picker interface for selecting colors and viewing their RGB and HEX values. While true screen color picking requires browser extensions, this tool offers a convenient way to choose and analyze colors.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Open Color Picker:</strong> Click "Open color picker" to launch the color selection interface</li>
+		<li><strong>Choose Color:</strong> Use the color picker to select your desired color</li>
+		<li><strong>View Values:</strong> See the RGB and HEX values automatically displayed</li>
+		<li><strong>Color Preview:</strong> The selected color appears in the preview box</li>
+		<li><strong>Try Different Colors:</strong> Click the button again to pick a different color</li>
+	</ol>
+	
+	<h3>Color Information Displayed:</h3>
+	<ul>
+		<li><strong>HEX Code:</strong> Hexadecimal color code in #RRGGBB format</li>
+		<li><strong>RGB Values:</strong> Red, Green, Blue values from 0-255</li>
+		<li><strong>Color Preview:</strong> Visual representation of the selected color</li>
+		<li><strong>Format:</strong> Both RGB and HEX represent the same color</li>
+	</ul>
+	
+	<h3>Color Format Explanations:</h3>
+	<ul>
+		<li><strong>HEX Format:</strong> Uses 6 hexadecimal digits (0-9, A-F)</li>
+		<li><strong>RGB Format:</strong> Three decimal values separated by commas</li>
+		<li><strong>Examples:</strong> #FF0000 = RGB(255,0,0) = Red</li>
+		<li><strong>Usage:</strong> HEX for web development, RGB for CSS and design tools</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Web development and CSS color selection</li>
+		<li>Graphic design color matching</li>
+		<li>UI/UX design color consistency</li>
+		<li>Brand color palette creation</li>
+		<li>Print design color specification</li>
+		<li>Digital art color selection</li>
+		<li>Accessibility color contrast checking</li>
+		<li>Color scheme development</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use the color picker's spectrum for precise color selection</li>
+		<li>Test colors in your target application to ensure accuracy</li>
+		<li>Consider color accessibility and contrast ratios</li>
+		<li>Save frequently used colors for future reference</li>
+		<li>Use color theory principles for harmonious combinations</li>
+	</ul>
+	
+	<h3>Browser Limitations:</h3>
+	<ul>
+		<li><strong>Screen Picking:</strong> True screen color picking requires browser extensions</li>
+		<li><strong>Security:</strong> Browsers restrict access to screen pixels for security</li>
+		<li><strong>Alternative:</strong> This tool provides a standard color picker interface</li>
+		<li><strong>Extensions:</strong> Install color picker extensions for screen sampling</li>
+	</ul>
+	
+	<h3>Color Theory Basics:</h3>
+	<ul>
+		<li><strong>Primary Colors:</strong> Red, Green, Blue (RGB color model)</li>
+		<li><strong>Color Wheel:</strong> Complementary colors are opposite on the wheel</li>
+		<li><strong>Harmony:</strong> Analogous colors are adjacent on the wheel</li>
+		<li><strong>Contrast:</strong> High contrast improves readability and accessibility</li>
+	</ul>
+	
+	<h3>Technical Details:</h3>
+	<ul>
+		<li><strong>Processing:</strong> Uses HTML5 color input for color selection</li>
+		<li><strong>Privacy:</strong> All processing happens locally in your browser</li>
+		<li><strong>Performance:</strong> Instant color conversion and display</li>
+		<li><strong>Compatibility:</strong> Works with all modern browsers</li>
+		<li><strong>Standards:</strong> Follows web color standards and specifications</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool provides a standard color picker interface</li>
+		<li>For true screen color picking, use browser extensions</li>
+		<li>All processing happens locally in your browser</li>
+		<li>Color accuracy depends on your monitor's calibration</li>
+		<li>Different devices may display colors slightly differently</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	const startPicker = document.getElementById('startPicker');

@@ -147,6 +147,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* Mobile styles */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -177,6 +256,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -198,7 +287,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -268,6 +357,82 @@
 		outputText.value = decode(inputText.value);
 	});
 </script>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool converts between regular text and Morse code. Morse code uses dots (.) and dashes (-) to represent letters, numbers, and punctuation.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Enter Text:</strong> Type your text in the input field (for encoding) or enter Morse code (for decoding)</li>
+		<li><strong>Choose Action:</strong> Click "Encode to Morse" to convert text to Morse code, or "Decode from Morse" to convert Morse code to text</li>
+		<li><strong>View Result:</strong> The converted result will appear in the output area</li>
+	</ol>
+	
+	<h3>Morse Code Basics:</h3>
+	<ul>
+		<li><strong>Dot (.)</strong> = Short signal</li>
+		<li><strong>Dash (-)</strong> = Long signal</li>
+		<li><strong>Space</strong> = Separates letters</li>
+		<li><strong>Slash (/)</strong> = Separates words</li>
+	</ul>
+	
+	<h3>Examples:</h3>
+	<ul>
+		<li><strong>Text to Morse:</strong> "HELLO" → ".... . .-.. .-.. ---"</li>
+		<li><strong>Morse to Text:</strong> ".... . .-.. .-.. ---" → "HELLO"</li>
+		<li><strong>With Numbers:</strong> "123" → ".---- ..--- ...--"</li>
+		<li><strong>With Spaces:</strong> "HELLO WORLD" → ".... . .-.. .-.. --- / .-- --- .-. .-.. -.."</li>
+	</ul>
+	
+	<h3>Common Morse Code Patterns:</h3>
+	<ul>
+		<li><strong>SOS:</strong> "... --- ..." (Emergency signal)</li>
+		<li><strong>OK:</strong> "--- -.-"</li>
+		<li><strong>YES:</strong> "-. ---"</li>
+		<li><strong>NO:</strong> "-. ---"</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use proper spacing between letters and words</li>
+		<li>For decoding, ensure Morse code is properly formatted</li>
+		<li>Case doesn't matter for encoding (automatically converts to uppercase)</li>
+		<li>Only letters and numbers are supported in this tool</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Learning Morse code for amateur radio</li>
+		<li>Emergency communication training</li>
+		<li>Historical communication studies</li>
+		<li>Puzzle solving and cryptography</li>
+		<li>Military and aviation training</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool uses standard International Morse Code</li>
+		<li>Only letters A-Z and numbers 0-9 are supported</li>
+		<li>For learning purposes, practice with simple words first</li>
+		<li>Real Morse code communication requires proper timing and rhythm</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 <script>
 	function toggleMenu() {
 		const nav = document.querySelector('.nav-categories');

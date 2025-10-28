@@ -195,6 +195,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* Mobile styles */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -225,6 +304,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -246,7 +335,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -283,6 +372,94 @@
 		<button class="con-btn" onclick="stop()">Stop</button>
 	</div>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool converts text to speech using your browser's built-in text-to-speech engine. You can choose between Chinese and English voices and download the audio.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Select Language:</strong> Choose between Chinese (China) or English (US)</li>
+		<li><strong>Enable Auto Play:</strong> Check "Auto play audio" if you want immediate playback</li>
+		<li><strong>Enter Text:</strong> Type or paste your text in the text area</li>
+		<li><strong>Play Audio:</strong> Click "Play" to start text-to-speech conversion</li>
+		<li><strong>Stop Audio:</strong> Click "Stop" to stop the current playback</li>
+		<li><strong>Download:</strong> Click "Download audio" to save the speech as an MP3 file</li>
+	</ol>
+	
+	<h3>Language Options:</h3>
+	<ul>
+		<li><strong>Chinese (China):</strong> Uses Chinese voice synthesis</li>
+		<li><strong>English (US):</strong> Uses English voice synthesis</li>
+	</ul>
+	
+	<h3>Features:</h3>
+	<ul>
+		<li><strong>Real-time Playback:</strong> Listen to text as it's being converted</li>
+		<li><strong>Auto Play:</strong> Automatically start playback when text is entered</li>
+		<li><strong>Download Support:</strong> Save audio as MP3 files</li>
+		<li><strong>Multiple Languages:</strong> Support for Chinese and English</li>
+		<li><strong>Browser-based:</strong> No external services required</li>
+	</ul>
+	
+	<h3>Examples:</h3>
+	<ul>
+		<li><strong>English:</strong> "Hello, welcome to our text-to-speech tool!"</li>
+		<li><strong>Chinese:</strong> "你好，欢迎使用我们的文字转语音工具！"</li>
+		<li><strong>Mixed Content:</strong> "Today is 2024年1月1日, Happy New Year!"</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Accessibility for visually impaired users</li>
+		<li>Language learning and pronunciation practice</li>
+		<li>Creating audio content from text</li>
+		<li>Proofreading by listening to text</li>
+		<li>Multitasking while listening to content</li>
+		<li>Creating voiceovers for presentations</li>
+	</ul>
+	
+	<h3>Browser Requirements:</h3>
+	<ul>
+		<li>Modern browser with Web Speech API support</li>
+		<li>Chrome, Firefox, Safari, or Edge</li>
+		<li>Microphone permission may be required</li>
+		<li>Internet connection for voice synthesis</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use proper punctuation for natural pauses</li>
+		<li>Break long texts into smaller chunks</li>
+		<li>Test different languages for your content</li>
+		<li>Use clear, well-formatted text</li>
+		<li>Check audio quality before downloading</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>Voice quality depends on your browser and system</li>
+		<li>Download feature requires auto-play to be enabled</li>
+		<li>Some browsers may have voice limitations</li>
+		<li>Large texts may take longer to process</li>
+		<li>Audio files are generated locally in your browser</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	const downloadButton = document.getElementById('downloadButton');

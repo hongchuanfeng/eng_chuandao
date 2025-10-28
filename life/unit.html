@@ -186,6 +186,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* Mobile styles */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -216,6 +295,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -236,7 +325,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -318,6 +407,95 @@
 
 	<div class="result" id="result"></div>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool converts between different units of measurement for speed, acceleration, volume, and time. Simply enter a value and select the units to convert from and to.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Enter Value:</strong> Type the number you want to convert in the input field</li>
+		<li><strong>Select From Unit:</strong> Choose the unit you're converting from</li>
+		<li><strong>Select To Unit:</strong> Choose the unit you want to convert to</li>
+		<li><strong>Convert:</strong> Click "Convert" to see the result</li>
+		<li><strong>View Result:</strong> The converted value will be displayed below</li>
+	</ol>
+	
+	<h3>Supported Unit Types:</h3>
+	<ul>
+		<li><strong>Speed:</strong> meters/second (m/s), kilometers/hour (km/h), miles/hour (mph)</li>
+		<li><strong>Acceleration:</strong> meters/second², standard gravity (g), feet/second²</li>
+		<li><strong>Volume:</strong> cubic meters (m³), liters (L), gallons (gal)</li>
+		<li><strong>Time:</strong> seconds (s), minutes (min), hours (h)</li>
+	</ul>
+	
+	<h3>Conversion Examples:</h3>
+	<ul>
+		<li><strong>Speed:</strong> 100 km/h = 27.78 m/s = 62.14 mph</li>
+		<li><strong>Acceleration:</strong> 9.8 m/s² = 1 g = 32.17 ft/s²</li>
+		<li><strong>Volume:</strong> 1 m³ = 1000 L = 264.17 gal</li>
+		<li><strong>Time:</strong> 3600 s = 60 min = 1 h</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Scientific calculations and research</li>
+		<li>Engineering and construction projects</li>
+		<li>International travel and navigation</li>
+		<li>Cooking and recipe conversions</li>
+		<li>Sports and fitness measurements</li>
+		<li>Educational and learning purposes</li>
+	</ul>
+	
+	<h3>Conversion Formulas:</h3>
+	<ul>
+		<li><strong>Speed:</strong> km/h = m/s × 3.6, mph = km/h ÷ 1.609</li>
+		<li><strong>Acceleration:</strong> g = m/s² ÷ 9.80665, ft/s² = m/s² × 3.28084</li>
+		<li><strong>Volume:</strong> L = m³ × 1000, gal = L × 0.264172</li>
+		<li><strong>Time:</strong> min = s ÷ 60, h = min ÷ 60</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Enter only numeric values (no units in the input field)</li>
+		<li>Use decimal points for precise measurements</li>
+		<li>Check your unit selections before converting</li>
+		<li>Verify results with known conversion factors</li>
+		<li>Use appropriate precision for your needs</li>
+	</ul>
+	
+	<h3>Accuracy and Precision:</h3>
+	<ul>
+		<li>Results are rounded to 2 decimal places</li>
+		<li>Conversion factors are based on international standards</li>
+		<li>Some conversions may have slight rounding errors</li>
+		<li>For critical applications, verify with official sources</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool only converts between the listed unit types</li>
+		<li>All conversions are based on metric and imperial standards</li>
+		<li>Results are for reference and educational purposes</li>
+		<li>For professional use, consult official conversion tables</li>
+		<li>Some unit conversions may vary by region or context</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	function convertUnits() {

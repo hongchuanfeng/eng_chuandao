@@ -213,6 +213,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -234,7 +315,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -308,6 +389,75 @@
 		</ul>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Province Abbreviations Reference</h2>
+	<p>Quick reference for Chinese provinces, abbreviations, and capital cities.</p>
+
+	<h3>Table Information</h3>
+	<p>This table provides a comprehensive list of all provinces, autonomous regions, municipalities, and special administrative regions of China with their common abbreviations and capital cities.</p>
+
+	<h3>How to Use This Reference</h3>
+	<ul>
+		<li>Browse the table to find any Chinese province or region</li>
+		<li>Check the abbreviation column for shorthand notation</li>
+		<li>Find the capital city for each administrative division</li>
+		<li>Use as a quick lookup reference for educational or business purposes</li>
+	</ul>
+
+	<h3>Administrative Divisions</h3>
+	<ul>
+		<li><strong>Provinces (23):</strong> Regular provincial administrative units</li>
+		<li><strong>Autonomous Regions (5):</strong> Tibet, Xinjiang, Inner Mongolia, Ningxia, Guangxi</li>
+		<li><strong>Municipalities (4):</strong> Beijing, Shanghai, Tianjin, Chongqing</li>
+		<li><strong>Special Administrative Regions (2):</strong> Hong Kong SAR, Macao SAR</li>
+	</ul>
+
+	<h3>Abbreviation System</h3>
+	<ul>
+		<li>Most abbreviations use one Chinese character</li>
+		<li>Some provinces have alternative abbreviations (indicated by "/")</li>
+		<li>Commonly used in postal codes, license plates, and official documents</li>
+		<li>Based on historical regions or geographic features</li>
+	</ul>
+
+	<h3>Example Lookups</h3>
+	<div class="example">
+		<strong>Example 1:</strong> Guangdong (粤) - Capital: Guangzhou<br><br>
+		<strong>Example 2:</strong> Sichuan (川/蜀) - Capital: Chengdu
+	</div>
+
+	<h3>Common Abbreviations</h3>
+	<ul>
+		<li><strong>Beijing (京):</strong> Municipality, Capital: Beijing</li>
+		<li><strong>Shanghai (沪):</strong> Municipality, Capital: Shanghai</li>
+		<li><strong>Guangdong (粤):</strong> Province, Capital: Guangzhou</li>
+		<li><strong>Zhejiang (浙):</strong> Province, Capital: Hangzhou</li>
+	</ul>
+
+	<h3>Use Cases</h3>
+	<ul>
+		<li>Educational reference for geography and administrative units</li>
+		<li>Business correspondence and address formatting</li>
+		<li>Travel planning and regional navigation</li>
+		<li>Understanding Chinese administrative structure</li>
+	</ul>
+
+	<h3>Note</h3>
+	<p>The table is organized by stroke order (笔画顺序). Some abbreviations may have regional variations. All information is accurate as of current administrative divisions.</p>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
+
 </body>
 <script>
 	function toggleMenu() {

@@ -204,6 +204,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<!-- Google tag (gtag.js2) -->
@@ -224,7 +305,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -265,6 +346,101 @@
 	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjxsaW5lIHgxPSIzMCIgeTE9IjUwIiB4Mj0iNzAiIHkyPSI1MCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4="
 		 class="test-image" alt="Test image">
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Camera Test</h2>
+	<p>Test your device's camera functionality and permissions with this simple camera test tool.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Click the "Click to test camera" button</li>
+		<li>Allow camera permission when prompted by your browser</li>
+		<li>If permission is granted, you'll see a live camera feed</li>
+		<li>If permission is denied, a test image will be displayed</li>
+		<li>Click the button again to stop the camera</li>
+	</ul>
+
+	<h3>What This Test Does</h3>
+	<ul>
+		<li>Requests access to your device's camera</li>
+		<li>Displays a live video feed if permission is granted</li>
+		<li>Shows a test image if camera access is denied</li>
+		<li>Tests camera functionality for web applications</li>
+		<li>Helps debug camera-related issues</li>
+	</ul>
+
+	<h3>Browser Requirements</h3>
+	<ul>
+		<li>Modern web browser with camera support</li>
+		<li>HTTPS connection (required for camera access)</li>
+		<li>Camera permission must be granted</li>
+		<li>Compatible with desktop and mobile browsers</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Successful Test:</strong><br>
+		Click button → Grant permission → Live camera feed appears<br><br>
+		<strong>Example 2 - Permission Denied:</strong><br>
+		Click button → Deny permission → Test image is shown
+	</div>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Testing camera functionality before video calls</li>
+		<li>Debugging web application camera issues</li>
+		<li>Verifying camera permissions work correctly</li>
+		<li>Testing camera quality and performance</li>
+		<li>Checking if camera is working on a device</li>
+	</ul>
+
+	<h3>Privacy & Security</h3>
+	<ul>
+		<li>Camera access is only requested when you click the button</li>
+		<li>No video data is recorded or transmitted</li>
+		<li>Camera feed is only displayed locally in your browser</li>
+		<li>You can revoke camera access at any time</li>
+		<li>No personal data is stored or shared</li>
+	</ul>
+
+	<h3>Troubleshooting</h3>
+	<ul>
+		<li><strong>Camera not working:</strong> Check if another app is using the camera</li>
+		<li><strong>Permission denied:</strong> Check browser settings and allow camera access</li>
+		<li><strong>No video feed:</strong> Ensure camera is not blocked by antivirus software</li>
+		<li><strong>Poor quality:</strong> Check camera settings and lighting conditions</li>
+		<li><strong>Mobile issues:</strong> Try refreshing the page and granting permission again</li>
+	</ul>
+
+	<h3>Browser Compatibility</h3>
+	<ul>
+		<li><strong>Chrome:</strong> Full support with permission prompt</li>
+		<li><strong>Firefox:</strong> Full support with permission prompt</li>
+		<li><strong>Safari:</strong> Full support on macOS and iOS</li>
+		<li><strong>Edge:</strong> Full support with permission prompt</li>
+		<li><strong>Mobile browsers:</strong> Supported on Android and iOS</li>
+	</ul>
+
+	<h3>Technical Notes</h3>
+	<ul>
+		<li>Uses WebRTC getUserMedia API for camera access</li>
+		<li>Camera feed is displayed in real-time</li>
+		<li>No server-side processing or storage</li>
+		<li>Works entirely in your browser</li>
+		<li>Camera stops automatically when you leave the page</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	const cameraBtn = document.getElementById('cameraBtn');

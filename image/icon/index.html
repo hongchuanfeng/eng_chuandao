@@ -34,10 +34,11 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border: 1px solid #eef0f2;
         }
         .input-area {
             width: 100%;
@@ -52,16 +53,19 @@
         }
         .button-group {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 20px;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .btn {
             padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            border: 1px solid transparent;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 14px;
-            transition: background-color 0.3s;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .convert-btn {
             background-color: #00c853;
@@ -69,6 +73,7 @@
         }
         .convert-btn:hover {
             background-color: #00b34a;
+            transform: translateY(-1px);
         }
         .clear-btn {
             background-color: #ff5252;
@@ -76,15 +81,17 @@
         }
         .clear-btn:hover {
             background-color: #ff1744;
+            transform: translateY(-1px);
         }
         .result-area {
             width: 100%;
-            min-height: 200px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
+            min-height: 220px;
+            border: 1px dashed #d9dee3;
+            border-radius: 12px;
+            padding: 18px;
             margin-bottom: 20px;
             text-align: center;
+            background: #fafbfc;
         }
         .result-area img {
             max-width: 100%;
@@ -94,7 +101,8 @@
             margin-top: 20px;
             padding: 15px;
             background: #fff5f0;
-            border-radius: 4px;
+            border-radius: 10px;
+            border: 1px solid #ffe1d6;
         }
         .info-title {
             color: #ff6b6b;
@@ -110,6 +118,40 @@
             margin-bottom: 5px;
             color: #ff6b6b;
         }
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1100px;
+            border-left: 4px solid #007bff;
+        }
+        .help-title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .help-content { color: #666; line-height: 1.6; }
+        .help-content h3 { color: #444; margin: 1.25rem 0 .5rem 0; font-size: 1.1rem; }
+        .help-content ul { margin: .5rem 0 1rem 1.5rem; }
+        .help-content li { margin: .35rem 0; }
+
+        /* Footer styles */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: color .3s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-copyright { color: #999; font-size: .9rem; }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -179,14 +221,16 @@
 
         .tool-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border: 1px solid #eef0f2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .tool-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
         }
 
         .tool-icon {
@@ -196,10 +240,18 @@
         }
 
         .category-title {
-            color: #444;
+            color: #1f2937;
             margin: 2rem 0 1rem;
-            padding-left: 1rem;
+            padding-left: .75rem;
+            border-left: 4px solid #007bff;
         }
+
+        /* Form layout enhancements */
+        .formLine { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #eef0f2; border-radius: 10px; margin-bottom: 12px; background: #f8fafc; }
+        .formLine .l { color: #334155; font-weight: 600; }
+        .formLine .r p { margin: 0; }
+        .formLine input[type="file"], .formLine input[type="checkbox"], .formLine input[type="radio"] { cursor: pointer; }
+        .butotn-p { background: transparent; border: none; display: flex; justify-content: flex-end; }
 
         /* 移动端样式 */
         @media (max-width: 768px) {
@@ -254,7 +306,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../../index.html" class="nav-item">
-                <img src="../../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -319,6 +371,52 @@
     </form>
 </div>
 
+<!-- Help Section -->
+<div class="help-section">
+    <h2 class="help-title"><i class="fas fa-question-circle"></i> How to Use</h2>
+    <div class="help-content">
+        <h3>What this tool does</h3>
+        <p>Convert an image into a multi-size .ico favicon. Choose icon sizes, shape (square, circle, rounded rectangle), and optional padding, then download a standards-compliant ICO file.</p>
+
+        <h3>Steps</h3>
+        <ol>
+            <li><strong>Upload Image:</strong> Click File to select PNG/JPG/WebP/BMP/GIF.</li>
+            <li><strong>Select Sizes:</strong> Pick one or more icon sizes (16–512 px).</li>
+            <li><strong>Choose Shape:</strong> Square, Circle, or Rounded rectangle.</li>
+            <li><strong>Padding (Rounded only):</strong> Enable padding to avoid edge clipping.</li>
+            <li><strong>Convert:</strong> Click Convert to generate and download the .ico.</li>
+        </ol>
+
+        <h3>Examples</h3>
+        <ul>
+            <li><strong>Classic favicon:</strong> 16, 32, 48 px – Shape: Square.</li>
+            <li><strong>Hi‑DPI favicon:</strong> 16, 32, 48, 96, 256 px – Shape: Rounded rectangle + Padding.</li>
+            <li><strong>Avatar-style:</strong> 128, 256, 512 px – Shape: Circle.</li>
+        </ul>
+
+        <h3>Tips</h3>
+        <ul>
+            <li>Start from a square image for best results (or crop beforehand).</li>
+            <li>Use transparent PNG to retain rounded or circular edges cleanly.</li>
+            <li>Include 16/32/48 for broad browser compatibility; add 256/512 for modern OS icons.</li>
+        </ul>
+
+        <h3>Privacy</h3>
+        <ul>
+            <li>Conversion happens locally in your browser – no uploads.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-links">
+        <a href="../../about.html">About Us</a>
+        <a href="../../contact.html">Contact Us</a>
+        <a href="../../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">&copy; 2024 Missionary AI. All rights reserved.</div>
+</div>
 </body>
 
 <script type="module">

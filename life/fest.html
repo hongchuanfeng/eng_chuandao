@@ -245,6 +245,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<!-- Google tag (gtag.js2) -->
@@ -265,7 +346,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -321,6 +402,108 @@
 		<div class="festival">House Cleaning Day</div>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the China Holidays Lookup</h2>
+	<p>Quick reference for traditional Chinese holidays and festivals with their dates and English translations.</p>
+
+	<h3>Holiday Information</h3>
+	<p>This table displays major traditional Chinese holidays with their lunar calendar dates and English names.</p>
+
+	<h3>Featured Holidays</h3>
+	<ul>
+		<li><strong>Spring Festival (春节):</strong> Chinese New Year - 1st day of Lunar January</li>
+		<li><strong>Lantern Festival (元宵节):</strong> 15th day of Lunar January</li>
+		<li><strong>Dragon Boat Festival (端午节):</strong> 5th day of Lunar May</li>
+		<li><strong>Double Seventh (七夕节):</strong> 7th day of Lunar July (Chinese Valentine's Day)</li>
+		<li><strong>Mid-Autumn Festival (中秋节):</strong> 15th day of Lunar August</li>
+		<li><strong>Double Ninth Festival (重阳节):</strong> 9th day of Lunar September</li>
+		<li><strong>Laba Festival (腊八节):</strong> 8th day of Lunar December</li>
+		<li><strong>House Cleaning Day:</strong> 24th day of Lunar December</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Spring Festival:</strong><br>
+		Date: 1st day of Lunar Jan<br>
+		Chinese: 春节<br>
+		English: Spring Festival<br><br>
+		<strong>Example 2 - Mid-Autumn Festival:</strong><br>
+		Date: 15th day of Lunar Aug<br>
+		Chinese: 中秋节<br>
+		English: Mid-Autumn Festival
+	</div>
+
+	<h3>Lunar Calendar System</h3>
+	<ul>
+		<li>Chinese holidays follow the traditional lunar calendar</li>
+		<li>Dates vary each year in the Gregorian calendar</li>
+		<li>Lunar months are approximately 29-30 days long</li>
+		<li>Some years have 13 lunar months (leap year)</li>
+		<li>Holiday dates shift by about 11 days each year</li>
+	</ul>
+
+	<h3>Cultural Significance</h3>
+	<ul>
+		<li><strong>Spring Festival:</strong> Most important holiday, family reunion time</li>
+		<li><strong>Lantern Festival:</strong> End of New Year celebrations, lantern displays</li>
+		<li><strong>Dragon Boat Festival:</strong> Commemorates poet Qu Yuan, dragon boat races</li>
+		<li><strong>Double Seventh:</strong> Romantic holiday, similar to Valentine's Day</li>
+		<li><strong>Mid-Autumn Festival:</strong> Moon viewing, family gatherings, mooncakes</li>
+		<li><strong>Double Ninth:</strong> Respect for elderly, mountain climbing</li>
+		<li><strong>Laba Festival:</strong> Buddhist holiday, eating Laba congee</li>
+	</ul>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Planning travel to China during holidays</li>
+		<li>Understanding Chinese cultural events</li>
+		<li>Business planning around Chinese holidays</li>
+		<li>Educational reference for Chinese culture</li>
+		<li>Event planning and scheduling</li>
+		<li>Cultural awareness and appreciation</li>
+	</ul>
+
+	<h3>Holiday Traditions</h3>
+	<ul>
+		<li><strong>Spring Festival:</strong> Red decorations, firecrackers, family dinners</li>
+		<li><strong>Lantern Festival:</strong> Lantern riddles, tangyuan (sweet dumplings)</li>
+		<li><strong>Dragon Boat Festival:</strong> Zongzi (sticky rice dumplings), dragon boat races</li>
+		<li><strong>Double Seventh:</strong> Romantic activities, gift exchanges</li>
+		<li><strong>Mid-Autumn Festival:</strong> Mooncakes, family reunions, moon viewing</li>
+		<li><strong>Double Ninth:</strong> Chrysanthemum viewing, mountain climbing</li>
+		<li><strong>Laba Festival:</strong> Eating Laba congee, temple visits</li>
+	</ul>
+
+	<h3>Important Notes</h3>
+	<ul>
+		<li>Holiday dates change each year in the Gregorian calendar</li>
+		<li>Some holidays are official public holidays in China</li>
+		<li>Regional variations may exist in different parts of China</li>
+		<li>Modern celebrations may differ from traditional customs</li>
+		<li>Check current year calendars for exact dates</li>
+	</ul>
+
+	<h3>Business Considerations</h3>
+	<ul>
+		<li>Many businesses close during major holidays</li>
+		<li>Travel and transportation may be affected</li>
+		<li>Shipping and delivery services may be delayed</li>
+		<li>Banking and government services may be limited</li>
+		<li>Plan business activities accordingly</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	// 标签切换功能

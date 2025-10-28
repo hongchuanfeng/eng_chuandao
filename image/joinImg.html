@@ -109,6 +109,105 @@
 		.info-list li {
 			margin-bottom: 5px;
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 2rem;
+			max-width: 1100px;
+			margin: 2rem auto;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-title {
+			color: #333;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.help-content {
+			color: #666;
+			line-height: 1.6;
+		}
+
+		.help-content h3 {
+			color: #444;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.1rem;
+		}
+
+		.help-content ul {
+			margin: 0.5rem 0 1rem 1.5rem;
+		}
+
+		.help-content li {
+			margin-bottom: 0.5rem;
+		}
+
+		.help-content code {
+			background: #e9ecef;
+			padding: 0.2rem 0.4rem;
+			border-radius: 3px;
+			font-family: monospace;
+			font-size: 0.9rem;
+		}
+
+		.example-box {
+			background: #fff;
+			border: 1px solid #dee2e6;
+			border-radius: 6px;
+			padding: 1rem;
+			margin: 1rem 0;
+		}
+
+		.example-title {
+			font-weight: bold;
+			color: #495057;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Footer styles */
+		.footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #ccc;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: white;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 768px) {
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
+		}
 	</style>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -282,7 +381,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -412,6 +511,141 @@
 
 		</div>
 	</main>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2 class="help-title">
+		<i class="fas fa-question-circle"></i>
+		How to Use
+	</h2>
+	<div class="help-content">
+		<h3>Step-by-Step Instructions</h3>
+		<ol>
+			<li><strong>Upload Images:</strong> Drag and drop multiple images or click "Select images" to choose files</li>
+			<li><strong>Configure Options:</strong> Set stitching direction, spacing, background color, and output quality</li>
+			<li><strong>Preview Images:</strong> Review uploaded images and remove any unwanted ones</li>
+			<li><strong>Start Stitching:</strong> Click "Start stitching" to combine your images</li>
+			<li><strong>Download Result:</strong> Use the download button to save the combined image</li>
+		</ol>
+
+		<h3>Stitching Options</h3>
+		<div class="example-box">
+			<div class="example-title">Direction:</div>
+			<ul>
+				<li><strong>Horizontal:</strong> Images are placed side by side from left to right</li>
+				<li><strong>Vertical:</strong> Images are stacked from top to bottom</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Spacing:</div>
+			<ul>
+				<li>Controls the gap between images (0-50 pixels)</li>
+				<li>Higher values create more space between images</li>
+				<li>Use 0 for seamless joining</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Background Color:</div>
+			<ul>
+				<li>Choose the background color for the combined image</li>
+				<li>Use color picker or enter hex code</li>
+				<li>White (#ffffff) is the default</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Output Quality:</div>
+			<ul>
+				<li>Controls JPEG compression quality (0.1-1.0)</li>
+				<li>Higher values = better quality but larger file size</li>
+				<li>0.9 is recommended for most uses</li>
+			</ul>
+		</div>
+
+		<h3>Supported Image Formats</h3>
+		<ul>
+			<li>JPEG (.jpg, .jpeg)</li>
+			<li>PNG (.png)</li>
+			<li>WebP (.webp)</li>
+			<li>GIF (.gif)</li>
+			<li>BMP (.bmp)</li>
+		</ul>
+
+		<h3>Common Use Cases</h3>
+		<div class="example-box">
+			<div class="example-title">Social Media:</div>
+			<ul>
+				<li>Create Instagram carousel posts</li>
+				<li>Combine multiple photos for Facebook posts</li>
+				<li>Create Twitter thread images</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Documentation:</div>
+			<ul>
+				<li>Combine screenshots for tutorials</li>
+				<li>Create before/after comparisons</li>
+				<li>Merge related images for reports</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Creative Projects:</div>
+			<ul>
+				<li>Create photo collages</li>
+				<li>Combine artwork pieces</li>
+				<li>Create panoramic-style images</li>
+			</ul>
+		</div>
+
+		<h3>Tips for Best Results</h3>
+		<ul>
+			<li>Use images with similar dimensions for better alignment</li>
+			<li>Consider the final aspect ratio when choosing direction</li>
+			<li>Use appropriate spacing to avoid cramped layouts</li>
+			<li>Choose background colors that complement your images</li>
+			<li>Test different quality settings to balance size and quality</li>
+		</ul>
+
+		<h3>Image Size Considerations</h3>
+		<div class="example-box">
+			<div class="example-title">Horizontal Stitching:</div>
+			<ul>
+				<li>Final width = sum of all image widths + spacing</li>
+				<li>Final height = height of tallest image</li>
+				<li>Best for: Side-by-side comparisons, timelines</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Vertical Stitching:</div>
+			<ul>
+				<li>Final width = width of widest image</li>
+				<li>Final height = sum of all image heights + spacing</li>
+				<li>Best for: Step-by-step guides, vertical layouts</li>
+			</ul>
+		</div>
+
+		<h3>Browser Requirements</h3>
+		<ul>
+			<li>Modern web browser with HTML5 Canvas support</li>
+			<li>JavaScript enabled</li>
+			<li>Sufficient memory for image processing</li>
+		</ul>
+
+		<h3>Important Notes</h3>
+		<ul>
+			<li>All processing is done locally in your browser</li>
+			<li>No images are uploaded to external servers</li>
+			<li>Large images may take longer to process</li>
+			<li>Output is always in JPEG format</li>
+			<li>Original image quality is preserved during stitching</li>
+		</ul>
+	</div>
 </div>
 
 <script>
@@ -693,6 +927,16 @@
 	}
 </script>
 
-
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		&copy; 2024 Missionary AI. All rights reserved.
+	</div>
+</footer>
 
 </html>

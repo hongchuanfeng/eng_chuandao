@@ -253,6 +253,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* 移动端样式 */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -283,6 +362,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -308,7 +397,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -435,6 +524,117 @@
 
 	</div>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This advanced image cropper allows you to precisely crop images with an interactive interface. Upload an image, adjust the crop area, and download the result in your preferred format.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Upload Image:</strong> Click the upload area or drag and drop an image file</li>
+		<li><strong>Auto Fit Crop Box:</strong> Click "Auto fit crop box" to create an initial crop area</li>
+		<li><strong>Adjust Crop Area:</strong> Drag the crop box or resize using the corner handles</li>
+		<li><strong>Crop Image:</strong> Click "Crop" to process the image with your selected area</li>
+		<li><strong>Download Result:</strong> Choose output format and quality, then download</li>
+	</ol>
+	
+	<h3>Crop Box Controls:</h3>
+	<ul>
+		<li><strong>Drag to Move:</strong> Click and drag the crop box to reposition it</li>
+		<li><strong>Corner Handles:</strong> Drag the white circles at corners to resize</li>
+		<li><strong>Auto Fit:</strong> Automatically creates a crop box covering 80% of the image</li>
+		<li><strong>Visual Feedback:</strong> Dark overlay shows the area that will be cropped out</li>
+	</ul>
+	
+	<h3>Supported Image Formats:</h3>
+	<ul>
+		<li><strong>Input Formats:</strong> JPEG, PNG, GIF, WebP, BMP, TIFF</li>
+		<li><strong>Output Formats:</strong> PNG, JPEG, WebP</li>
+		<li><strong>Quality Control:</strong> Adjustable quality for JPEG and WebP formats</li>
+		<li><strong>Transparency:</strong> PNG preserves transparency, JPEG/WebP do not</li>
+	</ul>
+	
+	<h3>Output Format Options:</h3>
+	<ul>
+		<li><strong>PNG:</strong> Lossless quality, supports transparency, larger file size</li>
+		<li><strong>JPEG:</strong> Compressed format, smaller file size, no transparency</li>
+		<li><strong>WebP:</strong> Modern format, excellent compression, web-optimized</li>
+		<li><strong>Quality Slider:</strong> Adjust compression level (10%-100%)</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Creating profile pictures and avatars</li>
+		<li>Cropping photos for social media posts</li>
+		<li>Preparing images for thumbnails</li>
+		<li>Removing unwanted parts from photos</li>
+		<li>Creating square images for Instagram</li>
+		<li>Extracting specific details from images</li>
+		<li>Preparing images for print layouts</li>
+		<li>Creating consistent image sizes for websites</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use high-resolution source images for best quality</li>
+		<li>Position the crop box carefully before cropping</li>
+		<li>Consider the aspect ratio of your target use case</li>
+		<li>Use PNG for images with transparency or sharp edges</li>
+		<li>Use JPEG for photographs with smooth gradients</li>
+		<li>Adjust quality based on your file size requirements</li>
+	</ul>
+	
+	<h3>Quality Settings Guide:</h3>
+	<ul>
+		<li><strong>90-100%:</strong> High quality, larger file size</li>
+		<li><strong>70-89%:</strong> Good quality, balanced file size</li>
+		<li><strong>50-69%:</strong> Medium quality, smaller file size</li>
+		<li><strong>10-49%:</strong> Low quality, very small file size</li>
+	</ul>
+	
+	<h3>Technical Features:</h3>
+	<ul>
+		<li><strong>Interactive Interface:</strong> Drag and drop, click to adjust</li>
+		<li><strong>Real-time Preview:</strong> See crop area as you adjust it</li>
+		<li><strong>Precise Control:</strong> Pixel-perfect cropping accuracy</li>
+		<li><strong>Format Conversion:</strong> Convert between different image formats</li>
+		<li><strong>Quality Control:</strong> Adjustable compression settings</li>
+		<li><strong>Responsive Design:</strong> Works on desktop and mobile devices</li>
+	</ul>
+	
+	<h3>Browser Requirements:</h3>
+	<ul>
+		<li><strong>Modern Browser:</strong> Chrome, Firefox, Safari, Edge (latest versions)</li>
+		<li><strong>HTML5 Canvas:</strong> Required for image processing</li>
+		<li><strong>File API:</strong> Required for file upload and download</li>
+		<li><strong>JavaScript:</strong> Must be enabled for full functionality</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool only processes valid image files</li>
+		<li>All processing happens locally in your browser</li>
+		<li>No images are uploaded to external servers</li>
+		<li>Large images may take longer to process</li>
+		<li>The crop operation is irreversible - keep your original files</li>
+		<li>Some very large images may not process due to memory limits</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	// 初始化变量

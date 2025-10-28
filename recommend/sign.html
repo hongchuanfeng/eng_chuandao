@@ -209,6 +209,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -230,7 +311,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -287,6 +368,93 @@
 		<p>Note: In dark mode, adjust pen or background color accordingly.</p>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Electronic Signature Generator</h2>
+	<p>Create digital signatures for documents, contracts, and official paperwork with this interactive tool.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li><strong>PC Users:</strong> Hold right mouse button and drag to write your signature</li>
+		<li><strong>Mobile Users:</strong> Touch and drag on the screen to create your signature</li>
+		<li>Use the toolbar to customize colors and export options</li>
+		<li>Clear the canvas to start over if needed</li>
+	</ul>
+
+	<h3>Toolbar Functions</h3>
+	<ul>
+		<li><strong>Pen Color:</strong> Choose the color for your signature</li>
+		<li><strong>Background Color:</strong> Set the background color for exported images</li>
+		<li><strong>Base64:</strong> Copy the signature as Base64 encoded data</li>
+		<li><strong>Download PNG:</strong> Save signature as PNG image file</li>
+		<li><strong>Download SVG:</strong> Save signature as scalable vector graphics</li>
+		<li><strong>Undo:</strong> Remove the last stroke you drew</li>
+		<li><strong>Clear:</strong> Erase the entire signature</li>
+	</ul>
+
+	<h3>Export Formats</h3>
+	<ul>
+		<li><strong>PNG:</strong> Raster image with transparent or colored background</li>
+		<li><strong>SVG:</strong> Vector format that scales without quality loss</li>
+		<li><strong>Base64:</strong> Text format for embedding in web pages or documents</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Business Document:</strong><br>
+		Create signature → Download PNG → Insert into Word/PDF document<br><br>
+		<strong>Example 2 - Web Form:</strong><br>
+		Create signature → Copy Base64 → Paste into HTML form field
+	</div>
+
+	<h3>Best Practices</h3>
+	<ul>
+		<li>Use a consistent signature style for professional documents</li>
+		<li>Choose appropriate colors that contrast well with backgrounds</li>
+		<li>Test your signature on different background colors</li>
+		<li>Keep signatures simple and readable</li>
+		<li>Save multiple versions for different use cases</li>
+	</ul>
+
+	<h3>Use Cases</h3>
+	<ul>
+		<li>Digital contracts and agreements</li>
+		<li>Email signatures and correspondence</li>
+		<li>Official forms and applications</li>
+		<li>Business documents and invoices</li>
+		<li>Personal documents and letters</li>
+		<li>Online forms and registrations</li>
+	</ul>
+
+	<h3>Technical Notes</h3>
+	<ul>
+		<li>All processing happens in your browser (no server upload)</li>
+		<li>Signatures are not stored or transmitted</li>
+		<li>Works on both desktop and mobile devices</li>
+		<li>Supports touch and mouse input</li>
+		<li>Right-click is disabled to prevent context menu</li>
+	</ul>
+
+	<h3>Tips for Better Results</h3>
+	<ul>
+		<li>Use a stylus or finger for smoother lines on touch devices</li>
+		<li>Practice your signature a few times before finalizing</li>
+		<li>Adjust pen color for better visibility on different backgrounds</li>
+		<li>Use the undo function to correct mistakes</li>
+		<li>Clear and retry if you're not satisfied with the result</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	const canvas = document.getElementById('signatureCanvas');

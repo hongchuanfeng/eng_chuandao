@@ -198,6 +198,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* 移动端样式 */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -228,6 +307,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -252,7 +341,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -331,6 +420,110 @@
 		</ul>
 	</div>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool converts images between different formats, allowing you to optimize file sizes, ensure compatibility, and meet specific requirements for different platforms and use cases.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Select Output Format:</strong> Choose your desired output format from the dropdown menu</li>
+		<li><strong>Upload Image:</strong> Click the upload area or drag and drop an image file</li>
+		<li><strong>View Image Info:</strong> Check the image properties displayed in the table</li>
+		<li><strong>Convert:</strong> Click "Convert and download" to process the image</li>
+		<li><strong>Download Result:</strong> Save the converted image to your device</li>
+	</ol>
+	
+	<h3>Supported Output Formats:</h3>
+	<ul>
+		<li><strong>PNG:</strong> Lossless compression, supports transparency, good for graphics</li>
+		<li><strong>JPEG:</strong> Lossy compression, smaller file sizes, good for photos</li>
+		<li><strong>WebP:</strong> Modern format, excellent compression, web-optimized</li>
+		<li><strong>BMP:</strong> Uncompressed format, large file sizes, high quality</li>
+	</ul>
+	
+	<h3>Image Information Displayed:</h3>
+	<ul>
+		<li><strong>File Size:</strong> Size in KB (shown after upload)</li>
+		<li><strong>Type:</strong> Original image format (e.g., jpg, png)</li>
+		<li><strong>Width:</strong> Image width in pixels</li>
+		<li><strong>Height:</strong> Image height in pixels</li>
+		<li><strong>Frame Count:</strong> Number of frames (for animated images like GIF)</li>
+	</ul>
+	
+	<h3>Format Selection Guide:</h3>
+	<ul>
+		<li><strong>Use PNG for:</strong> Graphics, logos, images with transparency, screenshots</li>
+		<li><strong>Use JPEG for:</strong> Photographs, complex images, web images</li>
+		<li><strong>Use WebP for:</strong> Modern web applications, mobile optimization</li>
+		<li><strong>Use BMP for:</strong> High-quality archival, print preparation</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Converting images for web optimization</li>
+		<li>Preparing images for different platforms</li>
+		<li>Reducing file sizes for faster loading</li>
+		<li>Ensuring compatibility with specific applications</li>
+		<li>Creating thumbnails in different formats</li>
+		<li>Converting between lossy and lossless formats</li>
+		<li>Preparing images for print vs. digital use</li>
+		<li>Optimizing images for mobile devices</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Choose the format that best fits your use case</li>
+		<li>Consider file size vs. quality trade-offs</li>
+		<li>PNG is better for images with few colors</li>
+		<li>JPEG is better for photographs and complex images</li>
+		<li>WebP offers the best compression for modern browsers</li>
+		<li>Test different formats to find the best balance</li>
+	</ul>
+	
+	<h3>Quality Considerations:</h3>
+	<ul>
+		<li><strong>Lossless Formats:</strong> PNG, BMP - no quality loss</li>
+		<li><strong>Lossy Formats:</strong> JPEG, WebP - some quality loss for smaller files</li>
+		<li><strong>Transparency:</strong> Only PNG supports transparency</li>
+		<li><strong>Compression:</strong> WebP and JPEG offer better compression</li>
+		<li><strong>Compatibility:</strong> PNG and JPEG have universal support</li>
+	</ul>
+	
+	<h3>Technical Details:</h3>
+	<ul>
+		<li><strong>Processing:</strong> Uses HTML5 Canvas for format conversion</li>
+		<li><strong>Privacy:</strong> All processing happens locally in your browser</li>
+		<li><strong>Performance:</strong> Large images may take longer to process</li>
+		<li><strong>Memory:</strong> Processing is limited by your device's memory</li>
+		<li><strong>Quality:</strong> Maintains original image dimensions</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>This tool only processes valid image files</li>
+		<li>All processing happens locally in your browser</li>
+		<li>No images are uploaded to external servers</li>
+		<li>Large images may cause performance issues</li>
+		<li>Some conversions may result in quality loss</li>
+		<li>Keep your original files as backup</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	const dropZone = document.getElementById('dropZone');

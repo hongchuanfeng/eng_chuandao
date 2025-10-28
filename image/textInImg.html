@@ -108,6 +108,80 @@
 		.info-list li {
 			margin-bottom: 5px;
 		}
+		
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 20px;
+			max-width: 1100px;
+			margin: 20px auto;
+		}
+		
+		.help-title {
+			color: #333;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 15px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		
+		.help-content {
+			color: #666;
+			line-height: 1.6;
+		}
+		
+		.help-content h3 {
+			color: #333;
+			font-size: 16px;
+			margin: 15px 0 8px 0;
+		}
+		
+		.help-content ul {
+			margin: 10px 0;
+			padding-left: 20px;
+		}
+		
+		.help-content li {
+			margin: 5px 0;
+		}
+		
+		.help-content code {
+			background: #e9ecef;
+			padding: 2px 6px;
+			border-radius: 3px;
+			font-family: monospace;
+		}
+		
+		/* Footer styles */
+		.footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 20px;
+			margin-top: 40px;
+		}
+		
+		.footer-links {
+			margin-bottom: 10px;
+		}
+		
+		.footer-links a {
+			color: #ccc;
+			text-decoration: none;
+			margin: 0 15px;
+		}
+		
+		.footer-links a:hover {
+			color: white;
+		}
+		
+		.footer-copyright {
+			color: #999;
+			font-size: 14px;
+		}
 	</style>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -285,7 +359,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -482,6 +556,109 @@
 		</div>
 	</main>
 
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<div class="help-title">
+		<i class="fa-solid fa-question-circle"></i>
+		How to Use
+	</div>
+	<div class="help-content">
+		<h3>What is Add Text to Image?</h3>
+		<p>This tool allows you to add customizable text overlays to any image. You can upload an image, add multiple text elements with different styles, positions, and effects, then download the final result.</p>
+		
+		<h3>How to Use</h3>
+		<ol>
+			<li><strong>Upload Image:</strong> Drag and drop an image or click "Select Image" to choose a file</li>
+			<li><strong>Add Text:</strong> Type your text in the text area and click "Add Text"</li>
+			<li><strong>Customize Style:</strong> Adjust font size, color, alignment, and text effects</li>
+			<li><strong>Position Text:</strong> Use the sliders to position text horizontally and vertically</li>
+			<li><strong>Select Text:</strong> Click on any text in the preview to edit it</li>
+			<li><strong>Add More Text:</strong> Repeat the process to add multiple text elements</li>
+			<li><strong>Save Image:</strong> Click "Save Image" to download the final result</li>
+		</ol>
+		
+		<h3>Text Style Options</h3>
+		<ul>
+			<li><strong>Font Size:</strong> Adjustable from 12px to 100px</li>
+			<li><strong>Text Color:</strong> Choose any color using color picker or hex code</li>
+			<li><strong>Alignment:</strong> Left, center, or right alignment</li>
+			<li><strong>Text Effects:</strong> Bold, italic, underline, strikethrough</li>
+			<li><strong>Text Shadow:</strong> Add shadow effect with adjustable intensity</li>
+		</ul>
+		
+		<h3>Position Controls</h3>
+		<ul>
+			<li><strong>Horizontal Position:</strong> 0% (left) to 100% (right)</li>
+			<li><strong>Vertical Position:</strong> 0% (top) to 100% (bottom)</li>
+			<li><strong>Real-time Preview:</strong> See changes instantly as you adjust</li>
+		</ul>
+		
+		<h3>Supported Image Formats</h3>
+		<ul>
+			<li>JPEG (.jpg, .jpeg)</li>
+			<li>PNG (.png)</li>
+			<li>GIF (.gif)</li>
+			<li>WebP (.webp)</li>
+			<li>BMP (.bmp)</li>
+		</ul>
+		
+		<h3>Common Use Cases</h3>
+		<ul>
+			<li>Adding captions to photos</li>
+			<li>Creating social media graphics</li>
+			<li>Adding watermarks to images</li>
+			<li>Creating memes and quotes</li>
+			<li>Adding labels to product photos</li>
+			<li>Creating announcement images</li>
+			<li>Adding text overlays to presentations</li>
+		</ul>
+		
+		<h3>Tips for Best Results</h3>
+		<ul>
+			<li>Use contrasting colors for better text readability</li>
+			<li>Add text shadow for text on busy backgrounds</li>
+			<li>Position text in areas with less visual clutter</li>
+			<li>Use larger font sizes for better visibility</li>
+			<li>Test different alignments for the best visual balance</li>
+			<li>Consider the image composition when placing text</li>
+		</ul>
+		
+		<h3>Text Selection and Editing</h3>
+		<ul>
+			<li>Click on any text in the preview to select it</li>
+			<li>Selected text will show a blue dashed border</li>
+			<li>Only the selected text will be affected by style changes</li>
+			<li>Use the Reset button to remove selected text</li>
+			<li>Add multiple texts for layered effects</li>
+		</ul>
+		
+		<h3>Browser Requirements</h3>
+		<p>This tool requires a modern browser with HTML5 Canvas support. Works on all major browsers including Chrome, Firefox, Safari, and Edge.</p>
+		
+		<h3>Important Notes</h3>
+		<ul>
+			<li>All processing is done client-side for privacy</li>
+			<li>No images or text are sent to external servers</li>
+			<li>Text positioning is relative to the image dimensions</li>
+			<li>You can add unlimited text elements</li>
+			<li>Each text element can be independently styled and positioned</li>
+			<li>Downloaded images maintain original quality</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		&copy; 2024 Missionary AI. All rights reserved.
+	</div>
 </div>
 
 <script>

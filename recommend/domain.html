@@ -270,6 +270,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -291,7 +372,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -501,6 +582,64 @@
 		})
 	}
 </script>
+<div class="help-section">
+	<h2>How to Use DNS Record Lookup</h2>
+	<p>Query and view DNS records for any domain name instantly.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Enter a domain name (e.g., example.com) in the search box</li>
+		<li>Click "Search" to query DNS records</li>
+		<li>View results including A, CNAME, and MX records</li>
+		<li>Recent queries are saved in the history section</li>
+	</ul>
+
+	<h3>DNS Record Types Explained</h3>
+	<ul>
+		<li><strong>A Record:</strong> Maps domain to IPv4 address (e.g., 192.168.1.1)</li>
+		<li><strong>AAAA Record:</strong> Maps domain to IPv6 address</li>
+		<li><strong>CNAME Record:</strong> Alias pointing to another domain (e.g., www -> example.com)</li>
+		<li><strong>MX Record:</strong> Mail exchange server for email routing</li>
+		<li><strong>TXT Record:</strong> Text data for verification, SPF, DKIM, etc.</li>
+	</ul>
+
+	<h3>What You'll See</h3>
+	<ul>
+		<li><strong>Type:</strong> DNS record type (A, CNAME, MX, etc.)</li>
+		<li><strong>Host:</strong> Host name or subdomain</li>
+		<li><strong>Value:</strong> The record value (IP address, domain, etc.)</li>
+		<li><strong>TTL:</strong> Time to live in seconds (cache duration)</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1:</strong> Query "google.com" to see multiple A records for load balancing<br><br>
+		<strong>Example 2:</strong> Query "github.com" to see CNAME records for subdomains
+	</div>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Troubleshooting DNS configuration issues</li>
+		<li>Verifying DNS propagation after changes</li>
+		<li>Checking email server configuration (MX records)</li>
+		<li>Understanding domain structure and subdomains</li>
+	</ul>
+
+	<h3>Note</h3>
+	<p>DNS lookup uses Google's public DNS servers. Results are real-time and may vary slightly based on your location. Some domains may not return all record types if they're not configured.</p>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
+
 <script>
 	function toggleMenu() {
 		const nav = document.querySelector('.nav-categories');

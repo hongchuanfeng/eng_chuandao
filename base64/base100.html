@@ -109,6 +109,21 @@
 			font-size: 14px;
 		}
 	</style>
+	<style>
+		/* Help section and footer */
+		.help-section { background:#f8f9fa; border-radius:8px; padding:2rem; margin:2rem auto; max-width:1100px; border-left:4px solid #007bff; }
+		.help-title { color:#333; font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem; }
+		.help-content { color:#666; line-height:1.6; }
+		.help-content h3 { color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem; }
+		.help-content ul { margin:.5rem 0 1rem 1.5rem; }
+		.help-content li { margin:.35rem 0; }
+		code.wrap { display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere; }
+		.footer { background:#333; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem; }
+		.footer-links { display:flex; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap; }
+		.footer-links a { color:#ccc; text-decoration:none; transition:color .3s; }
+		.footer-links a:hover { color:#fff; }
+		.footeropyright { color:#999; font-size:.9rem; }
+	</style>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 	<style>
 		* {
@@ -251,17 +266,17 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
 		<div class="nav-categories">
-			<a href="../index.html" class="nav-category">🔐 Base64</a>
-            <a href="../common.html" class="nav-category">🔍 Common</a>
+			<a href="../index.html" class="nav-category">🔍 Featured</a>
 			<a href="../life.html" class="nav-category">🏠 Life</a>
 			<a href="../encry.html" class="nav-category">🔒 Crypto</a>
 			<a href="../code.html" class="nav-category">📝 Encode/Decode</a>
 			<a href="../dev.html" class="nav-category">💻 Developer</a>
+			<a href="../base64.html" class="nav-category">🔐 Base64</a>
 			<a href="../image.html" class="nav-category">🖼️ Image</a>
 			<a href="../game.html" class="nav-category">🎮 Fun</a>
 		</div>
@@ -320,6 +335,36 @@
 </div>
 
 
+<!-- Help Section -->
+<div class="help-section">
+	<h2 class="help-title">How to Use</h2>
+	<div class="help-content">
+		<h3>What this tool does</h3>
+		<p>Encodes text into a base‑100 representation (00–99 tokens) and decodes back to text.</p>
+		<h3>Steps</h3>
+		<ol>
+			<li>Enter text → Encode → get space‑separated 00–99 tokens.</li>
+			<li>Paste tokens → Decode → restore text.</li>
+		</ol>
+		<h3>Example</h3>
+		<code class="wrap">Hello → 07 04 11 11 14 ...</code>
+		<h3>Notes</h3>
+		<ul>
+			<li>Accepts spaces/commas/hyphens between tokens; tokens must be 00–99.</li>
+			<li>Local processing only.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footeropyright">&copy; 2024 Missionary AI. All rights reserved.</div>
+</div>
 <script>
 	function toggleMenu() {
 		const nav = document.querySelector('.nav-categories');

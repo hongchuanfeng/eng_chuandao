@@ -224,6 +224,87 @@
                 padding: 1rem;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
     <!-- Google tag (gtag.js2) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
@@ -243,7 +324,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -326,6 +407,87 @@
         <div class="time">13:38:56</div>
     </div>
 </div>
+
+<div class="help-section">
+    <h2>How to Use the World Time Table</h2>
+    <p>View current time across major Asian cities and time zones for international coordination and planning.</p>
+
+    <h3>Time Zone Information</h3>
+    <p>This table displays the current time in major Asian cities with their respective time zones and UTC offsets.</p>
+
+    <h3>Displayed Information</h3>
+    <ul>
+        <li><strong>Country:</strong> The country where the city is located</li>
+        <li><strong>City:</strong> Major city name in that time zone</li>
+        <li><strong>Timezone:</strong> UTC offset and GMT notation</li>
+        <li><strong>Date:</strong> Current date in YYYY-MM-DD format</li>
+        <li><strong>Time:</strong> Current local time in HH:MM:SS format</li>
+    </ul>
+
+    <h3>Featured Time Zones</h3>
+    <ul>
+        <li><strong>UTC+8 (GMT+8):</strong> China, Hong Kong, Malaysia, Singapore</li>
+        <li><strong>UTC+9 (GMT+9):</strong> Japan, South Korea</li>
+        <li><strong>UTC+7 (GMT+7):</strong> Vietnam, Thailand</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="example">
+        <strong>Example 1 - Business Meeting:</strong><br>
+        If it's 1:38 PM in Beijing (UTC+8), it's 2:38 PM in Tokyo (UTC+9)<br><br>
+        <strong>Example 2 - Conference Call:</strong><br>
+        When scheduling across time zones, check the table to find convenient times for all participants
+    </div>
+
+    <h3>Common Use Cases</h3>
+    <ul>
+        <li>International business meetings and conference calls</li>
+        <li>Travel planning and itinerary coordination</li>
+        <li>Remote work across different time zones</li>
+        <li>Event scheduling for global audiences</li>
+        <li>Stock market hours and trading times</li>
+        <li>Customer support across regions</li>
+    </ul>
+
+    <h3>Time Zone Conversion Tips</h3>
+    <ul>
+        <li>UTC+8 is 8 hours ahead of UTC (Coordinated Universal Time)</li>
+        <li>UTC+9 is 9 hours ahead of UTC</li>
+        <li>UTC+7 is 7 hours ahead of UTC</li>
+        <li>When it's noon in UTC+8, it's 1 PM in UTC+9 and 11 AM in UTC+7</li>
+    </ul>
+
+    <h3>Important Notes</h3>
+    <ul>
+        <li>Times are displayed in 24-hour format</li>
+        <li>All times shown are current local times</li>
+        <li>Some countries may observe daylight saving time (not shown here)</li>
+        <li>Times are updated automatically when the page loads</li>
+        <li>For real-time updates, refresh the page</li>
+    </ul>
+
+    <h3>Business Hours Reference</h3>
+    <ul>
+        <li><strong>China/Hong Kong:</strong> Typically 9 AM - 6 PM local time</li>
+        <li><strong>Japan/Korea:</strong> Typically 9 AM - 6 PM local time</li>
+        <li><strong>Southeast Asia:</strong> Varies by country, generally 8 AM - 5 PM</li>
+    </ul>
+
+    <h3>Travel Planning</h3>
+    <p>Use this table to plan your travel itinerary, especially when crossing multiple time zones. Consider jet lag and adjust your schedule accordingly when traveling east or west.</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
+
 <script>
     function toggleMenu() {
         const nav = document.querySelector('.nav-categories');

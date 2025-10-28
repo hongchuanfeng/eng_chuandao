@@ -108,6 +108,105 @@
 		.info-list li {
 			margin-bottom: 5px;
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 2rem;
+			max-width: 1100px;
+			margin: 2rem auto;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-title {
+			color: #333;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.help-content {
+			color: #666;
+			line-height: 1.6;
+		}
+
+		.help-content h3 {
+			color: #444;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.1rem;
+		}
+
+		.help-content ul {
+			margin: 0.5rem 0 1rem 1.5rem;
+		}
+
+		.help-content li {
+			margin-bottom: 0.5rem;
+		}
+
+		.help-content code {
+			background: #e9ecef;
+			padding: 0.2rem 0.4rem;
+			border-radius: 3px;
+			font-family: monospace;
+			font-size: 0.9rem;
+		}
+
+		.example-box {
+			background: #fff;
+			border: 1px solid #dee2e6;
+			border-radius: 6px;
+			padding: 1rem;
+			margin: 1rem 0;
+		}
+
+		.example-title {
+			font-weight: bold;
+			color: #495057;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Footer styles */
+		.footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #ccc;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: white;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 768px) {
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
+		}
 	</style>
 
 	<script src="https://cdn.tailwindcss.com"></script>
@@ -291,7 +390,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -372,6 +471,126 @@
 			</section>
 		</main>
 
+	</div>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2 class="help-title">
+		<i class="fas fa-question-circle"></i>
+		How to Use
+	</h2>
+	<div class="help-content">
+		<h3>Step-by-Step Instructions</h3>
+		<ol>
+			<li><strong>Upload Image:</strong> Click the upload area or drag and drop an image file</li>
+			<li><strong>Preview:</strong> Review your uploaded image in the preview section</li>
+			<li><strong>Start Splitting:</strong> Click "Start splitting" to divide the image into 9 pieces</li>
+			<li><strong>Download Individual Pieces:</strong> Click "Download" on each piece to save it</li>
+			<li><strong>Download All:</strong> Use "Download all" to save all 9 pieces at once</li>
+		</ol>
+
+		<h3>What is 3x3 Grid Splitting?</h3>
+		<p>This tool divides any image into 9 equal rectangular pieces arranged in a 3x3 grid. Each piece is numbered from 1 to 9, making it easy to identify and download individual sections.</p>
+
+		<h3>Supported Image Formats</h3>
+		<ul>
+			<li>JPEG (.jpg, .jpeg)</li>
+			<li>PNG (.png)</li>
+			<li>GIF (.gif)</li>
+			<li>BMP (.bmp)</li>
+			<li>WebP (.webp)</li>
+		</ul>
+
+		<h3>Grid Layout</h3>
+		<div class="example-box">
+			<div class="example-title">3x3 Grid Structure:</div>
+			<ul>
+				<li><strong>Row 1:</strong> Pieces 1, 2, 3 (top row)</li>
+				<li><strong>Row 2:</strong> Pieces 4, 5, 6 (middle row)</li>
+				<li><strong>Row 3:</strong> Pieces 7, 8, 9 (bottom row)</li>
+			</ul>
+		</div>
+
+		<h3>Common Use Cases</h3>
+		<div class="example-box">
+			<div class="example-title">Social Media:</div>
+			<ul>
+				<li>Create Instagram 3x3 grid posts</li>
+				<li>Split large images for Twitter threads</li>
+				<li>Create Facebook photo collages</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Art & Design:</div>
+			<ul>
+				<li>Create puzzle pieces from images</li>
+				<li>Split artwork for printing on multiple pages</li>
+				<li>Create mosaic-style displays</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Education:</div>
+			<ul>
+				<li>Create learning materials with image sections</li>
+				<li>Split diagrams for step-by-step explanations</li>
+				<li>Create interactive image puzzles</li>
+			</ul>
+		</div>
+
+		<h3>Download Options</h3>
+		<div class="example-box">
+			<div class="example-title">Individual Download:</div>
+			<ul>
+				<li>Click "Download" on any piece to save it</li>
+				<li>Files are named: grid_1.png, grid_2.png, etc.</li>
+				<li>Perfect for selective use</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Download All:</div>
+			<ul>
+				<li>Downloads all 9 pieces at once</li>
+				<li>Files are automatically numbered</li>
+				<li>Convenient for complete sets</li>
+			</ul>
+		</div>
+
+		<h3>Image Quality & Sizing</h3>
+		<ul>
+			<li>Each piece maintains the original image quality</li>
+			<li>Pieces are sized proportionally (1/3 width × 1/3 height)</li>
+			<li>Output format is PNG for best quality</li>
+			<li>No compression or quality loss during splitting</li>
+		</ul>
+
+		<h3>Tips for Best Results</h3>
+		<ul>
+			<li>Use square images for perfect 3x3 grids</li>
+			<li>High-resolution images work best</li>
+			<li>Consider the final layout when choosing images</li>
+			<li>Test with different image orientations</li>
+			<li>Save original images before splitting</li>
+		</ul>
+
+		<h3>Browser Requirements</h3>
+		<ul>
+			<li>Modern web browser with HTML5 Canvas support</li>
+			<li>JavaScript enabled</li>
+			<li>Sufficient memory for image processing</li>
+		</ul>
+
+		<h3>Important Notes</h3>
+		<ul>
+			<li>All processing is done locally in your browser</li>
+			<li>No images are uploaded to external servers</li>
+			<li>Large images may take longer to process</li>
+			<li>Each piece is a separate downloadable file</li>
+			<li>Original image aspect ratio is preserved</li>
+		</ul>
 	</div>
 </div>
 
@@ -595,6 +814,16 @@
 	}
 </script>
 
-
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		&copy; 2024 Missionary AI. All rights reserved.
+	</div>
+</footer>
 
 </html>

@@ -248,6 +248,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -269,7 +350,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -343,6 +424,67 @@
 		</ul>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the GUID Generator</h2>
+	<p>Generate Globally Unique Identifiers (GUIDs) for your applications instantly.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Enter the number of GUIDs to generate (1-100)</li>
+		<li>Choose case preference (lowercase or UPPERCASE)</li>
+		<li>Select whether to include hyphens as separators</li>
+		<li>Click "Generate" to create GUIDs</li>
+		<li>Results displayed in a table format</li>
+	</ul>
+
+	<h3>What is a GUID?</h3>
+	<p>GUID stands for Globally Unique Identifier, a 128-bit identifier designed to be unique across space and time. Also known as UUID (Universally Unique Identifier).</p>
+
+	<h3>GUID Format</h3>
+	<ul>
+		<li><strong>Standard Format:</strong> xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx</li>
+		<li><strong>No Separator:</strong> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+		<li><strong>Always unique:</strong> Virtually impossible to generate duplicates</li>
+		<li><strong>Platform independent:</strong> Works across all systems</li>
+	</ul>
+
+	<h3>Settings Explained</h3>
+	<ul>
+		<li><strong>Count:</strong> Number of GUIDs to generate at once</li>
+		<li><strong>Uppercase/Lowercase:</strong> Convert hex characters to uppercase or lowercase</li>
+		<li><strong>Separator (-):</strong> Include or remove hyphens from the GUID</li>
+	</ul>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Database primary keys and unique identifiers</li>
+		<li>Session tracking in web applications</li>
+		<li>Unique file names and resource IDs</li>
+		<li>Distributed systems and microservices</li>
+		<li>Tracking objects across systems</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Standard Format:</strong> 550e8400-e29b-41d4-a716-446655440000<br><br>
+		<strong>Example 2 - No Separator:</strong> 550e8400e29b41d4a716446655440000
+	</div>
+
+	<h3>Technical Details</h3>
+	<p>The generator follows RFC 4122 standard. The '4' in the format indicates version 4 (random) GUIDs. The 'y' character is always 8, 9, a, or b to maintain GUID validity. Each GUID has a probability of collision so low (1 in 5.3 × 10^36) that it's considered practically unique.</p>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	function generateGUID() {

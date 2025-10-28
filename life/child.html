@@ -238,6 +238,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<!-- Google tag (gtag.js2) -->
@@ -258,7 +339,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -326,6 +407,102 @@
 		<li>4) For reference only; not guaranteed to be accurate.</li>
 	</ul>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Baby Gender Predictor</h2>
+	<p>Predict baby gender using traditional Chinese birth chart methods based on mother's age and conception month.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Find the mother's age at conception in the left column</li>
+		<li>Locate the conception month (1-12) across the top</li>
+		<li>Check the intersection to see predicted gender</li>
+		<li>Blue indicates "Boy", Pink indicates "Girl"</li>
+		<li>Use traditional lunar calendar for best results</li>
+	</ul>
+
+	<h3>How to Read the Chart</h3>
+	<ul>
+		<li><strong>Age Column:</strong> Mother's age at time of conception (18-45)</li>
+		<li><strong>Month Row:</strong> Lunar month of conception (1-12)</li>
+		<li><strong>Boy (Blue):</strong> Traditional prediction suggests male</li>
+		<li><strong>Girl (Pink):</strong> Traditional prediction suggests female</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Age 25, Month 3:</strong><br>
+		Find age 25 in left column, month 3 in top row<br>
+		Result: Boy (if blue) or Girl (if pink)<br><br>
+		<strong>Example 2 - Age 30, Month 8:</strong><br>
+		Find age 30 in left column, month 8 in top row<br>
+		Result: Check intersection for prediction
+	</div>
+
+	<h3>Traditional Chinese Method</h3>
+	<ul>
+		<li>Based on ancient Chinese birth chart (清宫图)</li>
+		<li>Uses mother's lunar age and lunar conception month</li>
+		<li>Combines yin-yang theory with numerology</li>
+		<li>Passed down through generations</li>
+		<li>Considered a cultural tradition rather than science</li>
+	</ul>
+
+	<h3>Important Notes</h3>
+	<ul>
+		<li>This is for entertainment purposes only</li>
+		<li>Not scientifically proven or medically accurate</li>
+		<li>Results are not guaranteed to be correct</li>
+		<li>Use traditional lunar calendar for calculations</li>
+		<li>Consult medical professionals for actual gender determination</li>
+	</ul>
+
+	<h3>Lunar Calendar Conversion</h3>
+	<ul>
+		<li>Convert Western dates to lunar calendar</li>
+		<li>Mother's age should be lunar age (usually +1 from Western age)</li>
+		<li>Conception month should be lunar month</li>
+		<li>Use online lunar calendar converters if needed</li>
+	</ul>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Fun prediction during pregnancy</li>
+		<li>Cultural tradition and family entertainment</li>
+		<li>Gender reveal party planning</li>
+		<li>Traditional Chinese family practices</li>
+		<li>Curiosity about ancient prediction methods</li>
+	</ul>
+
+	<h3>Accuracy Disclaimer</h3>
+	<ul>
+		<li>This method has no scientific basis</li>
+		<li>Gender is determined by chromosomes, not charts</li>
+		<li>Results are purely coincidental if accurate</li>
+		<li>Do not make important decisions based on predictions</li>
+		<li>Enjoy as a cultural tradition only</li>
+	</ul>
+
+	<h3>Modern Alternatives</h3>
+	<ul>
+		<li>Ultrasound examination (most accurate)</li>
+		<li>Genetic testing (100% accurate)</li>
+		<li>Blood tests during pregnancy</li>
+		<li>Amniocentesis (if medically indicated)</li>
+		<li>Consult your healthcare provider</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	// 生成完整的表格数据

@@ -159,6 +159,105 @@
 		.code-block .code-content {
 			color: #d4d4d4;
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 2rem;
+			max-width: 1100px;
+			margin: 2rem auto;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-title {
+			color: #333;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.help-content {
+			color: #666;
+			line-height: 1.6;
+		}
+
+		.help-content h3 {
+			color: #444;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.1rem;
+		}
+
+		.help-content ul {
+			margin: 0.5rem 0 1rem 1.5rem;
+		}
+
+		.help-content li {
+			margin-bottom: 0.5rem;
+		}
+
+		.help-content code {
+			background: #e9ecef;
+			padding: 0.2rem 0.4rem;
+			border-radius: 3px;
+			font-family: monospace;
+			font-size: 0.9rem;
+		}
+
+		.example-box {
+			background: #fff;
+			border: 1px solid #dee2e6;
+			border-radius: 6px;
+			padding: 1rem;
+			margin: 1rem 0;
+		}
+
+		.example-title {
+			font-weight: bold;
+			color: #495057;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Footer styles */
+		.footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #ccc;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: white;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 768px) {
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
+		}
 	</style>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 	<style>
@@ -304,7 +403,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -372,6 +471,77 @@
 		<div><span class="line-number">05.</span><span class="code-content">&lt;link rel="icon" href="/favicon-128x128.png" sizes="128x128"&gt;</span></div>
 	</div>
 	<li>6. Your image is processed locally and never uploaded to a server.</li>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2 class="help-title">
+		<i class="fas fa-question-circle"></i>
+		How to Use
+	</h2>
+	<div class="help-content">
+		<h3>Step-by-Step Instructions</h3>
+		<ol>
+			<li><strong>Upload Image:</strong> Click the upload area or drag and drop an image file</li>
+			<li><strong>Select Size:</strong> Choose your desired favicon size (16x16, 32x32, 48x48, 64x64, or 128x128)</li>
+			<li><strong>Generate:</strong> Click "Generate and Download" to create your favicon.ico file</li>
+			<li><strong>Install:</strong> Place the downloaded favicon.ico file in your website's root directory</li>
+		</ol>
+
+		<h3>Supported Image Formats</h3>
+		<ul>
+			<li>JPEG (.jpg, .jpeg)</li>
+			<li>PNG (.png)</li>
+			<li>GIF (.gif)</li>
+			<li>BMP (.bmp)</li>
+			<li>WebP (.webp)</li>
+		</ul>
+
+		<h3>Favicon Size Recommendations</h3>
+		<div class="example-box">
+			<div class="example-title">Standard Sizes:</div>
+			<ul>
+				<li><strong>16x16:</strong> Browser tabs and bookmarks</li>
+				<li><strong>32x32:</strong> Browser favorites and Windows shortcuts</li>
+				<li><strong>48x48:</strong> Windows desktop icons</li>
+				<li><strong>64x64:</strong> High-DPI displays</li>
+				<li><strong>128x128:</strong> Modern browsers and mobile devices</li>
+			</ul>
+		</div>
+
+		<h3>Common Use Cases</h3>
+		<ul>
+			<li>Website branding and identification</li>
+			<li>Browser tab recognition</li>
+			<li>Bookmark icons</li>
+			<li>Mobile home screen shortcuts</li>
+			<li>Social media sharing previews</li>
+		</ul>
+
+		<h3>Tips for Best Results</h3>
+		<ul>
+			<li>Use square images for best results</li>
+			<li>Keep designs simple and recognizable at small sizes</li>
+			<li>Use high contrast colors for visibility</li>
+			<li>Test your favicon in different browsers</li>
+			<li>Consider creating multiple sizes for different devices</li>
+		</ul>
+
+		<h3>Technical Details</h3>
+		<div class="example-box">
+			<div class="example-title">HTML Implementation:</div>
+			<code>&lt;link rel="icon" href="/favicon.ico" type="image/x-icon"&gt;</code>
+		</div>
+
+		<h3>Important Notes</h3>
+		<ul>
+			<li>All processing is done locally in your browser</li>
+			<li>No images are uploaded to external servers</li>
+			<li>Generated favicon.ico files are compatible with all major browsers</li>
+			<li>For best results, use images with transparent backgrounds (PNG)</li>
+			<li>Clear your browser cache after updating your favicon</li>
+		</ul>
+	</div>
 </div>
 
 <script>
@@ -566,6 +736,16 @@
 	}
 </script>
 
-
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		&copy; 2024 Missionary AI. All rights reserved.
+	</div>
+</footer>
 
 </html>

@@ -270,6 +270,87 @@
                 padding: 1rem;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
     <!-- Google tag (gtag.js2) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NMLH22Y6G"></script>
@@ -289,7 +370,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -355,6 +436,78 @@
         </div>
     </div>
 </div>
+
+<div class="help-section">
+    <h2>How to Use the RMB Amount to Uppercase Chinese Converter</h2>
+    <p>Convert Arabic numeral amounts to formal Chinese uppercase format for official documents and contracts.</p>
+
+    <h3>Instructions</h3>
+    <ul>
+        <li>Enter a RMB amount in Arabic numerals (e.g., 19535.65)</li>
+        <li>Use decimal point for cents (角分)</li>
+        <li>Maximum 2 decimal places supported</li>
+        <li>Click "Convert" to see the Chinese uppercase result</li>
+    </ul>
+
+    <h3>Chinese Number System</h3>
+    <ul>
+        <li><strong>Basic Numbers:</strong> 零(0), 壹(1), 贰(2), 叁(3), 肆(4), 伍(5), 陆(6), 柒(7), 捌(8), 玖(9)</li>
+        <li><strong>Units:</strong> 拾(10), 佰(100), 仟(1,000), 万(10,000), 亿(100,000,000)</li>
+        <li><strong>Currency:</strong> 元(yuan), 角(jiao/0.1), 分(fen/0.01)</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="example">
+        <strong>Example 1:</strong> 1234.56 → 壹仟贰佰叁拾肆元伍角陆分<br><br>
+        <strong>Example 2:</strong> 10000 → 壹万元整<br><br>
+        <strong>Example 3:</strong> 19535.65 → 壹万玖仟伍佰叁拾伍元陆角伍分
+    </div>
+
+    <h3>Formal Usage</h3>
+    <ul>
+        <li>Legal documents and contracts</li>
+        <li>Financial statements and invoices</li>
+        <li>Banking and official paperwork</li>
+        <li>Government forms and applications</li>
+        <li>Prevents tampering with amounts</li>
+    </ul>
+
+    <h3>Special Rules</h3>
+    <ul>
+        <li>Zero (零) is used to fill gaps between non-zero digits</li>
+        <li>Multiple zeros are represented by a single 零</li>
+        <li>When no decimal part exists, add 整 (whole) at the end</li>
+        <li>Amounts must be positive and valid</li>
+    </ul>
+
+    <h3>Input Format</h3>
+    <ul>
+        <li>Only digits and one decimal point allowed</li>
+        <li>Maximum 2 decimal places (角分)</li>
+        <li>No spaces or special characters</li>
+        <li>Examples: 1234, 1234.5, 1234.56</li>
+    </ul>
+
+    <h3>Common Use Cases</h3>
+    <ul>
+        <li>Writing checks and payment orders</li>
+        <li>Creating official receipts and invoices</li>
+        <li>Drafting legal contracts and agreements</li>
+        <li>Filling out government forms</li>
+        <li>Banking and financial documentation</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
     function convertToChinese() {

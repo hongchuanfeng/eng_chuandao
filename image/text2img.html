@@ -108,6 +108,80 @@
 		.info-list li {
 			margin-bottom: 5px;
 		}
+		
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 20px;
+			max-width: 1100px;
+			margin: 20px auto;
+		}
+		
+		.help-title {
+			color: #333;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 15px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		
+		.help-content {
+			color: #666;
+			line-height: 1.6;
+		}
+		
+		.help-content h3 {
+			color: #333;
+			font-size: 16px;
+			margin: 15px 0 8px 0;
+		}
+		
+		.help-content ul {
+			margin: 10px 0;
+			padding-left: 20px;
+		}
+		
+		.help-content li {
+			margin: 5px 0;
+		}
+		
+		.help-content code {
+			background: #e9ecef;
+			padding: 2px 6px;
+			border-radius: 3px;
+			font-family: monospace;
+		}
+		
+		/* Footer styles */
+		.footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 20px;
+			margin-top: 40px;
+		}
+		
+		.footer-links {
+			margin-bottom: 10px;
+		}
+		
+		.footer-links a {
+			color: #ccc;
+			text-decoration: none;
+			margin: 0 15px;
+		}
+		
+		.footer-links a:hover {
+			color: white;
+		}
+		
+		.footer-copyright {
+			color: #999;
+			font-size: 14px;
+		}
 	</style>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -286,7 +360,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -461,6 +535,102 @@
 			</section>
 		</main>
 
+	</div>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<div class="help-title">
+		<i class="fa-solid fa-question-circle"></i>
+		How to Use
+	</div>
+	<div class="help-content">
+		<h3>What is Text to Image?</h3>
+		<p>This tool converts text into high-quality images with customizable fonts, colors, and styles. Perfect for creating social media graphics, headers, or any text-based visual content.</p>
+		
+		<h3>How to Use</h3>
+		<ol>
+			<li><strong>Enter Text:</strong> Type or paste your text in the text area</li>
+			<li><strong>Choose Font:</strong> Select from 8 different font families</li>
+			<li><strong>Set Font Size:</strong> Use the slider to adjust text size (12-100px)</li>
+			<li><strong>Pick Colors:</strong> Choose text color and background color</li>
+			<li><strong>Set Alignment:</strong> Choose left, center, or right alignment</li>
+			<li><strong>Apply Styles:</strong> Toggle bold, italic, or underline</li>
+			<li><strong>Generate:</strong> Click "Generate Image" to create your image</li>
+			<li><strong>Download:</strong> Choose format and quality, then download</li>
+		</ol>
+		
+		<h3>Supported Fonts</h3>
+		<ul>
+			<li><strong>Arial:</strong> Clean, modern sans-serif</li>
+			<li><strong>Georgia:</strong> Classic serif font</li>
+			<li><strong>Times New Roman:</strong> Traditional serif</li>
+			<li><strong>Courier New:</strong> Monospace font</li>
+			<li><strong>Verdana:</strong> Web-optimized sans-serif</li>
+			<li><strong>Tahoma:</strong> Compact sans-serif</li>
+			<li><strong>Impact:</strong> Bold, condensed font</li>
+			<li><strong>Comic Sans MS:</strong> Casual, friendly font</li>
+		</ul>
+		
+		<h3>Output Formats</h3>
+		<ul>
+			<li><strong>PNG:</strong> Best for text with transparency support</li>
+			<li><strong>JPEG:</strong> Smaller file size, good for photos</li>
+			<li><strong>WebP:</strong> Modern format with excellent compression</li>
+		</ul>
+		
+		<h3>Common Use Cases</h3>
+		<ul>
+			<li>Social media post headers</li>
+			<li>Website banners and titles</li>
+			<li>Presentation slides</li>
+			<li>Logo text elements</li>
+			<li>Quote graphics</li>
+			<li>Announcement images</li>
+			<li>Blog post featured images</li>
+		</ul>
+		
+		<h3>Tips for Best Results</h3>
+		<ul>
+			<li>Use larger font sizes (24px+) for better readability</li>
+			<li>Choose contrasting colors for text and background</li>
+			<li>Test different fonts to find the best match for your content</li>
+			<li>Use center alignment for titles and headers</li>
+			<li>Consider using bold or italic for emphasis</li>
+			<li>Keep text concise for better visual impact</li>
+		</ul>
+		
+		<h3>Color Format Support</h3>
+		<p>You can enter colors in multiple formats:</p>
+		<ul>
+			<li><strong>Hex:</strong> #FF0000 (red), #00FF00 (green)</li>
+			<li><strong>RGB:</strong> rgb(255, 0, 0) for red</li>
+			<li><strong>Named colors:</strong> red, blue, green, etc.</li>
+		</ul>
+		
+		<h3>Browser Requirements</h3>
+		<p>This tool requires a modern browser with HTML5 Canvas support. Works on all major browsers including Chrome, Firefox, Safari, and Edge.</p>
+		
+		<h3>Important Notes</h3>
+		<ul>
+			<li>Generated images are created client-side for privacy</li>
+			<li>No text or images are sent to external servers</li>
+			<li>Canvas size automatically adjusts to text content</li>
+			<li>Quality setting only affects JPEG and WebP formats</li>
+			<li>PNG format always uses lossless compression</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		&copy; 2024 Missionary AI. All rights reserved.
 	</div>
 </div>
 

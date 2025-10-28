@@ -37,10 +37,11 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border: 1px solid #eef0f2;
         }
         .input-area {
             width: 100%;
@@ -55,16 +56,19 @@
         }
         .button-group {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 20px;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .btn {
             padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            border: 1px solid transparent;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 14px;
-            transition: background-color 0.3s;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .convert-btn {
             background-color: #00c853;
@@ -72,6 +76,7 @@
         }
         .convert-btn:hover {
             background-color: #00b34a;
+            transform: translateY(-1px);
         }
         .clear-btn {
             background-color: #ff5252;
@@ -79,15 +84,17 @@
         }
         .clear-btn:hover {
             background-color: #ff1744;
+            transform: translateY(-1px);
         }
         .result-area {
             width: 100%;
-            min-height: 200px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
+            min-height: 220px;
+            border: 1px dashed #d9dee3;
+            border-radius: 12px;
+            padding: 18px;
             margin-bottom: 20px;
             text-align: center;
+            background: #fafbfc;
         }
         .result-area img {
             max-width: 100%;
@@ -97,7 +104,8 @@
             margin-top: 20px;
             padding: 15px;
             background: #fff5f0;
-            border-radius: 4px;
+            border-radius: 10px;
+            border: 1px solid #ffe1d6;
         }
         .info-title {
             color: #ff6b6b;
@@ -113,6 +121,40 @@
             margin-bottom: 5px;
             color: #ff6b6b;
         }
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1100px;
+            border-left: 4px solid #007bff;
+        }
+        .help-title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .help-content { color: #666; line-height: 1.6; }
+        .help-content h3 { color: #444; margin: 1.25rem 0 .5rem 0; font-size: 1.1rem; }
+        .help-content ul { margin: .5rem 0 1rem 1.5rem; }
+        .help-content li { margin: .35rem 0; }
+
+        /* Footer styles */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: color .3s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-copyright { color: #999; font-size: .9rem; }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -183,14 +225,16 @@
 
         .tool-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border: 1px solid #eef0f2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .tool-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
         }
 
         .tool-icon {
@@ -200,9 +244,10 @@
         }
 
         .category-title {
-            color: #444;
+            color: #1f2937;
             margin: 2rem 0 1rem;
-            padding-left: 1rem;
+            padding-left: .75rem;
+            border-left: 4px solid #007bff;
         }
 
         /* 移动端样式 */
@@ -258,7 +303,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../../index.html" class="nav-item">
-                <img src="../../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -279,8 +324,8 @@
     <p class="text-center mb-4" style="line-height: 1.6; color: mediumvioletred; ">Convert images into Excel art. Adjust brightness, contrast, and more to create pixel-style spreadsheets.</p>
     <div class="row">
         <div class="col-md-4">
-            <div class="card p-4 mb-4">
-                <div class="upload-area text-center p-5 border rounded" id="uploadArea">
+            <div class="card p-4 mb-4" style="border-radius:12px; border:1px solid #eef0f2; box-shadow:0 6px 20px rgba(0,0,0,.05);">
+                <div class="upload-area text-center p-5 border rounded" id="uploadArea" style="border:2px dashed #cbd5e1; border-radius:12px; background:#f8fafc; transition:border-color .2s ease, background .2s ease, box-shadow .2s ease;">
                     <input type="file" id="fileInput" accept="image/*" class="d-none">
                     <div>
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mb-3">
@@ -288,12 +333,13 @@
                             <polyline points="17 8 12 3 7 8"></polyline>
                             <line x1="12" y1="3" x2="12" y2="15"></line>
                         </svg>
-                        <p class="mb-0">Click or drag an image here</p>
+                        <p class="mb-1 fw-semibold">Click or drag an image here</p>
+                        <small class="text-muted">PNG, JPG, WebP</small>
                     </div>
                 </div>
 
-                <div class="settings card mt-4" id="settings">
-                    <div class="card-body">
+                <div class="settings card mt-4" id="settings" style="border-radius:12px; border:1px solid #eef0f2;">
+                    <div class="card-body" style="padding:1.25rem;">
                         <div class="settings-group mb-4">
                             <h3 class="h5 mb-3">Image Settings</h3>
                             <div class="mb-3">
@@ -303,29 +349,29 @@
                             <div class="mb-3">
                                 <label class="form-label">Brightness:</label>
                                 <div class="d-flex align-items-center">
-                                    <input type="range" id="brightness" min="-100" max="100" value="0" class="form-range flex-grow-1">
-                                    <span class="range-value ms-2">0</span>
+                                    <input type="range" id="brightness" min="-100" max="100" value="0" class="form-range flex-grow-1" style="accent-color:#007bff;">
+                                    <span class="range-value ms-2 badge bg-light text-dark border" style="border-radius:999px;">0</span>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Contrast:</label>
                                 <div class="d-flex align-items-center">
-                                    <input type="range" id="contrast" min="-100" max="100" value="0" class="form-range flex-grow-1">
-                                    <span class="range-value ms-2">0</span>
+                                    <input type="range" id="contrast" min="-100" max="100" value="0" class="form-range flex-grow-1" style="accent-color:#007bff;">
+                                    <span class="range-value ms-2 badge bg-light text-dark border" style="border-radius:999px;">0</span>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Saturation:</label>
                                 <div class="d-flex align-items-center">
-                                    <input type="range" id="saturation" min="-100" max="100" value="0" class="form-range flex-grow-1">
-                                    <span class="range-value ms-2">0</span>
+                                    <input type="range" id="saturation" min="-100" max="100" value="0" class="form-range flex-grow-1" style="accent-color:#007bff;">
+                                    <span class="range-value ms-2 badge bg-light text-dark border" style="border-radius:999px;">0</span>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Hue:</label>
                                 <div class="d-flex align-items-center">
-                                    <input type="range" id="hue" min="-180" max="180" value="0" class="form-range flex-grow-1">
-                                    <span class="range-value ms-2">0</span>
+                                    <input type="range" id="hue" min="-180" max="180" value="0" class="form-range flex-grow-1" style="accent-color:#007bff;">
+                                    <span class="range-value ms-2 badge bg-light text-dark border" style="border-radius:999px;">0</span>
                                 </div>
                             </div>
                         </div>
@@ -369,18 +415,76 @@
         </div>
 
         <div class="col-md-8">
-            <div class="preview-container" id="previewContainer">
-                <img id="previewImage" class="preview-image img-fluid mb-3">
-                <div class="pixel-preview">
+            <div class="preview-container" id="previewContainer" style="background:#fff; border:1px solid #eef0f2; border-radius:12px; padding:16px; box-shadow:0 6px 20px rgba(0,0,0,.05);">
+                <img id="previewImage" class="preview-image img-fluid mb-3" style="border-radius:8px;">
+                <div class="pixel-preview" style="border-radius:8px; overflow:auto;">
                     <div id="pixelGrid" class="pixel-grid"></div>
                 </div>
-                <button class="btn btn-primary w-100" id="generateButton">Generate Excel file</button>
-                <div id="loading" class="loading text-muted mt-3">Generating Excel file, please wait...</div>
+                <button class="btn w-100" id="generateButton" style="background:linear-gradient(90deg,#4f46e5,#06b6d4); color:#fff; border:none;">Generate Excel file</button>
+                <div id="loading" class="loading mt-3" style="display:none; color:#475569;">
+                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Generating Excel file, please wait...
+                </div>
             </div>
         </div>
     </div>
     <canvas id="canvas" style="display:none;"></canvas>
     <script src="main.js"></script>
+</div>
+
+
+<!-- Help Section -->
+<div class="help-section">
+    <h2 class="help-title"><i class="fas fa-question-circle"></i> How to Use</h2>
+    <div class="help-content">
+        <h3>What this tool does</h3>
+        <p>Convert an image into an Excel workbook with colored cells (pixel art). Tune image adjustments and Excel cell options for best results, then export to .xlsx.</p>
+
+        <h3>Steps</h3>
+        <ol>
+            <li><strong>Upload:</strong> Click/drag an image into the upload area.</li>
+            <li><strong>Adjust Image:</strong> Set <em>Max pixels</em> (resolution), tweak <em>Brightness</em>, <em>Contrast</em>, <em>Saturation</em>, and <em>Hue</em>.</li>
+            <li><strong>Excel Settings:</strong> Choose <em>Cell size</em>, sheet <em>background</em>, <em>cell border</em> style/color, and <em>Zoom</em>.</li>
+            <li><strong>Preview:</strong> Review the pixel grid preview on the right.</li>
+            <li><strong>Generate:</strong> Click <em>Generate Excel file</em> to download an .xlsx file.</li>
+        </ol>
+
+        <h3>Examples</h3>
+        <ul>
+            <li><strong>Icon artwork:</strong> Max pixels 50–80, Cell size 40, Border none.</li>
+            <li><strong>Logo tracing:</strong> Increase <em>Contrast</em> slightly (10–20), Border thin (light gray).</li>
+            <li><strong>Vibrant art:</strong> Raise <em>Saturation</em> (10–25), keep background white.</li>
+        </ul>
+
+        <h3>Tips</h3>
+        <ul>
+            <li>Higher <em>Max pixels</em> → more detail but larger Excel and slower generation.</li>
+            <li>Use small <em>Cell size</em> for finer pixel art; larger for mosaic style.</li>
+            <li>Borders help readability but increase file size.</li>
+        </ul>
+
+        <h3>Limits & Privacy</h3>
+        <ul>
+            <li>Processing runs locally in your browser; images are not uploaded.</li>
+            <li>Very large images can be slow; reduce <em>Max pixels</em> if needed.</li>
+            <li>Excel rendering time depends on the number of colored cells.</li>
+        </ul>
+
+        <h3>Browser Requirements</h3>
+        <ul>
+            <li>Modern browsers (Chrome, Edge, Firefox, Safari) with JavaScript enabled.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-links">
+        <a href="../../about.html">About Us</a>
+        <a href="../../contact.html">Contact Us</a>
+        <a href="../../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">&copy; 2024 Missionary AI. All rights reserved.</div>
 </div>
 
 

@@ -34,10 +34,11 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border: 1px solid #eef0f2;
     }
     .input-area {
       width: 100%;
@@ -52,16 +53,19 @@
     }
     .button-group {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 20px;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .btn {
       padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
+      border: 1px solid transparent;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
-      transition: background-color 0.3s;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .convert-btn {
       background-color: #00c853;
@@ -69,6 +73,7 @@
     }
     .convert-btn:hover {
       background-color: #00b34a;
+      transform: translateY(-1px);
     }
     .clear-btn {
       background-color: #ff5252;
@@ -76,15 +81,17 @@
     }
     .clear-btn:hover {
       background-color: #ff1744;
+      transform: translateY(-1px);
     }
     .result-area {
       width: 100%;
-      min-height: 200px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
+      min-height: 220px;
+      border: 1px dashed #d9dee3;
+      border-radius: 12px;
+      padding: 18px;
       margin-bottom: 20px;
       text-align: center;
+      background: #fafbfc;
     }
     .result-area img {
       max-width: 100%;
@@ -94,7 +101,8 @@
       margin-top: 20px;
       padding: 15px;
       background: #fff5f0;
-      border-radius: 4px;
+      border-radius: 8px;
+      border: 1px solid #ffe1d6;
     }
     .info-title {
       color: #ff6b6b;
@@ -110,6 +118,41 @@
       margin-bottom: 5px;
       color: #ff6b6b;
     }
+
+    /* Help section styles */
+    .help-section {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 1100px;
+      border-left: 4px solid #007bff;
+    }
+    .help-title {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .help-content { color: #666; line-height: 1.6; }
+    .help-content h3 { color: #444; margin: 1.25rem 0 .5rem 0; font-size: 1.1rem; }
+    .help-content ul { margin: .5rem 0 1rem 1.5rem; }
+    .help-content li { margin: .35rem 0; }
+
+    /* Footer styles */
+    .footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .footer-links a { color: #ccc; text-decoration: none; transition: color .3s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copyright { color: #999; font-size: .9rem; }
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -170,21 +213,71 @@
       padding: 0 1rem;
     }
 
-    /* 工具卡片布局 */
-    .tools-grid {
+    /* Settings panel */
+    .settings {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      padding: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .settings label {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid #eef0f2;
+      border-radius: 10px;
+    }
+    .settings input[type="range"], .settings select {
+      grid-column: 1 / -1;
+    }
+    .settings input[type="range"] {
+      width: 100%;
+      accent-color: #007bff;
+    }
+    #scaleValue, #qualityValue {
+      display: inline-block;
+      background: #eef6ff;
+      color: #0866d6;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid #d6e8ff;
+    }
+    .recommended-tag {
+      color: #6c757d;
+      font-size: 12px;
+      background: #f1f3f5;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 6px;
     }
 
-    .tool-card {
-      background: white;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+    /* Upload area */
+    .upload-area {
+      position: relative;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 28px;
+      background: #f8fafc;
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
     }
+    .upload-area:hover {
+      border-color: #86b7fe;
+      background: #f4f8ff;
+      box-shadow: 0 4px 16px rgba(125, 170, 255, 0.15);
+    }
+    .upload-content i {
+      font-style: normal;
+      font-size: 40px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .upload-text { font-weight: 600; color: #334155; }
+    .upload-hint { color: #6b7280; font-size: 13px; }
+    .error-message { color: #dc2626; margin-top: 8px; font-size: 13px; }
 
     .tool-card:hover {
       transform: translateY(-3px);
@@ -196,11 +289,11 @@
       margin-bottom: 1rem;
     }
 
-    .category-title {
-      color: #444;
-      margin: 2rem 0 1rem;
-      padding-left: 1rem;
-    }
+    /* Progress and info */
+    .progress-bar { height: 8px; background: #edf2f7; border-radius: 999px; overflow: hidden; display: none; }
+    .progress { height: 100%; background: linear-gradient(90deg,#4f46e5,#06b6d4); width: 0%; transition: width .2s ease; }
+    .file-info { display: none; margin: 12px 0; padding: 12px; background: #f8fafc; border: 1px solid #eef0f2; border-radius: 10px; display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 8px; }
+    .file-info span { background: #fff; padding: 2px 8px; border-radius: 6px; border: 1px solid #eef0f2; }
 
     /* 移动端样式 */
     @media (max-width: 768px) {
@@ -229,9 +322,9 @@
         display: block;
       }
 
-      nav {
-        padding: 1rem;
-      }
+    nav {
+      padding: 1rem;
+    }
     }
   </style>
   <script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -255,7 +348,7 @@
   <div class="nav-container">
     <div class="logo">
       <a href="../../index.html" class="nav-item">
-        <img src="../../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+        <img src="../../static/images/logo.png" width="50px" style="margin-right: 60px"/>
       </a>
     </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -343,6 +436,55 @@
           download="compressed-image.jpg">
     Download compressed image</a>
   <div id="preview"></div>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+  <h2 class="help-title"><i class="fas fa-question-circle"></i> How to Use</h2>
+  <div class="help-content">
+    <h3>What this tool does</h3>
+    <p>Compress images in your browser without uploading. Adjust scale and quality, pick output format (JPEG/PNG/WebP), preview, then download.</p>
+
+    <h3>Steps</h3>
+    <ol>
+      <li><strong>Upload:</strong> Drag a JPG/PNG/WebP or click the upload area.</li>
+      <li><strong>Set Scale:</strong> Choose resize percentage (affects width and height).</li>
+      <li><strong>Set Quality:</strong> Compression level (for JPEG/WebP).</li>
+      <li><strong>Format:</strong> Select output format.</li>
+      <li><strong>Compress:</strong> Click “Compress” to process.</li>
+      <li><strong>Download:</strong> Save the compressed image.</li>
+    </ol>
+
+    <h3>Examples</h3>
+    <ul>
+      <li><strong>Web preview:</strong> Scale 50%, Quality 70%, JPEG.</li>
+      <li><strong>Keep transparency:</strong> Use PNG/WebP; adjust scale only.</li>
+      <li><strong>Social sharing:</strong> Scale 70%, Quality 70%, JPEG/WebP.</li>
+    </ul>
+
+    <h3>Tips</h3>
+    <ul>
+      <li>Keeping scale high preserves details; lowering quality reduces size quickly for photos.</li>
+      <li>PNG is lossless; prefer for graphics/logo with transparency.</li>
+      <li>WebP often yields smaller files with good quality.</li>
+    </ul>
+
+    <h3>Limits & Privacy</h3>
+    <ul>
+      <li>Max size 10MB; max dimensions 4096×4096 (auto downscaled).</li>
+      <li>Processing is local; images are not uploaded.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-links">
+    <a href="../../about.html">About Us</a>
+    <a href="../../contact.html">Contact Us</a>
+    <a href="../../privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copyright">&copy; 2024 Missionary AI. All rights reserved.</div>
 </div>
 
 <script>

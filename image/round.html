@@ -108,6 +108,105 @@
 		.info-list li {
 			margin-bottom: 5px;
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 2rem;
+			max-width: 1100px;
+			margin: 2rem auto;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-title {
+			color: #333;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.help-content {
+			color: #666;
+			line-height: 1.6;
+		}
+
+		.help-content h3 {
+			color: #444;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.1rem;
+		}
+
+		.help-content ul {
+			margin: 0.5rem 0 1rem 1.5rem;
+		}
+
+		.help-content li {
+			margin-bottom: 0.5rem;
+		}
+
+		.help-content code {
+			background: #e9ecef;
+			padding: 0.2rem 0.4rem;
+			border-radius: 3px;
+			font-family: monospace;
+			font-size: 0.9rem;
+		}
+
+		.example-box {
+			background: #fff;
+			border: 1px solid #dee2e6;
+			border-radius: 6px;
+			padding: 1rem;
+			margin: 1rem 0;
+		}
+
+		.example-title {
+			font-weight: bold;
+			color: #495057;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Footer styles */
+		.footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #ccc;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: white;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 768px) {
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
+		}
 	</style>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -284,7 +383,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -408,6 +507,158 @@
 		</div>
 	</main>
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2 class="help-title">
+		<i class="fas fa-question-circle"></i>
+		How to Use
+	</h2>
+	<div class="help-content">
+		<h3>Step-by-Step Instructions</h3>
+		<ol>
+			<li><strong>Upload Image:</strong> Click the upload area or drag and drop an image file</li>
+			<li><strong>Adjust Radius:</strong> Use the slider to set the corner radius (0-100px)</li>
+			<li><strong>Use Presets:</strong> Click preset buttons for quick radius settings</li>
+			<li><strong>Preview:</strong> See the rounded corners effect in real-time</li>
+			<li><strong>Download:</strong> Click "Download image" to save the processed image</li>
+		</ol>
+
+		<h3>What are Rounded Corners?</h3>
+		<p>Rounded corners are a design element that softens the sharp edges of rectangular images by applying a circular radius to the corners. This creates a more modern, friendly appearance and is commonly used in web design, mobile apps, and social media.</p>
+
+		<h3>Radius Settings</h3>
+		<div class="example-box">
+			<div class="example-title">Slider Control:</div>
+			<ul>
+				<li><strong>0px:</strong> No rounding (sharp corners)</li>
+				<li><strong>1-20px:</strong> Subtle rounding</li>
+				<li><strong>21-50px:</strong> Moderate rounding</li>
+				<li><strong>51-100px:</strong> Strong rounding</li>
+				<li><strong>100px:</strong> Maximum rounding (circular for square images)</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Preset Options:</div>
+			<ul>
+				<li><strong>No radius:</strong> 0px - Sharp corners</li>
+				<li><strong>Small:</strong> 4px - Subtle rounding</li>
+				<li><strong>Medium:</strong> 8px - Balanced rounding</li>
+				<li><strong>Large:</strong> 16px - Prominent rounding</li>
+				<li><strong>Circle:</strong> 50px - Maximum rounding</li>
+			</ul>
+		</div>
+
+		<h3>Supported Image Formats</h3>
+		<ul>
+			<li>JPEG (.jpg, .jpeg)</li>
+			<li>PNG (.png)</li>
+			<li>WebP (.webp)</li>
+			<li>GIF (.gif)</li>
+			<li>BMP (.bmp)</li>
+		</ul>
+
+		<h3>Common Use Cases</h3>
+		<div class="example-box">
+			<div class="example-title">Web Design:</div>
+			<ul>
+				<li>Profile pictures and avatars</li>
+				<li>Product images in e-commerce</li>
+				<li>Card layouts and thumbnails</li>
+				<li>Modern UI elements</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Social Media:</div>
+			<ul>
+				<li>Instagram post images</li>
+				<li>Facebook cover photos</li>
+				<li>Twitter profile pictures</li>
+				<li>LinkedIn post images</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Mobile Apps:</div>
+			<ul>
+				<li>App icon design</li>
+				<li>User interface elements</li>
+				<li>Image galleries</li>
+				<li>Button backgrounds</li>
+			</ul>
+		</div>
+
+		<h3>Design Tips</h3>
+		<div class="example-box">
+			<div class="example-title">Radius Guidelines:</div>
+			<ul>
+				<li>Use smaller radius (4-8px) for professional designs</li>
+				<li>Use medium radius (8-16px) for modern, friendly designs</li>
+				<li>Use large radius (16-32px) for playful, creative designs</li>
+				<li>Consider image size when choosing radius</li>
+			</ul>
+		</div>
+
+		<div class="example-box">
+			<div class="example-title">Best Practices:</div>
+			<ul>
+				<li>Maintain consistency across similar elements</li>
+				<li>Test different radius values to find the right balance</li>
+				<li>Consider the overall design aesthetic</li>
+				<li>Ensure readability and usability</li>
+			</ul>
+		</div>
+
+		<h3>Technical Details</h3>
+		<ul>
+			<li>Radius is calculated as a percentage of the image's smaller dimension</li>
+			<li>Maximum effective radius is 50% of the image's smaller side</li>
+			<li>Output maintains original image quality</li>
+			<li>Processed images are saved as PNG format</li>
+		</ul>
+
+		<h3>Preview Features</h3>
+		<div class="example-box">
+			<div class="example-title">Real-time Preview:</div>
+			<ul>
+				<li>See changes instantly as you adjust the slider</li>
+				<li>Compare original and processed images side by side</li>
+				<li>Large preview for detailed examination</li>
+				<li>Smooth transitions for better user experience</li>
+			</ul>
+		</div>
+
+		<h3>Browser Requirements</h3>
+		<ul>
+			<li>Modern web browser with HTML5 Canvas support</li>
+			<li>JavaScript enabled</li>
+			<li>Sufficient memory for image processing</li>
+		</ul>
+
+		<h3>Important Notes</h3>
+		<ul>
+			<li>All processing is done locally in your browser</li>
+			<li>No images are uploaded to external servers</li>
+			<li>Original image quality is preserved</li>
+			<li>Large images may take longer to process</li>
+			<li>Use "Reset" button to return to original settings</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		&copy; 2024 Missionary AI. All rights reserved.
+	</div>
+</footer>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {

@@ -213,6 +213,87 @@
                 padding: 1rem;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
     <link rel="stylesheet" href="../static/css/periodic-table.css">
     <!-- Google tag (gtag.js2) -->
@@ -233,7 +314,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -912,6 +993,71 @@
     </div>
 </div>
 
+<div class="help-section">
+    <h2>How to Use the Periodic Table of Elements</h2>
+    <p>Explore all 118 chemical elements in an interactive, color-coded periodic table.</p>
+
+    <h3>Element Organization</h3>
+    <ul>
+        <li><strong>Periods (Rows):</strong> 7 horizontal rows showing energy levels</li>
+        <li><strong>Groups (Columns):</strong> 18 vertical columns showing similar properties</li>
+        <li><strong>Element Box:</strong> Shows atomic number, symbol, and name</li>
+        <li><strong>Color Coding:</strong> Each color represents an element category</li>
+    </ul>
+
+    <h3>Element Categories by Color</h3>
+    <ul>
+        <li><strong>Orange (Alkali Metals):</strong> Highly reactive elements like Li, Na, K</li>
+        <li><strong>Yellow (Alkaline Earth Metals):</strong> Be, Mg, Ca, Sr, Ba, Ra</li>
+        <li><strong>Pink (Transition Metals):</strong> D-block elements including Fe, Cu, Au</li>
+        <li><strong>Light Blue (Post-Transition Metals):</strong> Al, Ga, In, Sn, Pb</li>
+        <li><strong>Green (Metalloids):</strong> B, Si, Ge, As, Sb, Te</li>
+        <li><strong>Cyan (Nonmetals):</strong> C, N, O, P, S, Se</li>
+        <li><strong>Purple (Noble Gases):</strong> He, Ne, Ar, Kr, Xe, Rn</li>
+        <li><strong>Lanthanides & Actinides:</strong> Rare earth elements in separate rows</li>
+    </ul>
+
+    <h3>Reading an Element</h3>
+    <ul>
+        <li><strong>Atomic Number:</strong> Number of protons (top left)</li>
+        <li><strong>Symbol:</strong> Chemical abbreviation (center, large)</li>
+        <li><strong>Name:</strong> Full element name (bottom)</li>
+    </ul>
+
+    <h3>Special Sections</h3>
+    <div class="example">
+        <strong>Lanthanides:</strong> Elements 57-71 (La-Lu) - Rare earth metals<br><br>
+        <strong>Actinides:</strong> Elements 89-103 (Ac-Lr) - Radioactive elements
+    </div>
+
+    <h3>Usage Tips</h3>
+    <ul>
+        <li>Hover over elements to see details</li>
+        <li>Explore similar elements by looking at the same column</li>
+        <li>Study periodic trends across rows and columns</li>
+        <li>Use this as a reference for chemistry studies and research</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="example">
+        <strong>Example 1:</strong> Gold (Au) - Atomic number 79, Transition metal<br><br>
+        <strong>Example 2:</strong> Carbon (C) - Atomic number 6, Nonmetal (forms basis of organic chemistry)
+    </div>
+
+    <h3>Common Patterns</h3>
+    <p>Elements in the same group have similar chemical properties. For example, all alkali metals (Group 1) are highly reactive with water. Moving across a period, elements become less metallic and more nonmetallic.</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
     function toggleMenu() {

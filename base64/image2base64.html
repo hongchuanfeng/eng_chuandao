@@ -247,13 +247,13 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
 		<div class="nav-categories">
-			<a href="../index.html" class="nav-category">🔐 Base64</a>
-            <a href="../common.html" class="nav-category">🔍 Common</a>
+			<a href="../base64.html" class="nav-category">🔐 Base64</a>
+			            <a href="../index.html" class="nav-category">🔍 Featured</a>
 			<a href="../encry.html" class="nav-category">🔒 Encryption</a>
 			<a href="../code.html" class="nav-category">📝 Encoding</a>
 			<a href="../dev.html" class="nav-category">💻 Dev Tools</a>
@@ -380,3 +380,43 @@
 
 
 </html>
+
+<!-- Help Section -->
+<div class="help-section" style="background:#f8f9fa; border-radius:8px; padding:2rem; margin:2rem auto; max-width:1100px; border-left:4px solid #007bff;">
+	<h2 class="help-title" style="color:#333; font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;">How to Use</h2>
+	<div class="help-content" style="color:#666; line-height:1.6;">
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">What this tool does</h3>
+		<p>Converts an image file to a Base64 data URL and shows the HTML <code>&lt;img&gt;</code> snippet for quick embedding.</p>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Steps</h3>
+		<ol style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Click the upload area or drag an image onto it.</li>
+			<li>Copy the Base64 data or the generated HTML snippet.</li>
+			<li>Use Clear to reset and convert another image.</li>
+		</ol>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Examples</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Result starts like <code class="wrap" style="display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere;">data:image/png;base64,iVBORw0KGgoAAAANSUhEUg...</code></li>
+			<li>HTML: <code class="wrap" style="display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere;">&lt;img src="data:image/jpeg;base64,/9j/4AAQ..." alt="Base64 Image"&gt;</code></li>
+		</ul>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Notes</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Very large images create long strings; consider compressing before embedding.</li>
+			<li>Base64 increases size by ~33%; use only when inline embedding is needed.</li>
+			<li>For privacy, processing happens locally in your browser.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="background:#333; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem;">
+	<div class="footer-links" style="display:flex; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;">
+		<a href="../about.html" style="color:#ccc; text-decoration:none; transition:color .3s;">About Us</a>
+		<a href="../contact.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Contact Us</a>
+		<a href="../privacy.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Privacy Policy</a>
+	</div>
+	<div style="color:#aaa; font-size:.9rem;">© <span id="year-img">2025</span> Chuandao Tools. All rights reserved.</div>
+</footer>
+<script>document.getElementById('year-img').textContent = new Date().getFullYear();</script>

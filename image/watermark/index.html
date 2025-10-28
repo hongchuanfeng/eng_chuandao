@@ -115,6 +115,40 @@
             margin-bottom: 5px;
             color: #ff6b6b;
         }
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1100px;
+            border-left: 4px solid #007bff;
+        }
+        .help-title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .help-content { color: #666; line-height: 1.6; }
+        .help-content h3 { color: #444; margin: 1.25rem 0 .5rem 0; font-size: 1.1rem; }
+        .help-content ul { margin: .5rem 0 1rem 1.5rem; }
+        .help-content li { margin: .35rem 0; }
+
+        /* Footer styles */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: color .3s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-copyright { color: #999; font-size: .9rem; }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -260,7 +294,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../../index.html" class="nav-item">
-                <img src="../../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -363,6 +397,63 @@
             </div>
         </div>
     </div>
+    </div>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+    <h2 class="help-title"><i class="fas fa-question-circle"></i> How to Use</h2>
+    <div class="help-content">
+        <h3>What this tool does</h3>
+        <p>Add text watermarks to images in your browser. Support diagonal repeating watermark or centered style, with control over text, color, angle, opacity, font size, and spacing.</p>
+
+        <h3>Steps</h3>
+        <ol>
+            <li><strong>Upload Image:</strong> Click or drag a JPG/PNG image into the upload area.</li>
+            <li><strong>Enter Text:</strong> Set the watermark text in the input box.</li>
+            <li><strong>Select Style:</strong> Choose Diagonal repeat or Centered.</li>
+            <li><strong>Tweak Settings:</strong> Adjust color, angle, opacity, font size, and spacing.</li>
+            <li><strong>Apply:</strong> Click “Apply watermark” to render.</li>
+            <li><strong>Save:</strong> Click “Save image” to download.</li>
+        </ol>
+
+        <h3>Examples</h3>
+        <ul>
+            <li><strong>Light subtle mark:</strong> Opacity 0.15, size 18, angle 335°, spacing 36.</li>
+            <li><strong>Bold center mark:</strong> Style Centered, size 48, opacity 0.4.</li>
+            <li><strong>Dense protection:</strong> Diagonal repeat, size 16, spacing 20, opacity 0.25.</li>
+        </ul>
+
+        <h3>Tips</h3>
+        <ul>
+            <li>Use semi‑transparent white (#FFFFFF, 0.15–0.3) for general images.</li>
+            <li>For dark images, try light colors; for bright images, try darker gray.</li>
+            <li>Increase spacing for large images to keep the pattern balanced.</li>
+        </ul>
+
+        <h3>Privacy & Security</h3>
+        <ul>
+            <li>All processing is local in your browser; no uploads.</li>
+            <li>Your images and watermark text never leave your device.</li>
+        </ul>
+
+        <h3>Important Notes</h3>
+        <ul>
+            <li>Large files may take longer to render.</li>
+            <li>Output format follows the original image type.</li>
+            <li>Canvas size limits in browsers may affect very large images.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-links">
+        <a href="../../about.html">About Us</a>
+        <a href="../../contact.html">Contact Us</a>
+        <a href="../../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">&copy; 2024 Missionary AI. All rights reserved.</div>
 </div>
 
 <script src="js/main.js" defer></script>

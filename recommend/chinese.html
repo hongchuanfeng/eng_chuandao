@@ -247,6 +247,87 @@
                 padding: 1rem;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
@@ -270,7 +351,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -312,6 +393,60 @@
         </ul>
     </div>
 </div>
+
+<div class="help-section">
+    <h2>How to Use Simplified/Traditional Chinese Converter</h2>
+    <p>Convert between Simplified and Traditional Chinese characters instantly.</p>
+
+    <h3>Instructions</h3>
+    <ul>
+        <li>Enter Chinese text in the upper text area</li>
+        <li>Click "To Traditional Chinese" to convert to Traditional</li>
+        <li>Click "To Simplified Chinese" to convert to Simplified</li>
+        <li>Click "Clear" to remove all text</li>
+        <li>Results appear in the lower text area</li>
+    </ul>
+
+    <h3>Features</h3>
+    <ul>
+        <li><strong>Bidirectional conversion:</strong> Convert both ways seamlessly</li>
+        <li><strong>Instant results:</strong> Conversion happens immediately</li>
+        <li><strong>Special character handling:</strong> Properly converts punctuation marks</li>
+        <li><strong>Accurate mapping:</strong> Uses industry-standard conversion tables</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="example">
+        <strong>Example 1 - Simplified to Traditional:</strong><br>
+        Input: "少年强则国强，少年智则国智"<br>
+        Output: "少年強則國強，少年智則國智"<br><br>
+        <strong>Example 2 - Traditional to Simplified:</strong><br>
+        Input: "計算機科學"<br>
+        Output: "计算机科学"
+    </div>
+
+    <h3>Use Cases</h3>
+    <ul>
+        <li>Reading materials from different regions</li>
+        <li>Creating content for international audiences</li>
+        <li>Translation and localization projects</li>
+        <li>Academic research and study</li>
+    </ul>
+
+    <h3>Note</h3>
+    <p>Some characters may have multiple Traditional forms. The converter uses the most common variant. Regional preferences (Taiwan vs Hong Kong Traditional Chinese) may vary slightly.</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
 

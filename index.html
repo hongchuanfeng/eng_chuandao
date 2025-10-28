@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Toolkit Collection - Chuandao Tools</title>
-    <meta name="keywords" content="online toolkit, Chuandao Tools">
-    <meta name="description" content="Chuandao Tools is an online toolkit: no login, no cost. Includes life utilities, developer tools, encoding/decoding, encryption/decryption, image tools, and entertainment tools.">
-    <link rel="canonical" href="https://www.chdaoai.com">
+    <title>Free Online Tools - No Login Required | Missionary AI</title>
+    <meta name="keywords" content="free online tools, online toolkit, Missionary AI, web utilities, developer tools, encoding tools, encryption tools, image tools, no registration required">
+    <meta name="description" content="Missionary AI offers free online tools with no login required. Access life utilities, developer tools, encoding/decoding, encryption/decryption, image processing, and entertainment tools instantly.">
+    <link rel="canonical" href="https://www.chdaoai.com/index.html">
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
@@ -78,27 +78,69 @@
         }
 
         .tool-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border: 1px solid #eef0f2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .tool-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
         }
 
         .tool-icon {
             font-size: 1.5rem;
             color: #007bff;
-            margin-bottom: 1rem;
+            margin-bottom: .75rem;
+            border-radius: 10px;
         }
 
         .category-title {
-            color: #444;
+            color: #1f2937;
             margin: 2rem 0 1rem;
-            padding-left: 1rem;
+            padding-left: .75rem;
+            border-left: 4px solid #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: #fff;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #eef0f2;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
         }
 
         /* Mobile styles */
@@ -150,7 +192,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="index.html" class="nav-item">
-                <img src="static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -410,6 +452,36 @@
     </div>
 
 </div>
+
+<!-- Help Section -->
+<div class="container" style="max-width: 1100px; margin-top: 1rem;">
+    <div style="background:#f8f9fa; border-left:4px solid #007bff; padding:1.25rem 1.25rem; border-radius:8px;">
+        <h3 style="margin:0 0 .75rem 0; color:#333; font-size:1.25rem;">How to Use This Site</h3>
+        <p style="color:#666; line-height:1.7; margin:0;">Browse categories above to access free tools. Most tools run entirely in your browser. Look for the Help section on each page for step-by-step instructions, examples, and tips.</p>
+    </div>
+    
+    <div style="margin-top:1rem; background:#fff; border:1px solid #eee; padding:1rem; border-radius:8px;">
+        <strong>Quick Links:</strong>
+        <ul style="margin:.5rem 0 0 1.25rem; color:#666;">
+            <li><a href="image.html">Image Tools</a> – convert, compress, crop, stitch, and more</li>
+            <li><a href="code.html">Encode/Decode</a> – Base64, QR, and text utilities</li>
+            <li><a href="dev.html">Developer</a> – GUID, DNS, WHOIS, meta tags</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
 <script>
     function toggleMenu() {

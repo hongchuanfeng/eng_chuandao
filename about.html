@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun and Games - Online Toolkit - Chuandao Tools</title>
-    <meta name="keywords" content="games, fun, tools, Chuandao Tools">
-    <meta name="description" content="Mini-games: minesweeper, rock-paper-scissors, number puzzles, click blocks, jump, mazes and more.">
-    <link rel="canonical" href="https://www.chdaoai.com/game.html">
+    <title>About Us - Missionary AI</title>
+    <meta name="keywords" content="About Us, Missionary AI, online toolkit">
+    <meta name="description" content="Missionary AI focuses on providing a simple and easy-to-use online tool platform, covering various tools such as daily life, development, encoding and decoding, encryption and decryption, images, entertainment, etc.">
+    <link rel="canonical" href="https://www.chdaoai.com/关于我们.html">
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/css.css">
     <style>
@@ -63,41 +64,112 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
-        /* Tool card layout */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            padding: 1rem;
-        }
-
-        .tool-card {
+        /* About page content */
+        .about-header {
             background: white;
             border-radius: 8px;
-            padding: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
         }
 
-        .tool-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .tool-icon {
-            font-size: 1.5rem;
-            color: #007bff;
+        .about-header h1 {
+            color: #333;
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .category-title {
-            color: #444;
-            margin: 2rem 0 1rem;
-            padding-left: 1rem;
+        .about-header p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #007bff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .section ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+        }
+
+        .timeline {
+            margin-top: 1.5rem;
+        }
+
+        .timeline-item {
+            border-left: 3px solid #007bff;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #007bff;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            color: #666;
+            line-height: 1.8;
         }
 
         /* Footer styles */
@@ -109,7 +181,7 @@
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
@@ -168,6 +240,18 @@
             nav {
                 padding: 1rem;
             }
+
+            .about-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.3rem;
+            }
         }
     </style>
     <!-- Google tag (gtag.js2) -->
@@ -179,7 +263,6 @@
 
         gtag('config', 'G-8NMLH22Y6G');
     </script>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
             crossorigin="anonymous"></script>
 </head>
@@ -208,132 +291,56 @@
 </nav>
 
 <div class="container">
-    <!-- Games -->
-    <h2 class="category-title">Games</h2>
-    <div class="tools-grid">
-
-
-        <div class="tool-card">
-            <a href="game/sl.html">
-
-                <img src="static/images/sl.png" class="tool-icon" alt="Minesweeper Online">
-                <div class="tool-info">
-                    <div class="tool-title">Minesweeper</div>
-                    <div class="tool-desc">Play Minesweeper online</div>
-                </div>
-
-            </a>
-        </div>
-
-
-        <div class="tool-card">
-
-            <a href="game/guess.html">
-
-                <img src="static/images/guess.png" class="tool-icon" alt="Rock-Paper-Scissors Online">
-                <div class="tool-info">
-                    <div class="tool-title">Rock-Paper-Scissors</div>
-                    <div class="tool-desc">Play RPS online</div>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="tool-card">
-
-            <a href="game/road.html">
-
-                <img src="static/images/road.png" class="tool-icon" alt="Number Puzzle Online">
-                <div class="tool-info">
-                    <div class="tool-title">Number Puzzle</div>
-                    <div class="tool-desc">Play number sliding puzzle</div>
-                </div>
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <a href="game/block.html">
-
-                <img src="static/images/block.png" class="tool-icon" alt="Click Blocks Game">
-                <div class="tool-info">
-                    <div class="tool-title">Click Blocks</div>
-                    <div class="tool-desc">Click blocks to score</div>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="tool-card">
-
-            <a href="game/jump.html">
-
-                <img src="static/images/jump.png" class="tool-icon" alt="Jump Game">
-                <div class="tool-info">
-                    <div class="tool-title">Jump Game</div>
-                    <div class="tool-desc">Casual jumping game</div>
-                </div>
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <a href="game/blockbreak.html">
-
-                <img src="static/images/blockbreak.png" class="tool-icon" alt="Breakout Online">
-                <div class="tool-info">
-                    <div class="tool-title">Breakout</div>
-                    <div class="tool-desc">Play brick breaker</div>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="tool-card">
-
-            <a href="game/text.html">
-
-                <img src="static/images/text.png" class="tool-icon" alt="Word Game">
-                <div class="tool-info">
-                    <div class="tool-title">Word Game</div>
-                    <div class="tool-desc">Play word-based mini game</div>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="tool-card">
-
-            <a href="game/maze.html">
-
-                <img src="static/images/maze.png" class="tool-icon" alt="Maze Online">
-                <div class="tool-info">
-                    <div class="tool-title">Maze</div>
-                    <div class="tool-desc">Solve mazes online</div>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="tool-card">
-
-            <a href="game/guessnumber.html">
-
-                <img src="static/images/guessnumber.png" class="tool-icon" alt="Guess the Number Online">
-                <div class="tool-info">
-                    <div class="tool-title">Guess the Number</div>
-                    <div class="tool-desc">Play number guessing game</div>
-                </div>
-            </a>
-
-        </div>
-
+    <div class="about-header">
+        <h1>About Us</h1>
+        <p>Missionary AI focuses on providing a simple and easy-to-use online tool platform, covering various tools such as daily life, development, encoding and decoding, encryption and decryption, images, entertainment, etc., to help users efficiently complete daily and work tasks.</p>
     </div>
 
+    <div class="section">
+        <h2>Our Mission</h2>
+        <p>Enable a wider audience to access high-quality online tools and knowledge capabilities at a lower cost, and solve complex problems with a minimalist experience.</p>
+    </div>
+
+    <div class="section">
+        <h2>Core Values</h2>
+        <ul>
+            <li><strong>User first:</strong> Results and experience oriented, reducing unnecessary complexity and barriers.</li>
+            <li><strong>Open co creation:</strong> Embrace the open source ecosystem and industry standards, continuously absorb community feedback, and iterate quickly.</li>
+            <li><strong>Reliable and secure:</strong> Prioritize local browser computing and try not to upload user data.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Product and Capability</h2>
+        <ul>
+            <li><strong>Multi category tools:</strong> life, development, encoding/decoding, encryption/decryption, images, entertainment, etc.</li>
+            <li><strong>Pure front-end computing:</strong> image processing, encoding conversion, formatting/compression, etc. are completed on-site to protect privacy.</li>
+            <li><strong>Cross platform adaptation:</strong> desktop and mobile adaptation, lightweight loading and offline friendly design.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Development Milestone</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">Site construction and core tools will be launched.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">Improve image, encryption and decryption, and development assistance tools, and upgrade page experience.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Planning</div>
+                <div class="timeline-content">Account and cloud synchronization (optional), team collaboration templates, and more industry plugins.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Law and Compliance</h2>
+        <p>We adhere to applicable laws and regulations and value the principle of minimizing user data processing. Please refer to the Privacy Policy and Contact Us for more information. If you need business cooperation and authorization, please feel free to communicate via email.</p>
+    </div>
 </div>
 
 <footer>
@@ -366,3 +373,4 @@
 </script>
 </body>
 </html>
+

@@ -245,6 +245,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<!-- Google tag (gtag.js2) -->
@@ -265,7 +346,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -303,6 +384,129 @@
   </div>
   <div id="resultBox" style="min-height:120px;"></div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Express Tracking Tool</h2>
+	<p>Track your packages and express deliveries from major Chinese courier companies in real-time.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Enter your tracking number in the input field</li>
+		<li>Select the courier company or use "Auto detect"</li>
+		<li>Click "Search" to retrieve tracking information</li>
+		<li>View detailed tracking history and current status</li>
+	</ul>
+
+	<h3>Supported Courier Companies</h3>
+	<ul>
+		<li><strong>SF Express (顺丰):</strong> Premium express service</li>
+		<li><strong>YTO (圆通):</strong> Major express delivery company</li>
+		<li><strong>ZTO (中通):</strong> Leading express logistics provider</li>
+		<li><strong>STO (申通):</strong> Established express delivery service</li>
+		<li><strong>Yunda (韵达):</strong> Nationwide express delivery</li>
+		<li><strong>JD (京东):</strong> E-commerce logistics service</li>
+		<li><strong>EMS (邮政):</strong> China Post express service</li>
+		<li><strong>China Post (邮政国内):</strong> National postal service</li>
+		<li><strong>Best Express (汇通):</strong> Express delivery network</li>
+		<li><strong>Deppon (德邦):</strong> Logistics and freight service</li>
+		<li><strong>ZJS Express (宅急送):</strong> Door-to-door delivery service</li>
+	</ul>
+
+	<h3>Auto-Detection Rules</h3>
+	<ul>
+		<li><strong>SF Express:</strong> Numbers starting with "SF" or 11-digit numbers starting with "01"</li>
+		<li><strong>YTO:</strong> Numbers starting with "YT" or "YTO"</li>
+		<li><strong>ZTO:</strong> Numbers starting with "ZTO"</li>
+		<li><strong>STO:</strong> Numbers starting with "STO"</li>
+		<li><strong>JD:</strong> Numbers starting with "JD"</li>
+		<li><strong>Yunda:</strong> Numbers starting with "YD"</li>
+		<li><strong>EMS:</strong> Numbers starting with "EMS"</li>
+		<li><strong>China Post:</strong> 13-digit numbers</li>
+		<li><strong>Best Express:</strong> Numbers starting with "HT"</li>
+		<li><strong>Deppon:</strong> Numbers starting with "DB"</li>
+		<li><strong>ZJS Express:</strong> Numbers starting with "ZJS"</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - SF Express:</strong><br>
+		Tracking Number: SF1234567890<br>
+		Company: Auto detect → SF Express<br>
+		Result: Shows delivery status and tracking history<br><br>
+		<strong>Example 2 - Manual Selection:</strong><br>
+		Tracking Number: 1234567890123<br>
+		Company: China Post (manual selection)<br>
+		Result: Displays postal service tracking information
+	</div>
+
+	<h3>Tracking Information Displayed</h3>
+	<ul>
+		<li><strong>Tracking Number:</strong> Your package's unique identifier</li>
+		<li><strong>Courier Company:</strong> The delivery service provider</li>
+		<li><strong>Current Status:</strong> Latest delivery status</li>
+		<li><strong>Tracking History:</strong> Chronological list of package movements</li>
+		<li><strong>Timestamps:</strong> When each status update occurred</li>
+	</ul>
+
+	<h3>Common Status Types</h3>
+	<ul>
+		<li><strong>In Transit:</strong> Package is being transported</li>
+		<li><strong>Collected:</strong> Package has been picked up</li>
+		<li><strong>Exception:</strong> Delivery issue or delay</li>
+		<li><strong>Delivered:</strong> Package successfully delivered</li>
+		<li><strong>Out for Delivery:</strong> Package is out for final delivery</li>
+		<li><strong>Returned:</strong> Package returned to sender</li>
+		<li><strong>Transferred:</strong> Package transferred between facilities</li>
+	</ul>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Track online shopping deliveries</li>
+		<li>Monitor business shipments</li>
+		<li>Check package delivery status</li>
+		<li>Verify delivery completion</li>
+		<li>Resolve delivery issues</li>
+		<li>Plan package pickup</li>
+	</ul>
+
+	<h3>Tips for Better Results</h3>
+	<ul>
+		<li>Enter the complete tracking number without spaces</li>
+		<li>Use auto-detect for convenience, manual selection for accuracy</li>
+		<li>Check tracking numbers are correct before searching</li>
+		<li>Some packages may take time to appear in tracking systems</li>
+		<li>Contact the courier company for urgent delivery issues</li>
+	</ul>
+
+	<h3>Error Messages</h3>
+	<ul>
+		<li><strong>"Please enter a tracking number":</strong> No input provided</li>
+		<li><strong>"Unable to identify the courier":</strong> Auto-detect failed, select manually</li>
+		<li><strong>"No tracking info found":</strong> Package not found or not yet in system</li>
+		<li><strong>"Interface does not support this courier":</strong> Try a different courier selection</li>
+		<li><strong>"Query failed, please try again later":</strong> Network or service issue</li>
+	</ul>
+
+	<h3>Privacy & Security</h3>
+	<ul>
+		<li>Tracking queries are processed through secure APIs</li>
+		<li>No personal information is stored</li>
+		<li>Tracking numbers are only used for status queries</li>
+		<li>Results are displayed locally in your browser</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
+
 <script>
 // Auto-detect company (simple rules)
 function guessCompany(no) {

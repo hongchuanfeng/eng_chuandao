@@ -251,17 +251,17 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
 		<div class="nav-categories">
-			<a href="../index.html" class="nav-category">🔐 Base64</a>
-            <a href="../common.html" class="nav-category">🔍 Common</a>
+			<a href="../index.html" class="nav-category">🔍 Featured</a>
 			<a href="../life.html" class="nav-category">🏠 Life</a>
 			<a href="../encry.html" class="nav-category">🔒 Crypto</a>
 			<a href="../code.html" class="nav-category">📝 Encode/Decode</a>
 			<a href="../dev.html" class="nav-category">💻 Developer</a>
+			<a href="../base64.html" class="nav-category">🔐 Base64</a>
 			<a href="../image.html" class="nav-category">🖼️ Image</a>
 			<a href="../game.html" class="nav-category">🎮 Fun</a>
 		</div>
@@ -395,6 +395,46 @@ function base64ToBlob(b64, contentType = 'application/octet-stream') {
 		});
 	}
 </script>
+
+<!-- Help Section -->
+<div class="help-section" style="background:#f8f9fa; border-radius:8px; padding:2rem; margin:2rem auto; max-width:1100px; border-left:4px solid #007bff;">
+	<h2 class="help-title" style="color:#333; font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;">How to Use</h2>
+	<div class="help-content" style="color:#666; line-height:1.6;">
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">What this page provides</h3>
+		<p>Quick reference and examples for Base64 in JavaScript (browser and Node.js), including UTF-8 safe helpers and URL-safe Base64.</p>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Common tasks</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Encode/decode UTF-8 text using <code>TextEncoder/TextDecoder</code> with <code>btoa/atob</code>.</li>
+			<li>Convert files to Base64 via <code>FileReader</code>; convert Base64 back to <code>Blob</code>.</li>
+			<li>Use URL-safe Base64 by replacing <code>+/</code> with <code>-_</code> and handling padding.</li>
+		</ul>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Examples</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li><code class="wrap" style="display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere;">encodeBase64('Hello, 世界') → SGVsbG8sIOS4lueVjw==</code></li>
+			<li><code class="wrap" style="display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere;">toUrlSafe('YWJj+/==', true) → YWJqLS8</code></li>
+		</ul>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Notes</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li><code>btoa/atob</code> operate on binary strings (Latin‑1). For general strings, always go through UTF‑8 bytes.</li>
+			<li>Restore missing padding before decoding URL‑safe Base64.</li>
+			<li>In Node.js, prefer <code>Buffer</code> APIs for reliability and performance.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="background:#333; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem;">
+	<div class="footer-links" style="display:flex; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;">
+		<a href="../about.html" style="color:#ccc; text-decoration:none; transition:color .3s;">About Us</a>
+		<a href="../contact.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Contact Us</a>
+		<a href="../privacy.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Privacy Policy</a>
+	</div>
+	<div style="color:#aaa; font-size:.9rem;">© <span id="year-js">2025</span> Chuandao Tools. All rights reserved.</div>
+</footer>
+<script>document.getElementById('year-js').textContent = new Date().getFullYear();</script>
 <script>
 function encodeHex() {
 	const text = document.getElementById('textInput').value;

@@ -374,6 +374,87 @@
                 min-width: auto;
             }
         }
+
+        /* Help section styles */
+        .help-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .help-section h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p, .help-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .help-section ul {
+            margin-left: 1.5rem;
+        }
+
+        .help-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .example strong {
+            color: #007bff;
+        }
+
+        /* Footer styles */
+        footer {
+            background: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
     </style>
     <script src="../static/js/jquery-3.6.2.min.js"></script>
    <!-- Google tag (gtag.js2) -->
@@ -394,7 +475,7 @@
     <div class="nav-container">
         <div class="logo">
             <a href="../index.html" class="nav-item">
-                <img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+                <img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
             </a>
         </div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -432,6 +513,47 @@
     </ul>
 </div>
 
+<div class="help-section">
+    <h2>How to Use IP Geolocation Lookup</h2>
+    <p>Find the geographical location and information for any IP address instantly.</p>
+
+    <h3>Instructions</h3>
+    <ul>
+        <li>Enter an IP address (e.g., 192.168.1.1) in the search box</li>
+        <li>Click "Search" to query the IP location</li>
+        <li>Or click "Get My IP" to automatically look up your current IP address</li>
+        <li>View detailed information including country, city, ISP, timezone, and more</li>
+    </ul>
+
+    <h3>What Information is Displayed?</h3>
+    <ul>
+        <li><strong>Country & City:</strong> Geographic location of the IP</li>
+        <li><strong>ISP:</strong> Internet Service Provider</li>
+        <li><strong>Timezone:</strong> Local time zone information</li>
+        <li><strong>Latitude & Longitude:</strong> Precise coordinates</li>
+        <li><strong>Organization:</strong> Associated organization</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="example">
+        <strong>Example 1:</strong> Query "8.8.8.8" to see Google's DNS server location.<br><br>
+        <strong>Example 2:</strong> Query "1.1.1.1" to see Cloudflare's DNS server location.
+    </div>
+
+    <h3>Privacy Note</h3>
+    <p>IP geolocation is approximate and based on database lookups. Results are for reference only and may not represent the exact physical location of a device. For privacy reasons, we do not store or track any IP addresses used in queries.</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Missionary AI. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 

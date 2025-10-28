@@ -188,6 +188,85 @@
 			padding-left: 1rem;
 		}
 
+		/* Help Section Styles */
+		.help-section {
+			background: white;
+			border-radius: 8px;
+			padding: 2rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.help-section h2 {
+			color: #333;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.help-section h3 {
+			color: #555;
+			margin: 1.5rem 0 0.5rem 0;
+			font-size: 1.2rem;
+		}
+
+		.help-section p {
+			color: #666;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.help-section ul, .help-section ol {
+			margin: 0.5rem 0 1rem 1.5rem;
+			color: #666;
+		}
+
+		.help-section li {
+			margin: 0.3rem 0;
+			line-height: 1.5;
+		}
+
+		.help-section strong {
+			color: #333;
+		}
+
+		/* Footer Styles */
+		.footer {
+			background: #333;
+			color: white;
+			padding: 2rem 0;
+			margin-top: 3rem;
+		}
+
+		.footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-links a {
+			color: white;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #ccc;
+			font-size: 0.9rem;
+		}
+
 		/* Mobile styles */
 		@media (max-width: 768px) {
 			.nav-categories {
@@ -218,6 +297,16 @@
 			nav {
 				padding: 1rem;
 			}
+
+			.help-section {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.footer-links {
+				flex-direction: column;
+				gap: 1rem;
+			}
 		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
@@ -239,7 +328,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -271,6 +360,78 @@
 	</div>
 
 </div>
+
+<!-- Help Section -->
+<div class="help-section">
+	<h2>How to Use</h2>
+	<p>This tool generates QR codes from text, URLs, or other data. QR codes are two-dimensional barcodes that can be scanned by smartphones and other devices to quickly access information.</p>
+	
+	<h3>Step-by-Step Instructions:</h3>
+	<ol>
+		<li><strong>Enter Content:</strong> Type or paste your text, URL, or data into the input field</li>
+		<li><strong>Generate:</strong> Click "Generate QR Code" to create the QR code</li>
+		<li><strong>View Result:</strong> The generated QR code will appear below the button</li>
+		<li><strong>Download:</strong> Long press the image to save or share it</li>
+	</ol>
+	
+	<h3>QR Code Basics:</h3>
+	<ul>
+		<li><strong>QR Code:</strong> Quick Response code - a type of matrix barcode</li>
+		<li><strong>Scanning:</strong> Use any smartphone camera or QR code scanner app</li>
+		<li><strong>Content Types:</strong> Text, URLs, contact info, WiFi credentials, and more</li>
+		<li><strong>Size:</strong> Automatically adjusts based on content length</li>
+	</ul>
+	
+	<h3>Examples:</h3>
+	<ul>
+		<li><strong>Website URL:</strong> "https://www.example.com"</li>
+		<li><strong>Contact Info:</strong> "BEGIN:VCARD\nFN:John Doe\nTEL:+1234567890\nEND:VCARD"</li>
+		<li><strong>WiFi:</strong> "WIFI:T:WPA;S:NetworkName;P:password;H:false;"</li>
+		<li><strong>Plain Text:</strong> "Hello, World!"</li>
+	</ul>
+	
+	<h3>Common Use Cases:</h3>
+	<ul>
+		<li>Sharing website URLs</li>
+		<li>Contact information exchange</li>
+		<li>WiFi network sharing</li>
+		<li>Event information</li>
+		<li>Product information</li>
+		<li>Social media profiles</li>
+	</ul>
+	
+	<h3>Tips for Better Results:</h3>
+	<ul>
+		<li>Use high contrast colors for better scanning</li>
+		<li>Ensure adequate white space around the QR code</li>
+		<li>Test the QR code with different scanning apps</li>
+		<li>Consider the viewing distance when choosing size</li>
+		<li>Keep content concise for better readability</li>
+	</ul>
+	
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>QR codes are generated using a third-party API</li>
+		<li>Ensure your content is appropriate and legal</li>
+		<li>Test QR codes before printing or sharing</li>
+		<li>Some QR code scanners may have different capabilities</li>
+		<li>Keep backup copies of important QR codes</li>
+	</ul>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-links">
+			<a href="../about.html">About Us</a>
+			<a href="../contact.html">Contact Us</a>
+			<a href="../privacy.html">Privacy Policy</a>
+		</div>
+		<div class="footer-copyright">
+			<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
 
 <script>
 	function generateQRCode() {

@@ -245,6 +245,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -266,7 +347,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -397,6 +478,58 @@
 		</ol>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Barcode Generator</h2>
+	<p>Create professional barcodes instantly with customizable options.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Enter the content you want to encode (text, numbers, URLs)</li>
+		<li>Adjust bar width and height to control barcode size</li>
+		<li>Choose whether to display the text below/above the barcode</li>
+		<li>Customize colors for background and foreground</li>
+		<li>Click "Generate" to create your barcode</li>
+		<li>Click "Download barcode" to save as PNG image</li>
+	</ul>
+
+	<h3>Supported Content Types</h3>
+	<ul>
+		<li><strong>Text:</strong> Any alphanumeric characters</li>
+		<li><strong>Numbers:</strong> Numeric sequences</li>
+		<li><strong>URLs:</strong> Web addresses like https://example.com</li>
+		<li><strong>Product codes:</strong> SKU, ISBN, or other identifiers</li>
+	</ul>
+
+	<h3>Customization Options</h3>
+	<ul>
+		<li><strong>Bar width:</strong> Controls the thickness of bars (1-10)</li>
+		<li><strong>Bar height:</strong> Controls the height of bars (20-200)</li>
+		<li><strong>Font size:</strong> Text size below the barcode (10-40)</li>
+		<li><strong>Colors:</strong> Set background and foreground colors</li>
+		<li><strong>Margin:</strong> Add spacing around the barcode</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1:</strong> Generate a barcode for a URL: "https://chdaoai.com/"<br><br>
+		<strong>Example 2:</strong> Create a barcode for a product code: "PROD123456"
+	</div>
+
+	<h3>Tips</h3>
+	<p>For best scanning results, use adequate bar width (2-3) and sufficient height (60-100). Ensure good contrast between foreground and background colors. Higher contrast improves barcode readability.</p>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	function generateBarcode() {

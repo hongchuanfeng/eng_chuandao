@@ -251,13 +251,13 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
 		<div class="nav-categories">
-			<a href="../index.html" class="nav-category">🔐 Base64</a>
-            <a href="../common.html" class="nav-category">🔍 Common</a>
+			<a href="../base64.html" class="nav-category">🔐 Base64</a>
+		            <a href="../index.html" class="nav-category">🔍 Featured</a>
 			<a href="../life.html" class="nav-category">🏠 Life</a>
 			<a href="../encry.html" class="nav-category">🔒 Crypto</a>
 			<a href="../code.html" class="nav-category">📝 Encode/Decode</a>
@@ -462,3 +462,43 @@
 </body>
 
 </html>
+
+<!-- Help Section -->
+<div class="help-section" style="background:#f8f9fa; border-radius:8px; padding:2rem; margin:2rem auto; max-width:1100px; border-left:4px solid #007bff;">
+	<h2 class="help-title" style="color:#333; font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;">How to Use</h2>
+	<div class="help-content" style="color:#666; line-height:1.6;">
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">What this tool does</h3>
+		<p>Remap between standard Base64 and a custom 64‑character alphabet (with optional custom padding). This is a 1‑to‑1 character substitution over Base64—no re‑encoding.</p>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Steps</h3>
+		<ol style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Enter a 64‑character alphabet (unique chars) and choose padding behavior.</li>
+			<li>Paste standard Base64 on the left or custom Base64 on the right.</li>
+			<li>Click “Std → Custom” or “Custom → Std” to map across; copy as needed.</li>
+		</ol>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Examples</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Custom alphabet: replace <code>+/</code> with <code>-_</code>; keep padding <code>=</code>.</li>
+			<li>Input <code>TWFu</code> (Std) → Custom with <code>-_</code>: mapping keeps payload intact, only chars change.</li>
+		</ul>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Notes</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Alphabets must be exactly 64 unique characters.</li>
+			<li>Padding policy must match both sides (use or remove consistently).</li>
+			<li>This is not encryption; share alphabets securely if used in protocols.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="background:#333; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem;">
+	<div class="footer-links" style="display:flex; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;">
+		<a href="../about.html" style="color:#ccc; text-decoration:none; transition:color .3s;">About Us</a>
+		<a href="../contact.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Contact Us</a>
+		<a href="../privacy.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Privacy Policy</a>
+	</div>
+	<div style="color:#aaa; font-size:.9rem;">© <span id="year-cust">2025</span> Chuandao Tools. All rights reserved.</div>
+</footer>
+<script>document.getElementById('year-cust').textContent = new Date().getFullYear();</script>

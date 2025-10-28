@@ -251,17 +251,17 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
 		<div class="nav-categories">
-			<a href="../index.html" class="nav-category">🔐 Base64</a>
-            <a href="../common.html" class="nav-category">🔍 Common</a>
+			<a href="../index.html" class="nav-category">🔍 Featured</a>
 			<a href="../life.html" class="nav-category">🏠 Life</a>
 			<a href="../encry.html" class="nav-category">🔒 Crypto</a>
 			<a href="../code.html" class="nav-category">📝 Encode/Decode</a>
 			<a href="../dev.html" class="nav-category">💻 Developer</a>
+			<a href="../base64.html" class="nav-category">🔐 Base64</a>
 			<a href="../image.html" class="nav-category">🖼️ Image</a>
 			<a href="../game.html" class="nav-category">🎮 Fun</a>
 		</div>
@@ -440,3 +440,42 @@ async function copyOutput() {
 </body>
 
 </html>
+
+<!-- Help Section -->
+<div class="help-section" style="background:#f8f9fa; border-radius:8px; padding:2rem; margin:2rem auto; max-width:1100px; border-left:4px solid #007bff;">
+	<h2 class="help-title" style="color:#333; font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;">How to Use</h2>
+	<div class="help-content" style="color:#666; line-height:1.6;">
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">What this page provides</h3>
+		<p>Base64 usage in Python: main <code>base64</code> APIs, URL‑safe variant, strict validation, and file read/write patterns.</p>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Common tasks</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>Encode/decode UTF‑8 strings by converting to <code>bytes</code> and back.</li>
+			<li>Use <code>urlsafe_b64encode</code>/<code>urlsafe_b64decode</code> for URL/filename‑safe operations.</li>
+			<li>Set <code>validate=True</code> to reject non‑alphabet characters.</li>
+		</ul>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Examples</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li><code class="wrap" style="display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere;">base64.b64encode('你好'.encode('utf-8')).decode('ascii')</code></li>
+			<li><code class="wrap" style="display:block; white-space:pre-wrap; word-break:break-all; overflow-wrap:anywhere; line-break:anywhere;">base64.urlsafe_b64encode(b'token:id/123+scope')</code></li>
+		</ul>
+
+		<h3 style="color:#444; margin:1.25rem 0 .5rem; font-size:1.1rem;">Notes</h3>
+		<ul style="margin:.5rem 0 1rem 1.5rem;">
+			<li>For large files, stream by chunks instead of loading everything into memory.</li>
+			<li>Padding may be omitted in URL‑safe contexts; restore before decoding.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="background:#333; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem;">
+	<div class="footer-links" style="display:flex; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;">
+		<a href="../about.html" style="color:#ccc; text-decoration:none; transition:color .3s;">About Us</a>
+		<a href="../contact.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Contact Us</a>
+		<a href="../privacy.html" style="color:#ccc; text-decoration:none; transition:color .3s;">Privacy Policy</a>
+	</div>
+	<div style="color:#aaa; font-size:.9rem;">© <span id="year-py">2025</span> Chuandao Tools. All rights reserved.</div>
+</footer>
+<script>document.getElementById('year-py').textContent = new Date().getFullYear();</script>

@@ -245,6 +245,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -267,7 +348,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -322,6 +403,103 @@
 		<div id="historyList"></div>
 	</div>
 </div>
+
+<div class="help-section">
+	<h2>How to Use the Domain WHOIS Lookup</h2>
+	<p>Check domain registration information, ownership details, and expiration dates for any domain name.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Enter a domain name in the search box (e.g., example.com)</li>
+		<li>Click "Search" to retrieve WHOIS information</li>
+		<li>View registration details, ownership, and expiration dates</li>
+		<li>Check recent queries for quick access to previously searched domains</li>
+	</ul>
+
+	<h3>What Information is Displayed</h3>
+	<ul>
+		<li><strong>Domain Name:</strong> The domain being queried</li>
+		<li><strong>Registrar:</strong> Company that registered the domain</li>
+		<li><strong>Created Date:</strong> When the domain was first registered</li>
+		<li><strong>Expires Date:</strong> When the domain registration expires</li>
+		<li><strong>Status:</strong> Current registration status</li>
+		<li><strong>Country:</strong> Country of the registrant</li>
+		<li><strong>State/Province:</strong> State or province of the registrant</li>
+	</ul>
+
+	<h3>Domain Status Types</h3>
+	<ul>
+		<li><strong>Active:</strong> Domain is registered and active</li>
+		<li><strong>Expired:</strong> Domain registration has expired</li>
+		<li><strong>Pending Delete:</strong> Domain is scheduled for deletion</li>
+		<li><strong>Redemption Period:</strong> Domain is in grace period after expiration</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Active Domain:</strong><br>
+		Domain: google.com<br>
+		Status: Active, Expires: 2025-09-14<br><br>
+		<strong>Example 2 - Expired Domain:</strong><br>
+		Domain: expired-example.com<br>
+		Status: Expired, Available for registration
+	</div>
+
+	<h3>Domain Expiration Process</h3>
+	<ul>
+		<li><strong>Grace Period (30-45 days):</strong> Domain expires but can be renewed</li>
+		<li><strong>Redemption Period (30 days):</strong> Domain requires special recovery process</li>
+		<li><strong>Pending Delete (5 days):</strong> Domain will be released to public</li>
+		<li><strong>Available:</strong> Domain can be registered by anyone</li>
+	</ul>
+
+	<h3>Use Cases</h3>
+	<ul>
+		<li>Check if a domain is available for registration</li>
+		<li>Research domain ownership and contact information</li>
+		<li>Monitor domain expiration dates</li>
+		<li>Investigate domain history and previous owners</li>
+		<li>Verify domain authenticity and legitimacy</li>
+		<li>Plan domain acquisition strategies</li>
+	</ul>
+
+	<h3>Privacy Considerations</h3>
+	<ul>
+		<li>Some registrars offer privacy protection services</li>
+		<li>Personal information may be hidden behind proxy services</li>
+		<li>Contact information shown may be for privacy service providers</li>
+		<li>Not all domains display complete ownership information</li>
+	</ul>
+
+	<h3>Tips for Domain Research</h3>
+	<ul>
+		<li>Check multiple variations of domain names</li>
+		<li>Look for typos and alternative spellings</li>
+		<li>Monitor domains that are close to expiration</li>
+		<li>Use the recent queries feature to track your searches</li>
+		<li>Consider different TLD extensions (.com, .net, .org, etc.)</li>
+	</ul>
+
+	<h3>Important Notes</h3>
+	<ul>
+		<li>WHOIS data may not always be complete or accurate</li>
+		<li>Some domains may have restricted or private registration</li>
+		<li>Information is provided for informational purposes only</li>
+		<li>Always verify information through official channels</li>
+		<li>Respect privacy and don't misuse contact information</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	function searchDomain() {

@@ -198,6 +198,87 @@
 				padding: 1rem;
 			}
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin: 2rem auto;
+			max-width: 800px;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 	<script src="../static/js/jquery-3.6.2.min.js"></script>
 	<!-- Google tag (gtag.js2) -->
@@ -218,7 +299,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -261,6 +342,100 @@
 	</div>
 </div>
 
+<div class="help-section">
+	<h2>How to Use the Calculator</h2>
+	<p>Perform basic arithmetic calculations with this simple and easy-to-use calculator.</p>
+
+	<h3>Instructions</h3>
+	<ul>
+		<li>Click number buttons (0-9) to enter numbers</li>
+		<li>Click operation buttons (+, -, *, /) to select operations</li>
+		<li>Click the decimal point (.) for decimal numbers</li>
+		<li>Click "C" to clear the display</li>
+		<li>Click "=" to calculate the result</li>
+	</ul>
+
+	<h3>Supported Operations</h3>
+	<ul>
+		<li><strong>Addition (+):</strong> Add two or more numbers</li>
+		<li><strong>Subtraction (-):</strong> Subtract one number from another</li>
+		<li><strong>Multiplication (*):</strong> Multiply two or more numbers</li>
+		<li><strong>Division (/):</strong> Divide one number by another</li>
+		<li><strong>Decimal Numbers:</strong> Use the decimal point for precise calculations</li>
+	</ul>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<strong>Example 1 - Basic Addition:</strong><br>
+		Input: 25 + 17 =<br>
+		Result: 42<br><br>
+		<strong>Example 2 - Decimal Calculation:</strong><br>
+		Input: 3.14 * 2 =<br>
+		Result: 6.28
+	</div>
+
+	<h3>Button Functions</h3>
+	<ul>
+		<li><strong>Number Buttons (0-9):</strong> Input digits</li>
+		<li><strong>Operation Buttons (+, -, *, /):</strong> Select mathematical operations</li>
+		<li><strong>Decimal Point (.):</strong> Add decimal places to numbers</li>
+		<li><strong>Clear (C):</strong> Erase all input and start over</li>
+		<li><strong>Equals (=):</strong> Calculate and display the result</li>
+	</ul>
+
+	<h3>Calculation Order</h3>
+	<ul>
+		<li>Operations are performed in standard mathematical order</li>
+		<li>Multiplication and division are performed before addition and subtraction</li>
+		<li>Use parentheses in complex expressions for specific order</li>
+		<li>Decimal calculations maintain precision</li>
+	</ul>
+
+	<h3>Common Use Cases</h3>
+	<ul>
+		<li>Quick arithmetic calculations</li>
+		<li>Budget and financial calculations</li>
+		<li>Percentage calculations</li>
+		<li>Unit conversions</li>
+		<li>Basic math homework</li>
+		<li>Shopping and price calculations</li>
+	</ul>
+
+	<h3>Tips for Better Results</h3>
+	<ul>
+		<li>Double-check your input before pressing equals</li>
+		<li>Use the clear button to start fresh calculations</li>
+		<li>For complex calculations, break them into smaller steps</li>
+		<li>Verify results with mental math when possible</li>
+	</ul>
+
+	<h3>Error Handling</h3>
+	<ul>
+		<li>Invalid expressions will show an error message</li>
+		<li>Division by zero is not allowed</li>
+		<li>Clear the display and try again if errors occur</li>
+		<li>Check for typos in your input</li>
+	</ul>
+
+	<h3>Keyboard Shortcuts</h3>
+	<ul>
+		<li>Use your keyboard number pad for faster input</li>
+		<li>Press Enter or = key to calculate</li>
+		<li>Use Escape or C key to clear</li>
+		<li>Arrow keys can be used for navigation</li>
+	</ul>
+</div>
+
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	let outputEl = document.getElementById('output');

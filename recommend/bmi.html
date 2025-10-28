@@ -89,6 +89,86 @@
 			display: inline-block;
 			margin-right: 10px;
 		}
+
+		/* Help section styles */
+		.help-section {
+			background: #f8f9fa;
+			padding: 1.5rem;
+			margin-top: 2rem;
+			border-radius: 8px;
+			border-left: 4px solid #007bff;
+		}
+
+		.help-section h2 {
+			color: #333;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+
+		.help-section h3 {
+			color: #007bff;
+			font-size: 1.1rem;
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.help-section p, .help-section ul {
+			color: #666;
+			line-height: 1.8;
+			margin-bottom: 0.8rem;
+		}
+
+		.help-section ul {
+			margin-left: 1.5rem;
+		}
+
+		.help-section ul li {
+			margin-bottom: 0.5rem;
+		}
+
+		.example {
+			background: #e7f3ff;
+			padding: 1rem;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+
+		.example strong {
+			color: #007bff;
+		}
+
+		/* Footer styles */
+		footer {
+			background: white;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 1px solid #e0e0e0;
+			text-align: center;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-links a {
+			color: #666;
+			text-decoration: none;
+			transition: color 0.3s;
+			font-size: 0.95rem;
+		}
+
+		.footer-links a:hover {
+			color: #007bff;
+		}
+
+		.footer-copyright {
+			color: #999;
+			font-size: 0.9rem;
+		}
 	</style>
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -232,7 +312,7 @@
 	<div class="nav-container">
 		<div class="logo">
 			<a href="../index.html" class="nav-item">
-				<img src="../static/images/logo.png" width="100px" style="margin-right: 60px"/>
+				<img src="../static/images/logo.png" width="50px" style="margin-right: 60px"/>
 			</a>
 		</div>
 		<button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -273,8 +353,48 @@
 		<br>
 		<p>Note: The BMI calculator is for reference only and does not reflect individual health. Consult a physician for medical advice.</p>
 	</div>
+
+	<div class="help-section">
+		<h2>How to Use the BMI Calculator</h2>
+		<p>Calculate your Body Mass Index (BMI) quickly and easily.</p>
+
+		<h3>Instructions</h3>
+		<ul>
+			<li>Enter your height in centimeters (cm)</li>
+			<li>Enter your weight in kilograms (kg)</li>
+			<li>Click the "Calculate" button</li>
+			<li>View your BMI result and body status</li>
+		</ul>
+
+		<h3>BMI Categories</h3>
+		<ul>
+			<li><strong>Underweight:</strong> BMI less than 18.5</li>
+			<li><strong>Normal:</strong> BMI between 18.5 and 23.9</li>
+			<li><strong>Overweight:</strong> BMI between 24 and 27.9</li>
+			<li><strong>Obese:</strong> BMI 28 or higher</li>
+		</ul>
+
+		<h3>Examples</h3>
+		<div class="example">
+			<strong>Example 1:</strong> A person who is 175 cm tall and weighs 70 kg has a BMI of 22.9 (Normal).<br><br>
+			<strong>Example 2:</strong> A person who is 160 cm tall and weighs 50 kg has a BMI of 19.5 (Normal).
+		</div>
+
+		<h3>Important Notes</h3>
+		<p>BMI is a screening tool and does not directly measure body fat. It may not accurately reflect body composition for athletes, older adults, or people with high muscle mass. For personalized health advice, consult a healthcare professional.</p>
+	</div>
 </div>
 
+<footer>
+	<div class="footer-links">
+		<a href="../about.html">About Us</a>
+		<a href="../contact.html">Contact Us</a>
+		<a href="../privacy.html">Privacy Policy</a>
+	</div>
+	<div class="footer-copyright">
+		<p>&copy; 2024 Missionary AI. All rights reserved.</p>
+	</div>
+</footer>
 
 <script>
 	function calculate() {
